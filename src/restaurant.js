@@ -80,9 +80,18 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (paramObj) => ({
-  fetchMenu: () => paramObj,
   consumption: [],
+  fetchMenu: () => paramObj,
   order(item) { this.consumption.push(item); },
+  pay() {
+    let total = 0;
+    const menu = this.fetchMenu();
+    for (let item of this.consumption) {
+      let itemPrice = menu.food[item] ? menu.food[item] : menu.drink[item];
+      total += itemPrice;
+    }
+    
+  },
 });
 
 module.exports = createMenu;
