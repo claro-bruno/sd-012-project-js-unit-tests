@@ -90,7 +90,7 @@ const createMenu = (paramObj) => ({
       let itemPrice = menu.food[item] ? menu.food[item] : menu.drink[item];
       total += itemPrice;
     }
-    
+    return Number(parseFloat(total).toPrecision(2));
   },
 });
 
