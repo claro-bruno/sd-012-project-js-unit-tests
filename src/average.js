@@ -15,11 +15,11 @@
 const average = (arrayNum) => {
   let soma = 0;
   let media = 0;
-  if (arrayNum.length < 1){
+  if (arrayNum.length < 1) {
     return undefined;
   }
-  for (let index = 0; index < arrayNum.length; index += 1){
-    if (typeof arrayNum[index] !== 'number' ){
+  for (let index = 0; index < arrayNum.length; index += 1) {
+    if (typeof arrayNum[index] !== 'number') {
       return undefined;
     }  
     soma += arrayNum[index];
@@ -29,4 +29,3 @@ const average = (arrayNum) => {
 };
 
 module.exports = average;
-
