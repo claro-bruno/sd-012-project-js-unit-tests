@@ -12,6 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (param) => {
+  let values = null;
+  if (param.length === 0) {
+    return undefined
+  };
+  for (let indice0 = 0; indice0 < param.length; indice0 += 1) {
+    if (typeof param[indice0] !== 'number') {
+      return undefined;
+    } else {
+      values += param[indice0]
+      let resultado = roundf(values / param.length);
+      return resultado;
+    };
 
+  };
+};
 module.exports = average;
