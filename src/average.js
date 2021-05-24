@@ -14,27 +14,26 @@
 
 const testString = (array) => {
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof(array[index]) !== 'number') {
+    if (typeof (array[index]) !== 'number') {
       return undefined;
     }
   }
   return 'okay';
-}
+};
 
-const  media = (array) => {
+const media = (array) => {
   let sum = 0;
   for (let index = 0; index < array.length; index += 1) {
     sum += array[index];
   }
-  return sum/array.length;
-}
+  return sum / array.length;
+};
 
 const average = (numMedia) => {
-  if(testString(numMedia) === undefined) {
+  if (testString(numMedia) === undefined) {
     return testString(numMedia);
-  } else {
-    return Math.round(media(numMedia));
   }
+  return Math.round(media(numMedia));
 };
 
 console.log(average([0, 0, 0, 0, 1]));
