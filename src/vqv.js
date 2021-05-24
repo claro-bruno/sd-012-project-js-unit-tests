@@ -17,18 +17,16 @@
 */
 
 const vqv = (nome, idade) => {
-  personName = nome;
-  personAge = idade;
-  if (idade ===  ''|| nome === '') {
-    return undefined;
-  } else {
-    return `Oi, meu nome é ${personName}!
-    Tenho ${personAge} anos,
-    trabalho na Trybe e mando muito em programação!
-    #VQV!'`;
+  let message = `Oi, meu nome é ${nome}!
+  Tenho ${idade} anos,
+  trabalho na Trybe e mando muito em programação!
+  #VQV!'`;
+  if (idade === '' || nome === '') {
+    message = undefined;
   }
+  return message;
 };
 
-console.log(vqv('gaga', 1));
+console.log(vqv('', 1));
 
 module.exports = vqv;
