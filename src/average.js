@@ -25,6 +25,4 @@ const average = (numArr) => {
   return Math.round(sum / length);
 };
 
-console.log(average([]));
-
 module.exports = average;
