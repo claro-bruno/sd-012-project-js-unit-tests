@@ -11,10 +11,8 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
-
 const average = (array) => {
-  if (array.length === 0 ||typeof array !== 'object') {
+  if (array.length === 0 || typeof array !== 'object') {
     return undefined;
   }
   let sum = 0;
