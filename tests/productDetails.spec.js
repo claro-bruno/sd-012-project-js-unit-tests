@@ -33,7 +33,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.deepStrictEqual(productDetails([]), [{"details": {"productId": "123"}, "name": []}, {"details": {"productId": "undefined123"}, "name": undefined}]);
+    assert.ok(Array.isArray(productDetails([])));
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.deepStrictEqual(productDetails([]), [{"details": {"productId": "123"}, "name": []}, {"details": {"productId": "undefined123"}, "name": undefined}]);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
