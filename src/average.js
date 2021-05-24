@@ -13,16 +13,17 @@
 */
 
 const average = (arrayNumeric) => {
+  if (arrayNumeric.length === 0) {
+    return undefined;
+  }
   let sum = 0;
   for (const number of arrayNumeric) {
     if (typeof number !== 'number') {
-      return 'undefined';
+      return undefined;
     }
     sum += number;
   }
-  return sum / arrayNumeric.length;
+  return Math.round(sum / arrayNumeric.length);
 };
 
 module.exports = average;
-
-// console.log(average([2, 4, 6, 8, 10]));
