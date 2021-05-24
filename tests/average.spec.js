@@ -16,7 +16,7 @@ const average = require('../src/average');
     - average([1, '2']) // Retorno: undefined;
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
-*/
+*/   
 
 describe('1 - Implemente a função `average`', () => {
   it('Verifica se o comportamento da função "average" está correto', () => {
