@@ -16,6 +16,14 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (nome === undefined || idade === undefined) {
+    return undefined;
+  }
+  const frase1 = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n`; 
+  const frase2 = 'trabalho na Trybe e mando muito em programação!\n#VQV!';
+  const frasefinal = `${frase1}${frase2}`;
+  return frasefinal;
+};
 
 module.exports = vqv;
