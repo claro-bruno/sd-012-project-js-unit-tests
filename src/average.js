@@ -12,9 +12,7 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const isNumber = (valor) => typeof valor === 'number';
-const average = (array) => (array.every(isNumber) && array.length > 0 ? Math.round(array.reduce((call, numero) => call + numero) / array.length) : undefined);
+const average = (array) => (array.every(isNumber) && array.length > 0
+? Math.round(array.reduce((call, numero) => call + numero) / array.length) : undefined);
 
-console.log(average([]));
-console.log(average([1, 2, 3, '4', 5]));
-console.log(average([3, 4, 5]))
 module.exports = average;
