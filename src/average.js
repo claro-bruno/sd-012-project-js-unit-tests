@@ -11,10 +11,10 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-
+const test = [];
 const average = (array) => {
   if (array.length === 0) {
-    return 'undefined';
+    return undefined;
   }
 
   let total = 0;
@@ -22,7 +22,7 @@ const average = (array) => {
 
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
-      return 'undefined';
+      return undefined;
     }
     total += array[index];
   }
@@ -30,5 +30,7 @@ const average = (array) => {
   media = (total / array.length);
   return media.toFixed(0);
 };
+
+console.log(average(test));
 
 module.exports = average;
