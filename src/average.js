@@ -24,8 +24,14 @@ const average = (array) => {
     soma += array[index];
   }
   let averageNumber = soma / array.length;
-  averageNumber = Math.round(average);
+  if (Number.isInteger(averageNumber) !== true) {
+    let averageString = averageNumber.toFixed(1);
+    averageNumber = parseFloat(averageString);
+    averageNumber = Math.round(averageNumber);
+  }
   return averageNumber;
 };
+
+console.log(average([0, 0, 0, 0, 0, 0, 1]));
 
 module.exports = average;
