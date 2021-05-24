@@ -14,21 +14,17 @@
 
 
 const average = (array) => {
-  let sum = 0;
-  if (array.length === 0) {
+  if (array.length === 0 ||typeof array !== 'object') {
     return undefined;
   }
+  let sum = 0;
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof array[index] !== 'number' || typeof array[index] === 'string') {
+    if (typeof array[index] !== 'number') {
       return undefined;
-    } else {
-      sum += array[index];
     }
+    sum += array[index];
   }
-  let quantNum = array.length;
-  const average = Math.round(sum / quantNum);
-  
-  return average;
+  return Math.round(sum / array.length);
 };
 
 module.exports = average;
