@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
+const { triggerAsyncId } = require('async_hooks');
 const numbers = require('../src/numbers');
 
 /*
@@ -19,8 +20,16 @@ const numbers = require('../src/numbers');
 describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   it('Verifica se a função `numbers`retorna um array e se o array retornado contém somente números', () => {
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
+    const expected = numbers([1, 2, 3, 4, 5]);
+    assert.deepStrictEqual(expected, true, 'true');
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
+    const expected2 = numbers([1, 2, 3, '4', 5]);
+    assert.strictEqual(expected2, false, 'false');
     // Escreva um teste em que a função recebe [1, 'a', 3] e retorna false
+    const expected3 = numbers([1, 'a', 3]);
+    assert.strictEqual(expected3, false, 'false');
     // Escreva um teste em que a função recebe [' '] e retorna false
+    const expected4 = numbers([' ']);
+    assert.strictEqual(expected4, false, 'false');
   });
 });
