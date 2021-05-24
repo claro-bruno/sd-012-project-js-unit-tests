@@ -17,18 +17,14 @@ const average = (arr) => {
 
    if (typeof (arr[0]) !== 'number') {
       return undefined;
-   } else {
+   }
    for (let key = 0; key < arr.length; key += 1) {
       total += arr[key];
       if (typeof (arr[key]) !== 'number') {
-         return undefined;
+         return undefined;}
       }
-   }}
 
    let arredondado = Math.round(total / arr.length);
-   if (typeof (arredondado) === 'number') {
    return arredondado;
-   }
-   return undefined;
 };
 module.exports = average;
