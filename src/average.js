@@ -23,7 +23,7 @@ const average = (arrayAux) => {
       return undefined;
     }
     // soma todos dentro do arrayAux para depois divididir pelo comprimento dele
-    arrayAux += arrayAux[indexArray];
+    somaNumeros += arrayAux[indexArray];
   }
   // math.round e para arredontar o numero se necessario
   return Math.round(arrayAux / arrayAux.length);
