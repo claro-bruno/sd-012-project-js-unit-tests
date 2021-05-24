@@ -12,8 +12,20 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  console.log('alteração para primeiro commit');
+const average = (numbers) => {
+  let sum = 0;
+  if (numbers.length !== 0) {
+    for (let i = 0; i < numbers.length; i += 1) {
+      if (typeof(numbers[i]) === 'number') {
+        sum += numbers[i];
+      } else {
+        return undefined;
+      }
+    }
+    return Math.round(sum / numbers.length);
+  } else {
+    return undefined;
+  }
 };
 
 module.exports = average;
