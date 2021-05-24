@@ -29,3 +29,5 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+
+// [3, 28.26, 18.84]
