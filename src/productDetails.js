@@ -23,6 +23,7 @@
     }
   ]
 */
+const assert = require('assert');
 
 const productDetails = (firstProduct, secondProduct) => [
   {
@@ -38,5 +39,6 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
+assert.strictEqual(typeof productDetails(1), 'array');
 
 module.exports = productDetails;
