@@ -13,6 +13,21 @@
 */
 
 
-const average = () => {};
+const average = (array) => {
+  let valor = 0;
+  for (index = 0; index < array.length;  ) {
+    valor = valor + array[index] / array.length;
+    if(typeof array[index] === 'string' || array.length === 0){
+      return 'undefined';
+    }
+  } if ((valor % 2) % 2 !== 0 && (valor % 3) % 3 !== 0 && (valor % 5) % 5) {
+      valor = valor + 1 - (valor % 2);
+      return valor;
+    } else {
+        return valor;
+      }
+};
+
 
 module.exports = average;
+
