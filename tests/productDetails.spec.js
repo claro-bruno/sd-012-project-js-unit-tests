@@ -30,20 +30,7 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara'),[
-      {
-        name: 'Alcool gel',
-        details: {
-          productId: 'Alcool gel123',
-        }
-      },
-      {
-        name: secondProduct,
-        details: {
-          productId: 'Máscara123',
-        }
-      }
-    ]);
+    assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'), 'array');
     assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
     assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara')[0], 'object');
     assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara')[1], 'object');
