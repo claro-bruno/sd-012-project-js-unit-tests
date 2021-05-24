@@ -28,4 +28,6 @@ const circle = (radius) => {
   };
 };
 
+// circle(2);
+
 module.exports = circle;
