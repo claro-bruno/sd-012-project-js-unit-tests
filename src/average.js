@@ -20,8 +20,8 @@ const average = (nums) => {
   for (let index = 0; index < nums.length; index += 1) {
     if (typeof nums[index] !== 'number') return undefined;
   }
-  return total / nums.length;
+  return Math.round(total / nums.length);
 };
-console.log(average([4, 6]));
+console.log(average([0, 0, 0, 0, 0, 0, 1]));
 
 module.exports = average;
