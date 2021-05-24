@@ -26,10 +26,10 @@ const circle = require('../src/circle');
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     const cicle1 = circle(3);
-    assert.strictEqual(cicle1, {
-      area: 3.14 * 3 * 3,
-      circumference: 2 * 3.14 * 3,
-      radius: 3,
+    assert.deepStrictEqual(cicle1, {
+      area: 28.259999999999998,
+      circumference: 18.84,
+      radius: 3
     });
     assert.strictEqual(Object.keys(circle1).length, 3);
     assert.strictEqual(circle(), undefined);
