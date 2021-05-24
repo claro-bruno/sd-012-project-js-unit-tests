@@ -14,17 +14,14 @@
 
 const average = (numbers) => {
   let media = 0;
-  if(numbers.length < 1 ){ return undefined;};
-    
-    for(let index of numbers){
-      if(typeof(index) !== 'number'){
+  if (numbers.length < 1) { return undefined; }   
+    for (let index of numbers) {
+      if (typeof (index) !== 'number') {
         return undefined;
       }
-        media += index;      
-           
+        media += index;            
     }
-  return Math.round(media/numbers.length);
- 
+    return Math.round(media / numbers.length); 
 };
 console.log(average([]));
 
