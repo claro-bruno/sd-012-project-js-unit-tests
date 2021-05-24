@@ -16,13 +16,12 @@ const average = (arr) => {
   let sum = 0;
   if (arr.length === 0) {
     return undefined;
-  } else {
-    for (number in arr) {
-      if (typeof arr[number] === 'number') {
-        sum += arr[number];
-      } else {
-        return undefined;
-      }
+  }
+  for (let number in arr) {
+    if (typeof arr[number] === 'number') {
+      sum += arr[number];
+    } else {
+      return undefined;
     }
   }
   let result = Math.round(sum / arr.length);
