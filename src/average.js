@@ -13,21 +13,21 @@
 */
 
 const average = (array) => {
-  for (let index in array) {
-    if (typeof(array[index]) != 'number') {
+  for (let index of array) {
+    if ((typeof index) !== 'number') {
       return undefined;
     } 
   }
   const tamanho = array.length;
   let total = 0;
-  for (let index in array) {
-    total += array[index];
-    // console.log(array[index]);
+  for (let index of array) {
+    total += index;
+    // console.log(typeof index);
   }
-  total = total / tamanho;
-  // console.log(total);
-  total = Math.round(total);
-  // console.log(total);
+  let media = (total / tamanho);
+  // console.log(media);
+  media = Math.round(media);
+  return media;
 };
 
 console.log(average([1, 5, 23, 5]));
