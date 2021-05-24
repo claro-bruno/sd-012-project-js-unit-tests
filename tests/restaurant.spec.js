@@ -126,7 +126,6 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
-    console.log(objetoRetornado.bill)
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     
     assert.strictEqual(objetoRetornado.pay(), 12.87);

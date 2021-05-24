@@ -86,7 +86,7 @@ const createMenu = (object) => ({
   order(string) {
     this.consumption.push(string);
     const menu = this.fetchMenu();
-    // Fonte: peguei essa ideia com o colega Eduardo Linhares
+    // Fonte: peguei essa ideia de comparar diretamente se existe o item no menu com o colega Eduardo Linhares
     if (menu.food[string]) this.bill += menu.food[string];
     if (menu.drink[string]) this.bill += menu.drink[string];
   },
