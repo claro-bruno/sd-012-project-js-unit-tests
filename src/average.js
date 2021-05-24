@@ -23,10 +23,9 @@ const average = (array) => {
     if (typeof array[index] !== 'number') {
       return undefined;
     }
-      let roundUP = Math.ceil(array[index]);
-      sum += roundUP;
+      sum += array[index];
   }
-  let arrayAverage = sum / size;
+  let arrayAverage = Math.round(sum / size);
   return arrayAverage;
 };
 
