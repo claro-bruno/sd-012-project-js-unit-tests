@@ -19,7 +19,7 @@ const average = (array) => {
     total += array[index];
     media = total / array.length;
   }
-  return Math.round(media) ;
+  return Math.round(media);
 };
 
 module.exports = average;
