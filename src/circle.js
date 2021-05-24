@@ -1,3 +1,4 @@
+const assert = require('assert');
 /* eslint-disable max-len */
 
 /*
