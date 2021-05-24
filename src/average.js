@@ -13,17 +13,12 @@
 */
 
 const average = (param) => {
- let values = null;
-  if (param.length === 0) {
-    return undefined;
-  }
-  for (let indice0 = 0; indice0 < param.length; indice0 += 1) {
-    if (typeof param[indice0] === 'number') {
+ let values = 0;
+ if (param.length === 0) return undefined;
+ for (let indice0 = 0; indice0 < param.length; indice0 += 1) {
       values += param[indice0];
-      return Math.round(values / param.length);
-    }
-    else
-     return undefined;
-  };
+      if (typeof values !== 'number') return undefined;
+ }
+ return Math.round(values / param.length);
 };
 module.exports = average;
