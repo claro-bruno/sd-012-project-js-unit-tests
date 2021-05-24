@@ -13,7 +13,19 @@
 */
 
 const average = (array) => {
-  
+  let media = 0;
+  let undefinedValue = false;
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof(array[index]) === 'number') {
+      media += array[index];
+    } else {
+      undefinedValue = true;
+    }
+  }
+  if (undefinedValue) {
+    return undefined;
+  }
+  return Math.floor(media / array.length);
 };
 
 module.exports = average;
