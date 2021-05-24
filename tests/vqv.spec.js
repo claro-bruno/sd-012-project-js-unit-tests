@@ -20,6 +20,8 @@ const vqv = require('../src/vqv.js');
 
 describe('3 - Implemente a função `vqv`', () => {
   it('Verifica se a função `vqv` retorna a frase esperada com nome e idade', () => {
+    const assert = require('assert');
+    const vqv = require('../src/vqv.js');
     assert.strictEqual(typeof vqv, 'function');
     assert.strictEqual(typeof vqv('Tunico', 30), 'string');
     assert.strictEqual(
