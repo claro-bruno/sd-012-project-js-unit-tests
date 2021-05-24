@@ -32,6 +32,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
+    const indexP1 = Object.values(productDetails('Pod', 'Ped')[0].details.productId);
+    const indexP2 = Object.values(productDetails('Pod', 'Ped')[1].details.productId);
     // Teste que o retorno da função é um array.
     assert.strictEqual(typeof productDetails(), 'object');
     // Teste que o array retornado pela função contém dois itens dentro.
@@ -40,8 +42,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(typeof Object.entries(productDetails('P1', 'P2')), 'object');
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(productDetails('P1', 'P2')[0], productDetails('P1', 'P2')[1]);
-    // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.ok(productDetails('P1', 'P2')[0].details.productId.includes(`123`));
-    assert.ok(productDetails('P1', 'P2')[1].details.productId.includes(`123`));
+    // (Difícil) Teste que os dois productIds terminam com 123. Código refatorado inspirado no código do colega Rodrigo Facury
+    assert.strictEqual(indexP1[indexP1.length - 1], '3');
+    assert.strictEqual(indexP1[indexP1.length - 2], '2');
+    assert.strictEqual(indexP1[indexP2.length - 3], '1');
+    assert.strictEqual(indexP2[indexP2.length - 1], '3');
+    assert.strictEqual(indexP2[indexP2.length - 2], '2');
+    assert.strictEqual(indexP2[indexP2.length - 3], '1');
   });
 });

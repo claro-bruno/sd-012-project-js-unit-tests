@@ -39,8 +39,4 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
-const index = Object.values(productDetails('Pod', 'Ped')[0].details.productId);
-
-console.log(index[index.length - 1], '3');
-
 module.exports = productDetails;
