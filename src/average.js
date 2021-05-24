@@ -12,8 +12,19 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  
+const average = (numbers) => {
+  if (numbers.length > 0) {
+    let avg = 0;
+    for (const number of numbers) {
+      avg += number;
+    }
+    const avgType = typeof avg;
+    if (avgType === 'number' && avg !== NaN) {
+      avg = Math.round(avg / numbers.length);
+      return avg;
+    }
+  }
+  return undefined;
 };
 
 module.exports = average;
