@@ -19,7 +19,9 @@ const average = (arrNumbers) => {
       contador += arrNumbers[index];
     } else {
       return undefined;
-    }
+      }
   } 
   return arrNumbers.length > 0 ? Math.round(contador / arrNumbers.length) : undefined;
 };
+
+module.exports = average;
