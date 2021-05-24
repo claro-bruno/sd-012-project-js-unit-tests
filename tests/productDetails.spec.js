@@ -40,7 +40,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.deepStrictEqual(typeof(productDetails(String, String)[0]), 'object');
     assert.deepStrictEqual(typeof(productDetails(String, String)[1]), 'object');
     // Teste que os dois objetos são diferentes entre si.
-    assert.notDeepStrictEqual(productDetails(String, String)[0], productDetails(String, String)[1]);
+    assert.notDeepStrictEqual(productDetails(String, String)[0], productDetails(String, "tijolo")[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.deepStrictEqual((Object.values(Object.values(Object.values(productDetails(String, String)[0]))[1])[0]).substr(-3), '123')
     assert.deepStrictEqual((Object.values(Object.values(Object.values(productDetails(String, String)[1]))[1])[0]).substr(-3), '123')
