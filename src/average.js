@@ -14,18 +14,16 @@
 
 const average = (arr) => {
   let sum = 0;
-  if (arr.length === 0){
+  if (arr.length === 0) {
     return undefined;
   }
-  for (let item of arr){
-    if (typeof item !== 'number'){
-      return undefined;
-    } else {
-      sum = sum + item;
-    }
+  for (let item of arr) {
+    if (typeof item !== 'number') {
+      return undefined };
+  sum = sum + item;
   };
-  let arrAverage = sum/arr.length;
-  let roundedAverage = Math.round(arrAverage)
+  let arrAverage = sum / arr.length;
+  let roundedAverage = Math.round(arrAverage);
   return roundedAverage;
 };
 
