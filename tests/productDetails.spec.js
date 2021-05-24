@@ -37,6 +37,9 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que o array retornado pela função contém dois itens dentro.
     assert.strictEqual(productDetails('a', 'b').length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    for (let valor of productDetails('a', 'b')) {
+      assert.strictEqual(typeof valor, 'object');
+    }
     // Teste que os dois objetos são diferentes entre si.
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
