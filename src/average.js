@@ -17,14 +17,14 @@ let media = 0;
 let nan = NaN;
 for (let index = 0; index < array.length; index += 1) {
   if (typeof array[index] !== 'number') {
-    return 'undefined';
+    throw Error('Undefined');
   }
   media += array[index];
 }
 media /= array.length;
 media = Math.round(media);
 if (Number.isNaN(media)) {
-  return 'undefined';
+  throw Error('Undefined');
 }
 return media;
 };
