@@ -13,6 +13,9 @@
 */
 
 const average = (array) => {
+  if (array.length === 0) {
+    return undefined;
+  }
   let media = 0;
   let undefinedValue = false;
   for (let index = 0; index < array.length; index += 1) {
