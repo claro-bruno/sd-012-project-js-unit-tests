@@ -13,17 +13,21 @@
 */
 
 const average = (array) => {
-  let sum = 0;
-  let averageOfNumbers = 0; 
-  for (let index = 0; index < array.length; index += 1) {
-    sum += array[index];    
+  if (array.length === 0 || typeof array !== 'object') {
+    return undefined;
   }
-  averageOfNumbers = sum / array.length;
 
-  console.log(sum);
-  console.log(averageOfNumbers);
+  let sum = 0;
+
+  for (const number of array) {
+    if (typeof number !== 'number') {
+      return undefined;
+      // break;
+    }
+    sum += number;
+  }
+  return parseInt((sum / array.length).toFixed(), 10);
 };
 
 // average([3, 4, 5]);
-
 module.exports = average;
