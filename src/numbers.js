@@ -10,7 +10,7 @@
 */
 
 const numbers = (myArray) => {
-  if (Array.isArray(myArray) ){
+  if (Array.isArray(myArray)) {
     for (let i = 0; i < myArray.length; i += 1) {
       if (typeof myArray[i] !== 'number') {
         return false;
@@ -20,5 +20,5 @@ const numbers = (myArray) => {
   }
   return false;
 };
-console.log(numbers(1));
+
 module.exports = numbers;
