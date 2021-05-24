@@ -20,10 +20,10 @@ const vqv = (nome, idade) => {
   if (typeof nome !== 'string' || typeof idade !== 'number') {
     return undefined;
   }
-  return `'Oi, meu nome é ${nome}!
-  Tenho ${idade} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!'`;
+  const string1 = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n`;
+  const string2 = 'trabalho na Trybe e mando muito em programação!\n#VQV!';
+  const finalString = `${string1}${string2}`;
+  return finalString;
 };
 
 module.exports = vqv;
