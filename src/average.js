@@ -14,11 +14,11 @@
 
 const average = (numeros) => {
   if (numeros.length === 0) {
-    return 'undefined';
+    return;
   }
   for (let index = 0; index < numeros.length; index += 1) {
     if (typeof numeros[index] !== 'number') {
-      return 'undefined';
+      return;
     }
   }
   let media = 0;
@@ -26,8 +26,8 @@ const average = (numeros) => {
     media += numeros[index];
   }
   media /= numeros.length;
-  media = Math.floor(media);
+  media = Math.round(media);
   return media;
 };
-
+console.log(average([-11, -5, 2]));
 module.exports = average;
