@@ -29,3 +29,6 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
+const assert = require('assert');
+
+assert.deepStrictEqual( circle(1),Object)
