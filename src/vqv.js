@@ -20,7 +20,10 @@ const vqv = (nome, idade) => {
   if (!nome && !idade) {
     return undefined;
   }
-  const frase = 'Oi, meu nome é ' + nome + '!\n' + 'Tenho ' + idade + ' anos,\n' + 'trabalho na Trybe e mando muito em programação!\n' + '#VQV!';
+  const linha1e2 = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n`;
+  const linha3 = 'trabalho na Trybe e mando muito em programação!\n';
+  const linha4 = '#VQV!';
+  const frase = linha1e2 + linha3 + linha4;
   return frase;
 };
 
