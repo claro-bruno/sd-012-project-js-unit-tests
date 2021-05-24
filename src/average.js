@@ -16,9 +16,12 @@ const average = (array) => {
   let total = 0;
   let resultado = 0;
   for (let key of array) {
+    if (typeof key !== 'number') {
+      return 'undefined';
+    }
     total += Math.round(key);
-    resultado = total / key;
   }
+  resultado = total / array.length;
   return resultado;
 };
 
