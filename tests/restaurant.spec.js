@@ -98,6 +98,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     meuRestaurante.order('coxinha');
     meuRestaurante.order('agua');
     meuRestaurante.order('coxinha');
-    assert.strictEqual(meuRestaurante.pay(), 11.7);
+    meuRestaurante.order('sanduiche');
+    assert.strictEqual(meuRestaurante.pay(), 23.76);
   });
 });

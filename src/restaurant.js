@@ -15,7 +15,7 @@ const createMenu = (objeto) => {
           cost += menu.fetchMenu().drinks[item];
         }
       }
-      return cost;
+      return Number((cost * 1.10).toFixed(2));
     },
   };
   return menu;
