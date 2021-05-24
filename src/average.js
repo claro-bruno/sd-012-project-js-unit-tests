@@ -14,6 +14,7 @@
 const isNumber = (valor) => typeof valor === 'number'; 
 
 const average = (array) => (array.every(isNumber) && array.length > 0
- ? Math.round(array.reduce((call, numero) => call + numero) / array.length) : undefined);
+ ? Math.round(array.reduce((call, numero) => call + numero) / array.length) 
+ : undefined);
 
 module.exports = average;
