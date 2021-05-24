@@ -13,7 +13,19 @@
   Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
-  - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
+  - Um objeto. Exemplos: 
+  { 
+    food: 
+    {
+      'coxinha': 3.9, 
+      'sopa': 9.9
+    }, 
+    drink: 
+    {
+      'agua': 3.9, 
+      'cerveja': 6.9
+    } 
+  }.
   Comportamento:
 
   const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }).
@@ -79,6 +91,16 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (object) => ({
+  fetchMenu: () => object,
+  consumption: [],
+  bill: 0,
+  order(string) {
+
+  },
+  pay() {
+
+  },
+}); 
 
 module.exports = createMenu;
