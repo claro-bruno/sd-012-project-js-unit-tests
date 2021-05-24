@@ -18,10 +18,9 @@ const average = (numbers) => {
     for (const number of numbers) {
       avg += number;
     }
-    const avgType = typeof avg;
-    if (avgType === 'number' && avg !== NaN) {
-      avg = Math.round(avg / numbers.length);
-      return avg;
+    
+    if ((typeof avg) === 'number') {
+      return (Math.round(avg / numbers.length));
     }
   }
   return undefined;
