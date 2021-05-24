@@ -33,7 +33,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.deepStrictEqual(circleValues(2)[2], 12.56);
     assert.deepStrictEqual(circleValues(3)[1], 28.259999999999998);
     const circle3 = [3, 28.259999999999998, 18.84];
-    assert.deepStrictEqual(circleValues(2), circle3);
+    assert.deepStrictEqual(circleValues(3), circle3);
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado tem 3 entradas.
