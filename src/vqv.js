@@ -17,7 +17,7 @@
 */
 
 const vqv = (nome, idade) => {
-  if (nome === undefined && idade === undefined) {
+  if (!nome && !idade) {
     return undefined;
   }
   return `Oi, meu nome é ${nome}!
@@ -27,3 +27,4 @@ trabalho na Trybe e mando muito em programação!
 };
 
 module.exports = vqv;
+console.log(vqv());
