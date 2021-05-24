@@ -14,7 +14,7 @@
 
 const average = (array) => {
 let media = 0;
-let nan = NaN;
+
 for (let index = 0; index < array.length; index += 1) {
   if (typeof array[index] !== 'number') {
     return undefined;
