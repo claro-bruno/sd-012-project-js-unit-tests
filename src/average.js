@@ -13,19 +13,19 @@
 */
 
 const average = (array) => {
-  let finalAverage = 0
+  let finalAverage = 0;
   if (array.length === 0 || array === undefined) {
     return undefined;
   }
 
-  for (let index = 0; index <= array.length ; index += 1 ) {
+  for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
-    return undefined;}
-    else { 
-    finalAverage = (finalAverage + index) / array.length
-    return finalAverage
+    return undefined;
+    }
+    finalAverage += array[index];    
   }
-  }
+  let finalNumber = Math.round(finalAverage / array.length);
+  return finalNumber;
 };
 
 module.exports = average;
