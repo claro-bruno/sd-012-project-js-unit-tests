@@ -14,6 +14,7 @@
 
 const average = (arr) => {
   let result = 0;
+  if (arr.length === 0) { return undefined; }
   for (let index = 0; index < arr.length; index += 1) {
     if (typeof (arr[index]) === 'number') {
       result += arr[index]; 
