@@ -25,7 +25,7 @@
   "homepage": "https://github.com/betrybe/sd-0x-block8-project-js-unit-test#readme",
   "devDependencies": {
     "acorn": "5.7.4",
-    "eslint": "^7.22.0",
+    "eslint": "^7.27.0",
     "eslint-config-trybe-fundamentals": "^1.1.0",
     "eslint-plugin-sonarjs": "^0.6.0",
     "jest": "24.9.0",
