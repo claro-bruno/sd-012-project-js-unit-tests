@@ -14,7 +14,7 @@
 
 const average = (array) => {
   let somaTotal = 0;
-  let media = 0;
+  let media;
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
       media = 'undefined';
@@ -27,3 +27,4 @@ const average = (array) => {
 };
 
 module.exports = average;
+console.log(average([-11, 2, 5]));
