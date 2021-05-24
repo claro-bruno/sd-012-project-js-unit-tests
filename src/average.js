@@ -12,8 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  
-};
+//https://stackoverflow.com/questions/29544371/finding-the-average-of-an-array-using-js/29544442
+
+const average = (nums) => {
+  const total = nums.reduce((acc, c) => acc + c, 0);
+  if (nums.length === 0) return undefined;
+  for (let index = 0; index < nums.length; index += 1) {
+    if (typeof nums[index] !== 'number') return undefined;
+  }
+  return total / nums.length;
+}
+console.log(average([4, 6]));
 
 module.exports = average;
