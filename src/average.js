@@ -20,7 +20,7 @@ const average = (arrNumbers) => {
     return accumulator + currentValue;
   });
 
-  if (total === undefined) {
+  if (total === undefined || arrNumbers.length === 0) {
     return undefined;
   } 
   return total / arrNumbers.length;
