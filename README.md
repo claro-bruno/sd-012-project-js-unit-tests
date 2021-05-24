@@ -159,11 +159,7 @@ module.exports = average
   2. `git add` _(para adicionar arquivos ao stage do Git)_
   3. `git commit` _(para criar um commit com os arquivos que estão no stage do Git)_
   4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
-  5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
-
----
-
-## Como desenvolver
+  5. `git push` _(para enviar o commitA função average recebe um array (tamanho variável) e retenvolver
 
 Este repositório contém um _template_ de uma aplicação **NodeJS** (observe a existência do arquivo _package.json_).
 Após clonar o projeto e instalar as dependências, você não precisará realizar nenhuma configuração adicional.
