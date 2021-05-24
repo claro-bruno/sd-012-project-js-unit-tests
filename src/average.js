@@ -12,8 +12,33 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  //in the beninging
+const average = (arr) => {
+  let total = 0;
+
+  if (checkIfNumber(arr)) {
+    for (let element of arr) {
+      total += element;
+    } return total / 2;
+  } else {
+    return undefined;
+  }
+};
+
+function checkIfNumber(nums) {
+
+  let isNumber = true;
+
+  if (nums.length < 1) {
+    isNumber = false;
+  }
+
+  for (let num of nums) {
+    if (typeof num !== 'number') {
+      isNumber = false;
+      break;
+    }
+  }
+  return isNumber;
 };
 
 module.exports = average;
