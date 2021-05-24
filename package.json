@@ -30,5 +30,8 @@
     "eslint-plugin-sonarjs": "^0.6.0",
     "jest": "24.9.0",
     "minimist": "1.2.2"
+  },
+  "dependencies": {
+    "strip-indent": "^4.0.0"
   }
 }
