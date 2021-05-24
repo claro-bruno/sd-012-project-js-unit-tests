@@ -21,10 +21,10 @@ const vqv = (nome, idade) => {
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
 #VQV!`;
-  if (typeof nome !== 'string' || typeof idade !== 'number' ) {
+  if (typeof nome !== 'string' || typeof idade !== 'number') {
     answer = undefined; 
   }
   return answer;
-}
+};
 
 module.exports = vqv;
