@@ -28,6 +28,9 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(typeof circle(3), 'object');
     assert.strictEqual(Object.keys(circle(5)).length, 3);
     assert.strictEqual(circle(), undefined);
+    assert.strictEqual(circle(2).circumference, 12.56);
+    assert.strictEqual(circle(3).area, 28.259999999999998);
+    assert.strictEqual(circle(3).circumference, 18.84);
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado tem 3 entradas.
