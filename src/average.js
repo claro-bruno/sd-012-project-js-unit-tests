@@ -26,7 +26,10 @@ const average = (arrayAux) => {
     somaNumeros += arrayAux[indexArray];
   }
   // math.round e para arredontar o numero se necessario
-  return Math.round(arrayAux / arrayAux.length);
+  return Math.round(somaNumeros / arrayAux.length);
 };
 
 module.exports = average;
+
+console.log(average([4, 7, 4, 9, 12]));
+console.log(average([4, 7, 4, 9, '12']));
