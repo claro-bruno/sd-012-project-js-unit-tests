@@ -15,12 +15,11 @@
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
 
-const createStudent = name => {
+const createStudent = (name) => {
   return { 
     name, 
-    feedback: _ => {
-      return 'Eita pessoa boa!';
-  } };
+    feedback: () => 'Eita pessoa boa!'
+   };
 };
 
 const estudante = createStudent('Renan');
