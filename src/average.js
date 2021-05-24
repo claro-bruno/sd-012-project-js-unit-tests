@@ -24,5 +24,5 @@ const average = (array) => {
   let averageValue = (array.length > 0) ? Math.round((summation / array.length)) : undefined;
   return averageValue;
  };
-console.log([1,2])
+
 module.exports = average;
