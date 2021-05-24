@@ -13,23 +13,15 @@
 */
 
 const average = (arrNumbers) => {
-  if (arrNumbers.length === 0) {
-    return undefined;
+  let contador = 0;
+    for (let index = 0; index < arrNumbers.length; index += 1) {
+      if (typeof (arrNumbers[index]) !== 'string') {
+        contador += arrNumbers[index];
+      } else {
+        return undefined;
+      }
   } 
-
-  const total = arrNumbers.reduce(function (accumulator, currentValue) {
-    if (typeof (currentValue) === 'string') {
-      return undefined;
-    } 
-    return accumulator + currentValue;
-  });
-
-  if (total === undefined) {
-    return undefined;
-  }
-  if (total !== undefined) {
-    return Math.round(total / arrNumbers.length);
-  }
+  return arrNumbers.length > 0 ? Math.round(contador / arrNumbers.length) : undefined;
 };
 
 module.exports = average;
