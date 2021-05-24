@@ -33,8 +33,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(Object.keys(circle(3)).length, 3);
     assert.strictEqual(circle(), undefined);
     assert.strictEqual(Math.trunc(circle(2).circumference), 12);
-    assert.strictEqual(circle(3).area, 28,26);
-    assert.strictEqual(circle(3),{});
+    assert.strictEqual(Math.trunc(circle(3).area), 28);
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado tem 3 entradas.
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
