@@ -80,31 +80,26 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (menu) => {
-  const request = (string) => restaurant.consumption.push(string);
-  const sumPayBill = () => {
+  const request = (string, consumption) => consumption.push(string);
+  const sumPayBill = (consumption, fetchMenu) => {
     let bill = 0;
-    const restaurantMenu = restaurant.fetchMenu();
-
-    restaurant.consumption.forEach((order) => {
-      Object.entries(restaurantMenu.food).forEach((entrie) => {
-        if (entrie[0] === order) {
-          bill += entrie[1];
+    const restaurantMenu = fetchMenu();
+    consumption.forEach((order) => {
+      for (let key in restaurantMenu) {
+        if (Object.prototype.hasOwnProperty.call(restaurantMenu[key], order)) {
+          bill += restaurantMenu[key][order];
         }
-      });
-      Object.entries(restaurantMenu.drink).forEach((entrie) => {
-        if (entrie[0] === order) {
-          bill += entrie[1];
-        }
-      });
+      }
     });
     return bill;
-  }
+  };
+
   const restaurant = {
     fetchMenu: (() => menu),
     consumption: [],
-    order: request,
-    pay: sumPayBill,
-  }
+    order: (string) => request(string, restaurant.consumption),
+    pay: () => sumPayBill(restaurant.consumption, restaurant.fetchMenu),
+  };
 
   return restaurant;
 };

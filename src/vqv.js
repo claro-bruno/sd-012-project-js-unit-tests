@@ -23,15 +23,15 @@ const vqv = (nome, idade) => {
   const string = `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
-#VQV!`
+#VQV!`;
 
   return string;
 };
 
-console.log(vqv('Tunico', 30))
-console.log('Oi, meu nome é Alberto!\n' +
-  'Tenho 30 anos,\n' +
-  'trabalho na Trybe e mando muito em programação!\n' +
-  '#VQV!')
+console.log(vqv('Tunico', 30));
+console.log('Oi, meu nome é Alberto!\n'
+  + 'Tenho 30 anos,\n'
+  + 'trabalho na Trybe e mando muito em programação!\n'
+  + '#VQV!');
 
 module.exports = vqv;
