@@ -14,7 +14,13 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-
-const createStudent = () => {};
+// Colega Rodrigo Facury me ajudou com o lint.
+const createStudent = (name) => {
+  const feedback = () => 'Eita pessoa boa!';
+  return {
+    name,
+    feedback,
+  };
+};
 
 module.exports = createStudent;
