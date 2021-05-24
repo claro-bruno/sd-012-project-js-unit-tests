@@ -19,10 +19,10 @@ const average = (arr) => {
       total += arr[key];
    }
 
-   let arredondado = Math.round(total/arr.length);
-   if (typeof(arredondado) === 'number') {
+   let arredondado = Math.round(total / arr.length);
+   if (typeof (arredondado) === 'number') {
       return arredondado;
-   } else {return undefined;}
+   } else { return undefined; }
 };
 
 module.exports = average;
