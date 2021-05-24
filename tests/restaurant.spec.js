@@ -1,6 +1,6 @@
 const assert = require('assert');
 const createMenu = require('../src/restaurant');
- 
+
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -82,8 +82,17 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
-    objetoRetornado = createMenu({ food: {'cenoura': 1.5, 'maçã': 2.0}, drink: {'agua': 10.5, 'cerveja': 7.5} });
-    objetoRetornado.order('maçã');
+    objetoRetornado = createMenu({
+      food: {
+        'coxinha': 3.9,
+        'sopa': 9.9
+      },
+      drink: {
+        'agua': 3.9,
+        'cerveja': 6.9
+      }
+    });
+    objetoRetornado.order("coxinha");
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
@@ -94,6 +103,21 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("sopa");
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+    objetoRetornado = createMenu({
+      food: {
+        'coxinha': 3.9,
+        'sopa': 9.9
+      },
+      drink: {
+        'agua': 3.9,
+        'cerveja': 6.9
+      }
+    });
+    objetoRetornado.order("coxinha");
+    objetoRetornado.order("agua");
+    objetoRetornado.order("sopa");
+    objetoRetornado.order("sashimi");
+    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "sashimi"])
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -103,6 +127,21 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
+    objetoRetornado = createMenu({
+      food: {
+        'coxinha': 3.9,
+        'sopa': 9.9
+      },
+      drink: {
+        'agua': 3.9,
+        'cerveja': 6.9
+      }
+    });
+
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha', 'agua', 'coxinha']);
     // ```
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
@@ -112,6 +151,12 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
+    objetoRetornado = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
+
+    objetoRetornado.order('coxinha');
+    objetoRetornado.order('agua');
+    objetoRetornado.order('coxinha');
+    assert.strictEqual(objetoRetornado.pay(), 12.87);
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });

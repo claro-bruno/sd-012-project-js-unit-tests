@@ -96,10 +96,13 @@ const createMenu = (object) => ({
   consumption: [],
   bill: 0,
   order(string) {
-
+    this.consumption.push(string);
+    const menu = this.fetchMenu();
+    if (menu.food[string]) this.bill += menu.food[string];
+    if (menu.drink[string]) this.bill += menu.drink[string];
   },
   pay() {
-
+    return parseFloat((this.bill * 1.1).toPrecision(4));
   },
 }); 
 
