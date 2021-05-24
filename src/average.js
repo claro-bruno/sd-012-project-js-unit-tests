@@ -9,9 +9,27 @@
   Comportamento:
     - average([2, 2]) // Retorno: 2;
     - average([1, 1]) // Retorno: 1;
-    - average([1, '2']) // Retorno: undefined - iniciando projeto VQV;
+    - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+const average = (array) => {
+  for (let index in array) {
+    if (typeof(array[index]) != 'number') {
+      return undefined;
+    } 
+  }
+  const tamanho = array.length;
+  let total = 0;
+  for (let index in array) {
+    total += array[index];
+    // console.log(array[index]);
+  }
+  total = total / tamanho;
+  // console.log(total);
+  total = Math.round(total);
+  // console.log(total);
+};
+
+console.log(average([1, 5, 23, 5]));
 
 module.exports = average;
