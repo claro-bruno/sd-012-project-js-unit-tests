@@ -14,13 +14,16 @@
 
 const average = (arr) => {
   let somaTotal = 0;
-  const result = somaTotal / arr.length;
+  if (arr.length === 0) {
+    return undefined;
+  }
   for (const index of arr) {
-    if (typeof arr !== 'number') {
+    if (typeof index !== 'number') {
       return undefined;
     } 
       somaTotal += index;
   }
+  let result = somaTotal / arr.length;
   return Math.round(result);
 };
 
