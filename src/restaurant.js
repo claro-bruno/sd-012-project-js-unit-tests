@@ -78,6 +78,19 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+let objetoRetornado1 = {};
+
+const novoPedido = (pedido) => {
+  objetoRetornado1.consumption.push(pedido); 
+};
+
+const pagamentoPorKey = (key, consumido) => {
+  let novoPagamento = 0;
+  for (let index = 0; index < Object.keys(key).length; index += 1) {
+    if (Object.keys(key)[index] === consumido) novoPagamento += key[Object.keys(key)[index]];
+  }
+  return novoPagamento;
+};
 
 const createMenu = (objeto) => ({
   fetchMenu: () => objeto,
@@ -85,28 +98,15 @@ const createMenu = (objeto) => ({
   order: novoPedido,
   pay: () => {
     let pagamento = 0;
-    for (let consumido of objetoRetornado1.consumption){
-      for (let comida of Object.keys(objeto.food)) {
-        if (consumido === comida) pagamento += objeto.food[comida];
-      }  
-      for (let bebida of Object.keys(objeto.drink)) {
-        if (consumido === bebida) pagamento += objeto.drink[bebida];
-      }   
+    for (let consumido of objetoRetornado1.consumption) {
+      pagamento += pagamentoPorKey(objeto.food, consumido);
+      pagamento += pagamentoPorKey(objeto.drink, consumido);  
     }
     return pagamento * 1.1;
-  }
+  },
 });
 
-const novoPedido = (pedido) => {
-  objetoRetornado1.consumption.push(pedido); 
-}; 
+const objetoQualquer = { food: { coxinha: 5 }, drink: { coca: 3 } };
+objetoRetornado1 = createMenu(objetoQualquer);
 
-const objetoQualquer = { food: {coxinha: 5}, drink: {coca: 3} }
-const objetoRetornado1 = createMenu(objetoQualquer);
-
-objetoRetornado1.order('coxinha');
-objetoRetornado1.order('coca');
-objetoRetornado1.order('coxinha');
-console.log(objetoRetornado1.pay());
-
-module.exports = createMenu;
+module.exports = { createMenu, objetoRetornado1 };
