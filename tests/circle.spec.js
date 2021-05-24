@@ -32,11 +32,15 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
-    assert.strictEqual( typeof circle(2), 'object', `A função não retorna um objeto.`);
-    assert.strictEqual( Object.values(circle(2)).length, 3, `O objeto não possui 3 entradas.`);
-    assert.strictEqual( circle(), undefined, `A função não recebeu parâmetro algum e não retornou undefined`);
-    assert.strictEqual( circle(2).circumference, 12.56, `O objeto não retorna a circunferência correta para um círculo de raio 2`);
-    assert.strictEqual( parseFloat(circle(3).area.toPrecision(4)), 28.26, `O objeto não retorna a área correta para um círculo de raio 3`);
-    assert.deepStrictEqual( circle(3), {area: 28.259999999999998, circumference: 18.84, radius: 3}, `O objeto não retorna os dados corretos para um círculo de raio 3`);
+    assert.strictEqual(typeof circle(2), 'object', `A função não retorna um objeto.`);
+    assert.strictEqual(Object.values(circle(2)).length, 3, `O objeto não possui 3 entradas.`);
+    assert.strictEqual(circle(), undefined, `A função não recebeu parâmetro algum e não retornou undefined`);
+    assert.strictEqual(circle(2).circumference, 12.56, `O objeto não retorna a circunferência correta para um círculo de raio 2`);
+    assert.strictEqual(parseFloat(circle(3).area.toPrecision(4)), 28.26, `O objeto não retorna a área correta para um círculo de raio 3`);
+    assert.deepStrictEqual(circle(3), {
+      area: 28.259999999999998,
+      circumference: 18.84,
+      radius: 3
+    }, `O objeto não retorna os dados corretos para um círculo de raio 3`);
   });
 });
