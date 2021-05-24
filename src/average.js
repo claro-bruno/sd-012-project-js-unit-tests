@@ -35,10 +35,8 @@ const average = (arr) => {
   if (checkIfNumber(arr)) {
     for (let element of arr) {
       total += element;
-    } return total / 2;
-  } else {
-    return undefined;
-  }
+    } return total / (arr.length);
+  } return undefined;
 };
 
 module.exports = average;
