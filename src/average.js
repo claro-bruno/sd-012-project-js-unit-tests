@@ -16,9 +16,11 @@ const average = (array) => {
   let somaTotal = 0;
   let media;
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof array[index] === 'number') {
-      media = Math.round(somaTotal / array.length);
+    if (typeof array[index] !== 'number') {
+      return 'undefined';
     }
+    somaTotal += array[index];
+    media = Math.round(somaTotal / array.length);
   }
   return media;
 };
