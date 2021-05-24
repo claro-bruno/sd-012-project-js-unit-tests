@@ -13,19 +13,17 @@
 */
 
 const average = (param) => {
-  let values = null;
+ let values = null;
   if (param.length === 0) {
-    return undefined
-  };
+    return undefined;
+  }
   for (let indice0 = 0; indice0 < param.length; indice0 += 1) {
-    if (typeof param[indice0] !== 'number') {
-      return undefined;
-    } else {
-      values += param[indice0]
-      let resultado = roundf(values / param.length);
-      return resultado;
-    };
-
+    if (typeof param[indice0] === 'number') {
+      values += param[indice0];
+      return Math.round(values / param.length);
+    }
+    else
+     return undefined;
   };
 };
 module.exports = average;
