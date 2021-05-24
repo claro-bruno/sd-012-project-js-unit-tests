@@ -91,7 +91,7 @@ const orderTotal = () => {
 
   const listMenu = myRestaurant.consumption;
   const foods = Object.keys(myRestaurant.fetchMenu().food);
-  const drinks = Object.keys(myRestaurant.fetchMenu().drinks);
+  const drinks = Object.keys(myRestaurant.fetchMenu().drink);
 
   const foodValue = Object.values(myRestaurant.fetchMenu().food);
   const drinkValue = Object.values(myRestaurant.fetchMenu().drink);
