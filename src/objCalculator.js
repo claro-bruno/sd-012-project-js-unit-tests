@@ -18,7 +18,7 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
-
+// parâmetro radix adicionado a partir da referência no stackoverflow: https://stackoverflow.com/questions/7818903/jslint-says-missing-radix-parameter 
 const calculator = {
   add: (num1, num2) => (num1 + num2),
   mult: (num1, num2) => (num1 * num2),
