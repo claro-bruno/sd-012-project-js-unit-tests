@@ -13,10 +13,10 @@
 */
 
 const average = (array) => {
-  let result = undefined;
+  let result;
   let soma = 0;
   for (let index = 0; index < array.length; index += 1) {
-    if (typeof(array[index]) === 'string') {      
+    if (typeof (array[index]) === 'string') {      
       return result;
     }
   }
