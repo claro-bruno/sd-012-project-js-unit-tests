@@ -13,6 +13,10 @@
 */
 
 const average = (array) => {
+  if (array.length === 0) {
+    return 'undefined';
+  }
+
   let total = 0;
   let media = 0;
 
@@ -24,7 +28,7 @@ const average = (array) => {
   }
 
   media = (total / array.length);
-  return media;
+  return media.toFixed(0);
 };
 
 module.exports = average;
