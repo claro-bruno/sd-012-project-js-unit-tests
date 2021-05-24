@@ -14,16 +14,18 @@
 
 const average = (array) => {
   let valor = 0;
-  if (array.length !== 0) {
+  if (array.length === 0) {
+    return undefined;
+  } 
     for (let index = 0; index < array.length; index += 1) {
-      if (typeof (array[index]) === 'string') {
+      if (typeof array[index] === 'string') {
         return undefined;
       } 
-    valor += array[index] / array.length;
+      valor += array[index];
     }
-    return Math.round(valor);
-  } 
-  return undefined;
+  return Math.round(valor / array.length);
 };
-//
+
 module.exports = average;
+
+console.log(average([1,1,2]));
