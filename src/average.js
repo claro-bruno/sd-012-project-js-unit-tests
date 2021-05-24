@@ -15,10 +15,16 @@
 const testString = (array) => {
   for (let index = 0; index < array.length; index += 1) {
     if (typeof (array[index]) !== 'number') {
-      return undefined;
+      return true;
     }
   }
-  return 'okay';
+};
+
+const testArray = (array) => {
+  if (array.length > 0) {
+    return (testString(array) === true) ? undefined : 'okay';
+  }
+  return undefined;
 };
 
 const media = (array) => {
@@ -30,12 +36,10 @@ const media = (array) => {
 };
 
 const average = (numMedia) => {
-  if (testString(numMedia) === undefined) {
-    return testString(numMedia);
+  if (testArray(numMedia) === undefined) {
+    return testArray(numMedia);
   }
   return Math.round(media(numMedia));
 };
-
-console.log(average([0, 0, 0, 0, 1]));
 
 module.exports = average;
