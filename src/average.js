@@ -14,7 +14,7 @@
 
 const average = (numeros) => {
   if (typeof numeros !== 'number') {
-    throw Error('undefined');
+    return 'undefined';
   }
   let media = 0;
   for (let index = 0; index < numeros.length; index += 1) {
