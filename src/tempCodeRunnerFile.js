@@ -1,0 +1,1 @@
+divisao = media / soma;
