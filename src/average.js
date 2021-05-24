@@ -16,6 +16,7 @@ const average = (arrNumbers) => {
   if (arrNumbers.length === 0) {
     return undefined;
   } 
+
   const total = arrNumbers.reduce(function (accumulator, currentValue) {
     if (typeof (currentValue) === 'string') {
       return undefined;
@@ -25,8 +26,10 @@ const average = (arrNumbers) => {
 
   if (total === undefined) {
     return undefined;
-  } 
-  return Math.round(total / arrNumbers.length); 
+  }
+  if (total !== undefined) {
+    return Math.round(total / arrNumbers.length);
+  }
 };
 
 module.exports = average;
