@@ -22,11 +22,8 @@ const average = (array) => {
     if (typeof (array[index]) === 'number') {
       media += array[index];
     } else {
-      undefinedValue = true;
+      return undefined;
     }
-  }
-  if (undefinedValue) {
-    return undefined;
   }
   return Math.floor(media / array.length);
 };
