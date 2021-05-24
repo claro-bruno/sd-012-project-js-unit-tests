@@ -15,7 +15,7 @@
 const average = (lista) => {
   let media = 0; 
   let tamanhoArray = 0;
-  if (lista.length == []) {
+  if (lista.length === 0) {
     return undefined;
   }
   for (let i = 0; i < lista.length; i += 1) {
