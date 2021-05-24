@@ -31,4 +31,4 @@ const circle = (radius) => {
 module.exports = circle;
 const assert = require('assert');
 
-assert.strictEqual(typeof(circle(Number)),Object)
+assert.strictEqual(typeof (circle(Number)), Object)
