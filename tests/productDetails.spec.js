@@ -32,7 +32,7 @@ const productDetails = require('../src/productDetails');
 const verifyFinal = (funcao, position) => {
   const id = funcao[position].details.productId;
   id.split('');
-  let finalLetters = new String;
+  let finalLetters = '';
   for (const letters of id) {
     if (id.indexOf(letters) >= id.length - 4) {
       finalLetters += letters;
