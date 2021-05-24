@@ -1,1 +1,1 @@
-divisao = media / soma;
+8
