@@ -32,7 +32,7 @@ const average = (arr) => {
   if (checkIfNumber(arr)) {
     for (let element of arr) {
       total += element;
-    } return total / (arr.length);
+    } return Math.ceil(total / (arr.length));
   } return undefined;
 };
 
