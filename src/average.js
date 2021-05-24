@@ -19,7 +19,7 @@ const average = (arr) => {
   }
   for (let item of arr) {
     if (typeof item !== 'number') {
-      return undefined 
+      return undefined; 
     }
   sum += item;
   }
