@@ -13,13 +13,10 @@
 */
 
 function checkIfNumber(nums) {
-
   let isNumber = true;
-
   if (nums.length < 1) {
     isNumber = false;
   }
-
   for (let num of nums) {
     if (typeof num !== 'number') {
       isNumber = false;
@@ -27,7 +24,7 @@ function checkIfNumber(nums) {
     }
   }
   return isNumber;
-};
+}
 
 const average = (arr) => {
   let total = 0;
