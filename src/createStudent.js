@@ -16,19 +16,18 @@
 */
 
 // const goodPerson = 'Eita pessoa boa!';
-const createStudent = (name) => {
-  const info = {
-    nome: name,
-    feedback: () => 'Eita pessoa boa!',
-  };
-};
-// const estudante = createStudent('Leandrão, o Lobo Solitário');
+const createStudent = (name) => ({
+  name,
+  feedback: () => 'Eita pessoa boa!',
+});
 
-// console.log(estudante.name); // Leandrão
-// console.log(estudante.feedback()); // eita pessoa
-// console.log(typeof createStudent); // function
-// console.log(typeof estudante); // object
-// console.log(typeof estudante.feedback()); // string
-// console.log(typeof estudante.feedback); // function
+const estudante = createStudent('Leandrão, o Lobo Solitário');
+
+console.log(estudante.name); // Leandrão
+console.log(estudante.feedback()); // eita pessoa
+console.log(typeof createStudent); // function
+console.log(typeof estudante); // object
+console.log(typeof estudante.feedback()); // string
+console.log(typeof estudante.feedback); // function
 
 module.exports = createStudent;
