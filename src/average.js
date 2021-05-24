@@ -21,8 +21,9 @@ const average = (arr) => {
    for (let key = 0; key < arr.length; key += 1) {
       total += arr[key];
       if (typeof (arr[key]) !== 'number') {
-         return undefined;}
+         return undefined;
       }
+   }
 
    let arredondado = Math.round(total / arr.length);
    return arredondado;
