@@ -13,7 +13,17 @@
 */
 
 const average = (arrNumbers) => {
-  arrNumbers.reduce((a, b) => a + b, 0);
+  const total = arrNumbers.reduce(function (accumulator, currentValue) {
+    if (typeof (currentValue) === 'string') {
+      return undefined;
+    } 
+    return accumulator + currentValue;
+  });
+
+  if (total === undefined) {
+    return undefined;
+  } 
+  return total / arrNumbers.length;
 };
 
 module.exports = average;
