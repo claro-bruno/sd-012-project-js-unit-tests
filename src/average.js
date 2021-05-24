@@ -13,13 +13,22 @@
 */
 
 const average = (array) => {
-
   let media = 0;
-  for (let index = 0; index < array.length; index += 1) {
-    media = media + array[index];
+
+  if (array.length === 0) {
+    return undefined;
   }
-  media = media / array.length;
-  return Math.ceil(media);
+  for (let i = 0; i < array.length; i += 1) {
+    if (typeof (array[i]) !== 'number') {
+      return undefined;
+    }
+  }
+
+  for (let index = 0; index < array.length; index += 1) {
+    media += array[index];
+  }
+  media /= array.length;
+  return Math.round(media);
 };
 console.log(average([1, 2, 3, 4]));
 
