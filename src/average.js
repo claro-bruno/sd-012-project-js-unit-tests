@@ -26,9 +26,9 @@ const average = (array) => {
   if (contNumber === 0) {
     return undefined;
   }
-  return parseInt(result, 10);
+  return Math.round(result, 10);
 };
 
-console.log(average([1, 2, 3]));
+console.log(average([-11, -5, 2]));
 
 module.exports = average;
