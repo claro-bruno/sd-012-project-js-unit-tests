@@ -30,7 +30,7 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'), 'array');
+    assert.strictEqual(Array.isArray(productDetails('Alcool gel', 'Máscara')), true);
     assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
     assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara')[0], 'object');
     assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara')[1], 'object');
