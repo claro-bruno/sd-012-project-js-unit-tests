@@ -20,12 +20,12 @@ const vqv = (nome, idade) => {
   const first = `Oi, meu nome é ${nome}!\nTenho ${idade} anos,\n`;
   const second = 'trabalho na Trybe e mando muito em programação!\n#VQV!';
   let message = `${first}${second}`;
-  if (idade === '' || nome === '') {
-    message = undefined;
+  if (nome === undefined || idade === undefined) {
+    return undefined;
   }
   return message;
 };
 
-console.log(vqv('', 29));
+console.log(vqv(29));
 
 module.exports = vqv;
