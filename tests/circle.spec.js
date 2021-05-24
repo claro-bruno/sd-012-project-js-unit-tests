@@ -42,3 +42,4 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.strictEqual(parseFloat(Object.values(circle(3))[2]), 18.84);
   });
 });
+
