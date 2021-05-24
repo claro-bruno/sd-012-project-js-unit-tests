@@ -19,7 +19,7 @@ const average = (array) => {
       return undefined;
     }
   }
-  return Math.ceil(array.reduce((ac, valor) => ac + valor) / array.length);
+  return Math.round(array.reduce((ac, valor) => ac + valor) / array.length);
 };
 
 module.exports = average;
