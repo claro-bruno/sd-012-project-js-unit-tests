@@ -16,6 +16,14 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {};
+const vqv = (nome, idade) => {
+  if (!nome || !idade) { // checando se a variável é true/false, source https://www.ti-enxame.com/pt/javascript/o-que-um-ponto-de-exclamacao-antes-de-uma-variavel-significa-em-javascript/1041635275/. No caso se alguma delas n estiver como parâmetro, eu retorno undefined.
+    return undefined;
+  }
+return (`Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`);
+};
 
 module.exports = vqv;
