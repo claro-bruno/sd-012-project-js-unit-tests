@@ -13,21 +13,20 @@
 */
 
 const average = (arr) => {
-  if (arr === []) {
+  if (arr.length === 0) {
     return undefined;
   }
 
   let sum = 0;
-  let media = sum / arr.length;
-
   for (let index = 0; index < arr.length; index += 1) {
-    if (arr[index].isNan) {
+    if (typeof (arr[index]) !== 'number') {
       return undefined;
     }
     sum += arr[index];
   }
-
+  
+  let media = Math.round(sum / arr.length);  
   return media;
 };
-
+console.log(average([]));
 module.exports = average;
