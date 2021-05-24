@@ -15,17 +15,17 @@ const average = (array) => {
   let soma = 0;
   let result = 0;
   const tamanhoArray = array.length;
-  if(tamanhoArray <= 0) {
+  if (tamanhoArray <= 0) {
     return undefined;
-  };
-  for(let numeros of array) {
-    if(typeof numeros !== 'number' ) {
-      return undefined;
-    };
+  }
+  for (let numeros of array) {
+  if (typeof numeros !== 'number' ) {
+    return undefined;
+  }
     soma += numeros;
-    result = Math.round(soma / array.length)
+    result = Math.round(soma / array.length);
   }
   return result;
 };
-console.log(average([0, 0, 0, 0, 0, 0, 1]))
+console.log(average([0, 0, 0, 0, 0, 0, 1]));
 module.exports = average;
