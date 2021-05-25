@@ -85,8 +85,29 @@ const createMenu = (menu) => {
   restaurant.fetchMenu = () => menu;
   restaurant.consumption = [];
   restaurant.order = (order) => {restaurant.consumption.push(order);}
+  restaurant.pay = () => {
+    let result = 0;
+    for (let index = 0; index < restaurant.consumption.length; index += 1) {      
+      result += verifyOrder(restaurant.consumption[index]);
+    }
+    return result;
+  }  
   return restaurant;
 }
-createMenu({food: {}, drink: {}});
-console.log(restaurant);
+
+const verifyOrder = (order) => {
+  let value = 0;
+  for (let key in restaurant.fetchMenu().food) {
+    if (key === order) {
+      value = restaurant.fetchMenu().food[key];
+    }
+  }
+  for (let key in restaurant.fetchMenu().drink) {
+    if (key === order) {
+      value = restaurant.fetchMenu().drink[key];
+    }
+  }  
+  return value;
+}
+
 module.exports = createMenu;
