@@ -16,9 +16,10 @@
 */
 
 const createStudent = (nome) => {
-  let estudante;
-  estudante.name = nome;
-  estudante.feedback = () => 'Eita pessoa boa!';
+  let estudante = {
+     name: nome,
+     feedback: feedback = () => 'Eita pessoa boa!',
+    };
   return estudante;
 };
 
