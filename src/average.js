@@ -24,8 +24,7 @@ const average = (array) => {
      }
       valor = array.reduce(media);
     };
-    return valor;
-  }
+  } return valor;
 };
 
 module.exports = average;
