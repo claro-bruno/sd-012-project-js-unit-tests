@@ -27,4 +27,4 @@ describe("2 - Implemente os casos de teste para a função `numbers`", () => {
     // Escreva um teste em que a função recebe [' '] e retorna false
     assert.strictEqual(numbers([' ']), false);
   });
-};
+});
