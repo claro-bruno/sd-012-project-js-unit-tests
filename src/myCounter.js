@@ -14,7 +14,7 @@
   Comportamento:
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
-
+// Trocou-se o var por let e mudou-se o nome do segundo counter.
 const myCounter = () => {
   var myArray = [];
   for (let counter = 0; counter <= 3; counter += 1) {
