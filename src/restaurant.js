@@ -81,20 +81,6 @@
 
 const restaurant = {};
 
-const createMenu = (menu) => {
-  restaurant.fetchMenu = () => menu;
-  restaurant.consumption = [];
-  restaurant.order = (order) => {restaurant.consumption.push(order);}
-  restaurant.pay = () => {
-    let result = 0;
-    for (let index = 0; index < restaurant.consumption.length; index += 1) {      
-      result += verifyOrder(restaurant.consumption[index]);
-    }
-    return result;
-  }  
-  return restaurant;
-}
-
 const verifyOrder = (order) => {
   let value = 0;
   for (let key in restaurant.fetchMenu().food) {
@@ -108,6 +94,20 @@ const verifyOrder = (order) => {
     }
   }  
   return value;
+}
+
+const createMenu = (menu) => {
+  restaurant.fetchMenu = () => menu;
+  restaurant.consumption = [];
+  restaurant.order = (order) => { restaurant.consumption.push(order); };
+  restaurant.pay = () => {
+    let result = 0;
+    for (let index = 0; index < restaurant.consumption.length; index += 1) {      
+      result += verifyOrder(restaurant.consumption[index]);
+    }
+    return result + (result / 10);
+  }
+  return restaurant;
 }
 
 module.exports = createMenu;
