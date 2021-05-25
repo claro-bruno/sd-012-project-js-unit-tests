@@ -19,8 +19,11 @@
 const vqv = (nome, idade) => {
   if (!nome && !idade) {
     return undefined;
-  } return `Oi, meu nome é ${nome}!
-  Tenho ${idade} anos,\ntrabalho na Trybe e mando muito em programação!\n#VQV!`;
+  } else if (typeof nome === 'string' && typeof idade === 'number'); {
+  } return 'Oi, meu nome é ' + nome + '!\n' +
+  `Tenho ${idade} anos,\n` +
+  'trabalho na Trybe e mando muito em programação!\n' +
+  '#VQV!';
 };
 
 console.log(vqv('Camila', 32));
