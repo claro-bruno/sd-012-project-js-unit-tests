@@ -39,4 +39,36 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+// const typeVerify = (array) =>{
+//  let typeArray = [];
+//  for (let index =0; index < array.length; index +=1){
+//   typeArray.push(typeof(array[index]));
+//  }
+//  return typeArray;
+// }
+
+// let igual
+// if (productDetails('Alcool gel', 'Máscara')[0].name === productDetails('Alcool gel', 'Máscara')[1].name){
+//  igual = true;
+// } else {
+//  igual = false;
+// }
+
+// const verifyId = (productsArray) => {
+//  let finalId123 = false;
+//  for (let index = 0; index < productsArray.length; index += 1) {
+//    let finalId = productsArray[index].details.productId.substr(-3);
+//    if (finalId === '123') {
+//      finalId123 = true;
+//    } else {
+//      finalId = false;
+//    }
+//  }
+//  return finalId123;
+// };
+
+// console.log(verifyId(productDetails('Alcool gel', 'Máscara')))
+
+console.log();
+
 module.exports = productDetails;
