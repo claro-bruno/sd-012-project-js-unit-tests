@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 
+const { request } = require('http');
+
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
@@ -78,7 +80,32 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+function orderFromMenu(menuItem) {
+  this.consumption.push(menuItem);
+}
 
-const createMenu = () => {};
+function payBill() {
+  const foodOrDrink = this.fetchMenu();
+  const keys = Object.keys(foodOrDrink);
+  for (let index = 0; index < keys.length; index += 1) {
+    this.consumption.forEach((item) => {
+      if (foodOrDrink[keys[index]][item] !== undefined) {
+        this.total += foodOrDrink[keys[index]][item];
+      }
+    });
+  }
+  const totalWithTip = (this.total * 0.1) + this.total;
+  return totalWithTip;
+}
+
+const createMenu = (myMenu) => ({
+  fetchMenu: () => myMenu,
+  consumption: [],
+  total: 0, /** Consultei o Pull Request do Roberval Filho para resolver essa parte de colocar o total como chave do objeto e conseguir passar por um erro do Linter.
+  https://github.com/tryber/sd-012-project-js-unit-tests/pull/23
+  */
+  order: orderFromMenu,
+  pay: payBill,
+});
 
 module.exports = createMenu;
