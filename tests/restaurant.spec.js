@@ -75,7 +75,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
     objetoRetornado.order('coxinha');
-    assert.ok(objetoRetornado.consumption.includes('coxinha'));
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
