@@ -36,7 +36,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(typeof (productTest[0].details), 'object');
     assert.strictEqual(typeof (productTest[1].details), 'object');
     assert.deepStrictEqual(Object.values(productTest[0].details) !== Object.values(productTest[1].details), true);
-    assert.deepStrictEqual(((Object.values(productTest[0].details)).join()).slice(-3), '123');
-    assert.deepStrictEqual(((Object.values(productTest[1].details)).join()).slice(-3), '123');
+    assert.strictEqual(((Object.values(productTest[0].details)).join()).slice(-3), '123');
+    assert.strictEqual(((Object.values(productTest[1].details)).join()).slice(-3), '123');
   });
 });
