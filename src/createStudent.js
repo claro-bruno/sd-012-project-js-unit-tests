@@ -18,10 +18,10 @@
 const createStudent = (nome) => {
   let estudante = {
   name: 'Leandrão, o Lobo Solitário',
-  feedback: 'Eita pessoa boa!'
-  }
+  feedback: 'Eita pessoa boa!',
+  };
   estudante.name = nome;
-  estudante.feedback = () => 'Eita pessoa boa!'
+  estudante.feedback = () => 'Eita pessoa boa!';
   return estudante;
 };
 
