@@ -17,11 +17,12 @@
 */
 
 const vqv = (nome, idade) => {
-  const retorno = `Oi, meu nome é ${nome}! 
-  Tenho ${idade} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`;
-  return typeof (idade) === 'number' && typeof (nome) === 'string' ? retorno : undefined; 
+  const name = `Oi, meu nome é ${nome}!\n`;
+  const age = `Tenho ${idade} anos,\n`;
+  const work = 'trabalho na Trybe e mando muito em programação!\n';
+  const vq = '#VQV!';
+  const header = `${name}${age}${work}${vq}`;
+  return typeof nome === 'string' && typeof idade === 'number' ? header : undefined;
 };
 
 module.exports = vqv;
