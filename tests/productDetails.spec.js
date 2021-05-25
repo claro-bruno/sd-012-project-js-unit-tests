@@ -29,21 +29,6 @@ const productDetails = require('../src/productDetails');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-const verifyFinal = (funcao, position) => {
-  const id = funcao[position].details.productId;
-  id.split('');
-  let finalLetters = '';
-  for (const letters of id) {
-    if (id.indexOf(letters) >= id.length - 4) {
-      finalLetters += letters;
-    }
-  }
-  if (finalLetters === '123') {
-    return true;
-  }
-  return false;
-};
-
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     // ESCREVA SEUS TESTES ABAIXO:
@@ -57,8 +42,11 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.notDeepStrictEqual((chamadaDaFuncao[0]), (chamadaDaFuncao[1]));
     // Teste que os dois objetos são diferentes entre si.
-    assert.strictEqual(verifyFinal(chamadaDaFuncao, 0), true);
-    assert.strictEqual(verifyFinal(chamadaDaFuncao, 1), true);
+    assert.strictEqual(chamadaDaFuncao[0].details.productId.endsWith('123'), true);
+    assert.strictEqual(chamadaDaFuncao[1].details.productId.endsWith('123'), true);
+  
+    // Fonte: Repositório do colega Roberval Filho, onde estava fazendo um code-review e econtrei o método '.endsWith'
+  
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
