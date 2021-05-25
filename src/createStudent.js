@@ -16,13 +16,11 @@
 */
 
 const createStudent = (pessoa) => {
-  if (!name) { return undefined; };
+  if (!pessoa) { return undefined };
 
   return {
     name: pessoa,
-    feedback: function () {
-      return `Eita pessoa boa!`;
-    }
+    feedback: function () { return `Eita pessoa boa!` }
   }
 };
 
