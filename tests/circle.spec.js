@@ -29,8 +29,8 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     assert.deepStrictEqual(typeof circle(1) , 'object'); //Teste se circle retorna um objeto.
     assert.deepStrictEqual(Object.values(circle(1)).length, 3); // Teste se o objeto retornado tem 3 entradas.// referencia: https://wallacemaxters.com.br/blog/2021/01/29/como-verificar-objeto-vazio-em-javascript#:~:text=O%20m%C3%A9todo%20Object.,um%20objeto%20em%20um%20Array%20.&text=Sendo%20assim%2C%20%C3%A9%20poss%C3%ADvel%20utilizar,se%20o%20mesmo%20%C3%A9%20vazio.
     assert.deepStrictEqual(circle(), undefined);// Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
-    assert.deepStrictEqual(circle(2).circumference, (parseFloat(2 * Math.PI * 2).toPrecision(4)));// Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
-    //assert.deepStrictEqual(circle(3).area, (Math.PI));// Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
-    // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
+    assert.deepStrictEqual(circle(2).circumference, (2 * 3.14 * 2));// Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
+    assert.deepStrictEqual(circle(3).area, (3.14 * 3 * 3));// Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    assert.deepStrictEqual(circle(3), { radius: 3, area: 3.14 * 3 *3, circumference: 2* 3.14 * 3 })// Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
   });
 });
