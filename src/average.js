@@ -14,17 +14,19 @@
 
 const average = (array) => {
   let valor;
-  if (typeof array !== 'number') {
-    valor = undefined;
-  } else {
-    const funcaoMedia = () => {
-      let soma = 0;
-      for (let index = 0; index < array.length; index += 1) {
-        soma += array.length;
-      }
-      valor = (Math.round(soma / array.length));
-    };
-  } return valor;
+  let soma = 0;
+  
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    soma += array[index];
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+  }
+  valor = (Math.round(soma / array.length));
+  return valor;
 };
 
 module.exports = average;
