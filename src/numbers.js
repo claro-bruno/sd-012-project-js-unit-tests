@@ -19,3 +19,8 @@ const numbers = (myArray) => {
 };
 
 module.exports = numbers;
+
+  console.log(numbers([1, 2, 3, 4, 5]), true);
+  console.log(numbers([1, 2, '3', 4, 5]), false);
+  console.log(numbers([1, 'a', 3]), false);
+  console.log(numbers([' ']), false);
