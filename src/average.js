@@ -15,7 +15,7 @@
 const average = (numbers) => {
   let soma = 0;
   let media;
-  for (let cont = 0; cont < numbers.length; cont +=1) {
+  for (let cont = 0; cont < numbers.length; cont += 1) {
     if (typeof numbers[cont] !== 'number' || numbers.length === 0) {
       return undefined;
     } 
