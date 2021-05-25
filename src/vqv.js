@@ -20,10 +20,9 @@
 const vqv = (nome, idade) => {
   if (nome === null || idade === null) {
   return undefined;
-// eslint-disable-next-line no-lone-blocks
-} { `Oi, meu nome é ${nome}!
-  Tenho ${idade} anos,
-  trabalho na Trybe e mando muito em programação!
-  #VQV!`; }
+  } `Oi, meu nome é ${nome}!
+    Tenho ${idade} anos,
+    trabalho na Trybe e mando muito em programação!
+   #VQV!`; 
 };
 module.exports = vqv;
