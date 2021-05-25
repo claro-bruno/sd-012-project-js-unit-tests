@@ -1,6 +1,15 @@
 const assert = require('assert');
 const productDetails = require('../src/productDetails');
+const funcxon = productDetails('a','b')
+const diff = (funcxon) => {
+  if (funcxon[0] === funcxon[1]){
+    return false;
+  } else if (funcxon[0] !== funcxon[1]) {
+    return true
+  }
+}
 
+const str = funcxon[0].details.productId
 /*
   Dadas duas strings que representam nomes de produtos, retorne um array contendo dois objetos com os detalhes dos respectivos produtos.
 
@@ -33,10 +42,14 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste que o retorno da função é um array.
-    assert.notStrictEqual(typeof productDetails('a','b'), 'array')
+    assert.strictEqual(Array.isArray(funcxon), true)
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(funcxon.length, 2)
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.deepStrictEqual(Array.isArray(funcxon), true)
     // Teste que os dois objetos são diferentes entre si.
+    assert.strictEqual(diff(funcxon), true)
     // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.strictEqual(parseInt(str.substring(1,4)), 123)
   });
 });

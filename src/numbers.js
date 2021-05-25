@@ -17,6 +17,5 @@ const numbers = (myArray) => {
   }
   return true;
 };
-let ar = [' ']
-console.log(numbers(ar))
+
 module.exports = numbers;
