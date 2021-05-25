@@ -12,22 +12,34 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (numbers) => {
-  let sum = 0;
-  if (numbers.length !== 0) {
-    for (let i = 0; i < numbers.length; i += 1) {
-      if (typeof(numbers[i]) === 'number') {
-        sum += numbers[i];
-      } else {
-        return undefined;
-      }
+const checkNumber = (numbers) => {
+  let result = true;
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (typeof (numbers[i]) !== 'number') {
+      result = false;
     }
-    // Referencia do metodo Math.round():
-    // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
-    return Math.round(sum / numbers.length);
-  } else {
-    return undefined;
   }
+  return result;
+};
+
+const computeAverage = (numbers) => {
+  let summation = 0;
+  for (let i = 0; i < numbers.length; i += 1) {
+    summation += numbers[i];
+  }
+  // Referencia do metodo Math.round():
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+  return Math.round(summation / numbers.length);
+};
+
+const average = (numbers) => {
+  let sum;
+  if (numbers.length === 0 || checkNumber(numbers) === false) {
+    sum = undefined;
+  } else {
+    sum = computeAverage(numbers);
+  }
+  return sum;
 };
 
 module.exports = average;
