@@ -57,8 +57,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.notDeepStrictEqual((chamadaDaFuncao[0]), (chamadaDaFuncao[1]));
     // Teste que os dois objetos são diferentes entre si.
-    assert,strictEqual(verifyFinal(chamadaDaFuncao, 0), true);
-    assert,strictEqual(verifyFinal(chamadaDaFuncao, 1), true);
+    assert.strictEqual(verifyFinal(chamadaDaFuncao, 0), true);
+    assert.strictEqual(verifyFinal(chamadaDaFuncao, 1), true);
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
