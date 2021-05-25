@@ -29,7 +29,3 @@ const circle = (radius) => {
 };
 
 module.exports = circle;
-
-circle(1);
-
-console.log(Object.keys(circle(1)));
