@@ -79,8 +79,37 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {
-};
-// const cardapio = { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} };
+function aConta() {
+  let valorConta = 0;
+  const cardapio = this.fetchMenu();
+  for (let key of this.consumption) {
+  // cardapio.drink[key] ? compara a chave em drink e em food e retorna o valor
+    let preco = cardapio.drink[key] ? cardapio.drink[key] : cardapio.food[key];
+    valorConta += preco;
+  }
+  valorConta = Math.round(valorConta * 110) / 100;
+  return valorConta;
+}
+
+// Quando chama createMenu(objeto).order('comida') vai chamar updateConsumption e adicionar comida a consumption como um valor dentro de um array
+function updateConsumption(string) {
+  this.consumption.push(string);
+}
+
+// createMenu um 'objeto' que recebe parametro, e facilita a chamada de outras funções e valores
+const createMenu = (objeto) => ({
+  fetchMenu: () => objeto,
+  consumption: [],
+  order: updateConsumption,
+  pay: aConta,
+});
+
+// const objeto = { food: {'coxinha': 3.90, 'sanduiche': 9.90},
+// drinks: {'agua': 3.90, 'cerveja': 6.90}}
+// console.log(objeto.drinks.agua);
+// const teste = createMenu(objeto)
+// teste.order('coxinha')
+// teste.order('agua')
+// console.log(teste.pay())
 
 module.exports = createMenu;
