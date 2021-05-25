@@ -42,4 +42,3 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
 
   });
 });
-// parse float
