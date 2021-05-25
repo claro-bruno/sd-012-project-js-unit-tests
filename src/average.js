@@ -11,9 +11,19 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-const sequenciaArray = [];
-const average = () => {
 
+const average = (sequenciaArray) => {
+  let soma = 0;
+  let media;
+  if (sequenciaArray.length === 0) return undefined;
+  for (let index = 0; index < sequenciaArray.length; index += 1) {
+    soma += sequenciaArray[index];
+    media = soma / sequenciaArray.length;
+    if (typeof sequenciaArray[index] !== 'number') {
+      return undefined;
+    }
+  }
+  return Math.round(media);
 };
-
+console.log(average([2, 2]));
 module.exports = average;
