@@ -19,11 +19,11 @@ const average = (array) => {
     valor = undefined;
   } else {
     const funcaoMedia = () => {
-      const somar = (total, number) => total + number;
-     
-      valor = array.reduce(somar, 0) / array.length;
+     function media(acc, val) {
+       return (acc + val) / array.length;
+     }
+      valor = array.reduce(media);
     };
-    
     return valor;
   }
 };
