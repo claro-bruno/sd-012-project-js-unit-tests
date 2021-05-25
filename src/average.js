@@ -14,15 +14,15 @@
 
 const average = (array) => {
   let valor;
-
   if (typeof array !== 'number') {
     valor = undefined;
   } else {
     const funcaoMedia = () => {
-     function media(acc, val) {
-       return (acc + val) / array.length;
-     }
-      valor = array.reduce(media);
+      let soma = 0;
+      for (let index = 0; index < array.length; index += 1) {
+        soma += array.length;
+      }
+      valor = (Math.round(soma / array.length));
     };
   } return valor;
 };
