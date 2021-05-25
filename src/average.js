@@ -22,7 +22,7 @@ const average = (numbers) => {
         return undefined;
       }
     }
-    // O metodo Math.round() foi retirado do seguinte link:
+    // Referencia do metodo Math.round():
     // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
     return Math.round(sum / numbers.length);
   } else {
