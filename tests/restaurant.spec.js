@@ -109,6 +109,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
-    assert.deepStrictEqual( typeof createMenu, 'object', 'O valor retornado pela função não é um objeto');
+    const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} });
+    assert.deepStrictEqual( typeof createMenu (), 'object', 'O valor retornado pela função não é um objeto');
   });
 });
