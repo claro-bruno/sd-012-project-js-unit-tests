@@ -9,12 +9,12 @@
   Comportamento:
   productDetails('Alcool gel', 'Máscara') // Retorna:
   [
-    {
+   {
       name: 'Alcool gel'
       details: {
         productId: 'Alcool gel123'
       }
-    },
+    }, 
     {
       name: 'Máscara'
       details: {
