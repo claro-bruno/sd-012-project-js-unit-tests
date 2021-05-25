@@ -17,11 +17,11 @@ const average = (numbers) => {
   let media;
 
   if (numbers.length === 0) {
-    return undefined
+    return undefined;
   }
-  
+
   for (let cont = 0; cont < numbers.length; cont += 1) {
-    if (typeof(numbers[cont]) !== 'number') {
+    if (typeof (numbers[cont]) !== 'number') {
       return undefined;
     } 
 
@@ -31,6 +31,4 @@ const average = (numbers) => {
   
   return Math.round(media);
 };
-console.log(average([]))
-
 module.exports = average;
