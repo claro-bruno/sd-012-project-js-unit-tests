@@ -89,7 +89,7 @@ const verifyOrderAux = (order, actualValue) => {
     }
   }
   return auxValue;
-}
+};
 
 const verifyOrder = (order) => {
   let value = 0;
