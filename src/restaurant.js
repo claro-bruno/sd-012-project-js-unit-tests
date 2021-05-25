@@ -79,27 +79,48 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+const forItems = (menuItems, consumido) => {
+  const keysItems = Object.keys(menuItems);
+  for (let index = 0; index < keysItems.length; index += 1) {
+    const item = keysItems[index];
+    const preco = menuItems[item];
+    if (item === consumido) {
+      return preco;
+    }
+  }
+};
+
+const forMenu = (menu, consumido) => {
+  const menuKeys = Object.keys(menu.fetchMenu());
+  for (let index = 0; index < menuKeys.length; index += 1) {
+    const categorias = menu.fetchMenu()[menuKeys[index]];
+    if (typeof forItems(categorias, consumido) === 'number') {
+      return forItems(categorias, consumido);
+    }
+  }
+};
+
 const createMenu = (object) => {
   const menu = { 
     fetchMenu: () => object,
     consumption: [],
+    order: (string) => {
+      menu.consumption.push(string);
+    },
+    pay: () => {
+      let total = 0;
+      const consumidos = menu.consumption;
+      for (let index = 0; index < consumidos.length; index += 1) {
+        const itemConsumido = consumidos[index];
+        if (typeof forMenu(menu, itemConsumido) === 'number') {
+          total += forMenu(menu, itemConsumido);
+        }
+      }
+      return total;
+    },
   };
+
   return menu;
 };
-
-const objetoRetornado = createMenu({});
-
-const orderFromMenu = (string) => {
-  createMenu.consumption.push(string);
-};
-
-objetoRetornado.order = orderFromMenu;
-/* objetoRetornado.pay = () => {
-  const consumidos = objetoRetornado.consumption;
-  for (let indexCons = 0; indexCons < consumidos.length; indexCons += 1) {
-    for (let indexFood = 0; indexFood < objetoRetornado.fetchMenu())
-  }
-} */
-console.log(objetoRetornado);
 
 module.exports = createMenu;
