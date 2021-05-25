@@ -30,12 +30,18 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
+    assert.deepStrictEqual(typeof (productDetails('Alcool gel', 'Máscara')), 'object');
     // Teste que o retorno da função é um array.
+    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.deepStrictEqual(typeof (productDetails('Alcool gel')) ==='object' && typeof (productDetails('Máscara')) === 'object', true);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.notDeepStrictEqual(productDetails('Alcool gel'), productDetails('Máscara'));
     // Teste que os dois objetos são diferentes entre si.
+   /*  Dica no slack  postada por Diogo Santana https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith , retirei do seu respositório essa parte abaixo*/
+    const ending123 = func => func[0].details.productId.endsWith('123') === func[1].details.productId.endsWith('123') ? true : false;
+    assert.deepStrictEqual(ending123(productDetails('Alcool gel', 'Mascara')), true);
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
 });
