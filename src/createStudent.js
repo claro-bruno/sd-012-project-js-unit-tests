@@ -16,12 +16,12 @@
 */
 
 const createStudent = (pessoa) => {
-  if (!pessoa) { return undefined };
+  if (!pessoa) { return undefined; }
 
   return {
     name: pessoa,
-    feedback: function () { return `Eita pessoa boa!` }
-  }
+    feedback: () => { 'Eita pessoa boa!'; },
+  };
 };
 
 module.exports = createStudent;
