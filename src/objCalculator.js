@@ -19,6 +19,23 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (n1, n2) => {
+    let soma = n1 + n2;
+    return soma;
+  },
+  mult: (n1, n2) => {
+    let multi = n1 * n2;
+    return multi;  
+  },
+  div: (n1, n2) => {
+    let divi = Math.trunc(n1 / n2);
+    return divi;
+  },
+  sub: (n1, n2) => {
+    let subt = n1 -n2;
+    return subt;
+  }
+};
 
 module.exports = calculator;
