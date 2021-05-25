@@ -84,17 +84,17 @@ const restaurant = {};
 const verifyOrder = (order) => {
   let value = 0;
   for (let key in restaurant.fetchMenu().food) {
-    if (key === order) {
+    if (order === key) {
       value = restaurant.fetchMenu().food[key];
     }
   }
   for (let key in restaurant.fetchMenu().drink) {
-    if (key === order) {
+    if (order === key) {
       value = restaurant.fetchMenu().drink[key];
     }
   }  
   return value;
-}
+};
 
 const createMenu = (menu) => {
   restaurant.fetchMenu = () => menu;
@@ -106,8 +106,8 @@ const createMenu = (menu) => {
       result += verifyOrder(restaurant.consumption[index]);
     }
     return result + (result / 10);
-  }
+  };
   return restaurant;
-}
+};
 
 module.exports = createMenu;
