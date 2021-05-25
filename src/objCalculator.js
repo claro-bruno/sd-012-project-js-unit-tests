@@ -18,7 +18,12 @@
   calculator.add(1, 1) // Retorno: 2;
   calculator.div(3, 2) // Retorno: 1;
 */
-
-const calculator = {};
+// REFERENCIA - arrendondar número para baixo, função MATH.FLOOR (https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
+const calculator = {
+  add: (n1, n2) => n1 + n2,
+  mult: (n1, n2) => n1 * n2,
+  div: (n1, n2) => Math.floor(n1 / n2),
+  sub: (n1, n2) => n1 - n2,
+};
 
 module.exports = calculator;
