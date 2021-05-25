@@ -17,10 +17,10 @@
 
 const myCounter = () => {
   var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+  for (let colCounter = 0; colCounter <= 3; colCounter += 1) {
+    myArray.push(colCounter);
+    for (let rowCounter = 2; rowCounter <= 3; rowCounter += 1) {
+      myArray.push(rowCounter);
     }
   }
   return myArray;
