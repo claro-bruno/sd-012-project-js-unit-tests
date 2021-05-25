@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 
+/* const { create } = require("eslint/lib/rules/*"); */
+
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, 
   cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
@@ -79,6 +81,79 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const assert = require('assert');
+
+/* const createMenu = (obj) => {
+  if (!obj) {
+    const menu = {
+      fetchMenu() {
+        return {};
+      },
+    };
+    return menu;
+  }
+  const menu = {
+    fetchMenu() {
+      return obj;
+    },
+  };
+  return menu;
+}; */
+
+const createMenu = (obj) => {
+  if (!obj) {
+    const menu = {
+      fetchMenu: () => {
+        const emptyObj = ({});
+        return emptyObj;
+      },
+    };
+    return menu;
+  }
+  const menu = {
+    fetchMenu: () => (obj),
+  };
+  return menu;
+};
 
 module.exports = createMenu;
+
+console.log('----------------------------------');
+
+const menu = createMenu({ food: {} });
+console.log('createMenu({ food: {} }) Call:');
+console.log('\n');
+
+console.log(`Keys (stringify): ${JSON.stringify(Object.keys(menu))}`);
+console.log('Keys (no stringify): ' + Object.keys(menu));
+console.log(`Values (stringify): ${JSON.stringify(Object.values(menu))}`);
+console.log('Values (no stringify): ' + Object.values(menu));
+console.log(`Entries (stringify): ${JSON.stringify(Object.entries(menu))}`);
+console.log('Entries (no stringify): ' + Object.entries(menu));
+console.log('\n');
+
+console.log(`fetchMenu Call: ${JSON.stringify(menu.fetchMenu())}`);
+
+console.log('----------------------------------');
+
+const menu2 = createMenu();
+console.log('createMenu() Call: ');
+console.log('\n');
+
+console.log(`Keys (stringify): ${JSON.stringify(Object.keys(menu2))}`);
+console.log('Keys (no stringify): ' + Object.keys(menu2));
+console.log(`Values (stringify): ${JSON.stringify(Object.values(menu2))}`);
+console.log('Values (no stringify): ' + Object.values(menu2));
+console.log(`Entries (stringify): ${JSON.stringify(Object.entries(menu2))}`);
+console.log('Entries (no stringify): ' + Object.entries(menu2));
+console.log('\n');
+
+console.log(`fetchMenu Call: ${JSON.stringify(menu2.fetchMenu())}`);
+
+console.log('----------------------------------');
+
+assert.strictEqual(Object.keys(menu).includes('fetchMenu'), true);
+assert.strictEqual(Object.keys(menu2).includes('fetchMenu'), true);
+
+// assert.strictEqual(Object.values(menu).includes(''), true);
+// assert.strictEqual(Object.values(menu2).includes('fetchMenu'), true);
