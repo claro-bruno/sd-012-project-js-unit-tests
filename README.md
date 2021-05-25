@@ -211,14 +211,14 @@ A função average recebe um array (tamanho variável) e retorna a média dos va
   **O que será avaliado**
 
   * Será validado se o comportamento da função "average" está correto. -->
-
+<!-- 
 ### 2 - Implemente os casos de teste para a função `numbers`
 
- A função `numbers` recebe um array (tamanho variável) e retorna true se todos os parâmetros forem do tipo 'number' e false caso contrário. Essa função já está implementada no arquivo `src/numbers.js`. Escreva os testes para essa função para garantir que a implementação de `numbers` está correta.
+ A função `numbers` recebe um array (tamanho variável) e retorna true se todos os parâmetros forem do tipo 'number' e false caso contrário. Essa função já está implementada no arquivo `src/numbers.js`. Escreva os testes para essa função para garantir que a implementação de `numbers` está correta. -->
 
-  **O que será avaliado**
+  <!-- **O que será avaliado**
 
-  * Será validado se o teste da função `numbers` verifica se o retorno da função é um array e se o array retornado contém somente números.
+  * Será validado se o teste da função `numbers` verifica se o retorno da função é um array e se o array retornado contém somente números. -->
 
 ### 3 - Implemente a função `vqv`
 
