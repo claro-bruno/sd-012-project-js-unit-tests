@@ -81,6 +81,16 @@
 
 const bar = {};
 
+const verifyOrderAux = (order, actualValue) => {
+  let auxValue = actualValue;
+  for (let key in bar.fetchMenu().drink) {
+    if (order === key) {
+      auxValue = bar.fetchMenu().drink[key];      
+    }
+  }
+  return auxValue;
+}
+
 const verifyOrder = (order) => {
   let value = 0;
   for (let key in bar.fetchMenu().food) {
@@ -88,11 +98,7 @@ const verifyOrder = (order) => {
       value = bar.fetchMenu().food[key];
     }
   }
-  for (let key in bar.fetchMenu().drink) {
-    if (order === key) {
-      value = bar.fetchMenu().drink[key];
-    }
-  }
+  value = verifyOrderAux(order, value);  
   return value;
 };
 
