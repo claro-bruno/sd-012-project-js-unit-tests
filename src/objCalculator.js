@@ -19,7 +19,6 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-
 const add = (n1, n2) => Math.floor(n1 + n2);
 const mult = (n1, n2) => Math.floor(n1 * n2);
 const div = (n1, n2) => Math.floor(n1 / n2);
