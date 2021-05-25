@@ -42,5 +42,3 @@ const productDetails = (firstProduct, secondProduct) => [
 module.exports = productDetails;
 
 productDetails(('Alcool gel', 'Máscara'))[0].details.productId.slice(-3);
-
-console.log(productDetails('Alcool gel', 'Máscara')[0].name);
