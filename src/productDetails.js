@@ -38,5 +38,6 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
+// Nesse teste acabei descobrindo que o máximo de caracteres de uma linha é 100 kkk'
+console.log((productDetails('Alcool gel', 'Máscara')[0].details.productId));
 module.exports = productDetails;
