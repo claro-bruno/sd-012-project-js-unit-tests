@@ -43,6 +43,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof productDetails(), 'object');
     // Teste que os dois objetos são diferentes entre si.
+    /*
+      Consultei o repositório do Ramon Paschoal:
+      Src: https://github.com/tryber/sd-012-project-js-unit-tests/pull/117/commits/ce6777ab76512eb9b0077c9793b03a74107dad6c
+
+      Consultei o site:
+      Link: https://danvitoriano.medium.com/igualdade-entre-objetos-9e1104bd23ea#:~:text=No%20mundo%20JavaScript%2C%20n%C3%A3o%20existe,utilizado%20%C3%A9%20equals%20ou%20isEquals%20.&text=O%20m%C3%A9todo%20stringify%20da%20classe,se%20dois%20objetos%20s%C3%A3o%20iguais. para resolver este ponto.
+    */
     assert.notStrictEqual(JSON.stringify(productDetails()[0]) === JSON.stringify(productDetails()[1]), false);
     // (Difícil) Teste que os dois productIds terminam com 123.
   });
