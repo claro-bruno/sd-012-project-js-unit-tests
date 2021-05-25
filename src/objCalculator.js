@@ -19,6 +19,15 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  /*
+    Consultei o repositório do Willian Prado.
+    Src: https://github.com/tryber/sd-012-project-js-unit-tests/pull/126/commits/2f194d750e950860e2266455d1da79122eb5f22c
+  */
+  add: (n1, n2) => n1 + n2,
+  mult: (n1, n2) => n1 * n2,
+  div: (n1, n2) => Math.floor(n1 / n2),
+  sub: (n1, n2) => n1 - n2,
+};
 
 module.exports = calculator;
