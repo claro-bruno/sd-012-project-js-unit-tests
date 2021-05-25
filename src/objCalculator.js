@@ -33,9 +33,9 @@ const calculator = {
     return divi;
   },
   sub: (n1, n2) => {
-    let subt = n1 -n2;
+    let subt = n1 - n2;
     return subt;
-  }
+  },
 };
 
 module.exports = calculator;
