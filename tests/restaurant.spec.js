@@ -52,12 +52,14 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
     assert.strictEqual(typeof createMenu().fetchMenu, 'function');
     // ```
-  
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
+    assert.notStrictEqual(typeof createMenu({food: {}, drink:{}}).fetchMenu({food: {}, drink:{}}).food, 'undefined');
+    assert.notStrictEqual(typeof createMenu({food: {}, drink:{}}).fetchMenu({food: {}, drink:{}}).drink, 'undefined');
     // ```
+    
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
