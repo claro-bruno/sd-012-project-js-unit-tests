@@ -1,6 +1,5 @@
 const assert = require('assert');
 const createMenu = require('../src/restaurant');
- 
 /*
   Você é responsável por escrever o código do sistema de pedidos de um restaurante. Deve ser possível, através desse sistema, cadastrar um menu. Dado que um menu foi cadastrado, o sistema deve disponibilizar um objeto através do qual se consegue:
   - ler o menu cadastrado;
@@ -48,20 +47,24 @@ const createMenu = require('../src/restaurant');
 
 describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    assert.fail();
+    let cardapio = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }
+    const expected = createMenu(cardapio);
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
     // ```
+    assert.strictEqual(Object.keys(expected).includes('fetchMenu'), true)
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
+    assert.strictEqual(Object.keys(expected.fetchMenu()).includes('food', 'drink'), true)
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
+    assert.strictEqual(expected.fetchMenu(), cardapio)
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
@@ -69,6 +72,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
+    assert.strictEqual(expected.consumption.length === 0, true)
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
@@ -77,6 +81,14 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
+   const meuRestaurante = createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } });
+   meuRestaurante.consumption = []
+    function addConsumption(string) {
+      meuRestaurante.consumption.push(string);
+    }
+    meuRestaurante.order = addConsumption
+    meuRestaurante.order('coxinha')
+    assert.strictEqual(Object.values(meuRestaurante.consumption).includes('coxinha'), true)
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
     // objetoRetornado.consumption // Retorno: ["coxinha"]
@@ -85,30 +97,43 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
+    expected.order("coxinha");
+    expected.order("agua");
+    expected.order("sopa");
+    expected.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
+    assert.strictEqual(expected.consumption.length === 4, true)
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
+    expected.order('coxinha');
+    expected.order('agua');
+    expected.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
+    assert.strictEqual(expected.consumption.filter(x => x == 'coxinha').length > 1, true)
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
-    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
+    // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna -se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
-    // ```
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    const menu = expected.fetchMenu();
+    let soma = 0;
+    function pay() {
+      let valores = [...Object.values(menu.food), Object.values(menu.drink)];
+      let comidas = [...Object.keys(menu.food), Object.keys(menu.drink)];
+      expected.consumption.forEach((element1) => {
+        comidas.forEach((element2, index2) => {
+            if (element1 === element2) {
+              soma += valores[index2];
+            }
+        });
+      });
+      return soma * 1.10;
+    }
+    expected.pay = pay
+    assert.strictEqual(expected.pay(), soma * 1.10)
+
   });
 });

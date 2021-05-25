@@ -42,6 +42,5 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(Object.values(expected[0]) === Object.values(expected[1]), false);
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.strictEqual(expected[0].details.productId.replace(`${expected[0].name}`, ''), expected[1].details.productId.replace(`${expected[1].name}`, ''))
-    
   });
 });

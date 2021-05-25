@@ -23,8 +23,6 @@
     }
   ]
 */
-const assert = require('assert');
-
 const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,
@@ -39,8 +37,5 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-const expected = productDetails('alcool', 'gel');
 
-assert.strictEqual(expected.length, 2);
-assert.strictEqual(Object.values(expected[0]) === Object.values(expected[1]), false);
 module.exports = productDetails;
