@@ -20,10 +20,10 @@
 */
 
 const calculator = {
-  add: function sum(a, b) { return a + b; },
-  sub: function sub(a, b) { return a - b; },
-  mult: function mult(a, b) { return a * b; },
-  div: function div(a, b) { return a / b; },
+  add: function sum(a, b) { return Math.floor(a + b); },
+  sub: function sub(a, b) { return Math.floor(a - b); },
+  mult: function mult(a, b) { return Math.floor(a * b); },
+  div: function div(a, b) { return Math.floor(a / b); },
 };
 
 module.exports = calculator;
