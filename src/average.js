@@ -18,6 +18,9 @@ const average = (xablau) => {
   }
   let valor = 0;
   for (let index = 0; index < xablau.length; index += 1) {
+    if (typeof xablau[index] !== 'number') {
+      return undefined;
+    }
     valor += xablau[index];
   }
   return Math.round(valor / xablau.length);
