@@ -48,6 +48,9 @@
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
 // FEITO *REQUISITO 4*
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
+const createMenu = (objeto = {}) => ({
+  fetchMenu: () => objeto,
+});
 
 //------------------------------------------------------------------------------------------
 
@@ -96,7 +99,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 // *REQUISITO 12*
-
+/* 
 const fetchMenu = () => ({
   food: { coxinha: 3.9, sopa: 9.9 },
   drink: { agua: 3.9, cerveja: 6.9 },
@@ -121,6 +124,6 @@ const createMenu = (myMenu) => ({
   // pay: totalPaY,
 });
 
-console.log(createMenu(fetchMenu()));
+console.log(createMenu(fetchMenu())); */
 
 module.exports = createMenu;
