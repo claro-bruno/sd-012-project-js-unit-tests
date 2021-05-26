@@ -18,13 +18,12 @@
 const createStudent = (nome) => {
   const pessoa = { name: nome };
   // pessoa.name = nome;
-  pessoa.feedback = () => { 'Eita pessoa boa!'; };
+  pessoa.feedback = () => 'Eita pessoa boa!';
+  console.log(pessoa);
   return pessoa;
 };
 // const feedback = () => {
 //   return 'Eita pessoa boa!';
 // }
-
-console.log(createStudent('Silvio Santos'));
 
 module.exports = createStudent;
