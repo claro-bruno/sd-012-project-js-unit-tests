@@ -21,7 +21,8 @@ const primeiro = `Oi, meu nome é ${nome}!\n`;
 const segundo = `Tenho ${idade} anos,\n`;
 const terceiro = 'trabalho na Trybe e mando muito em programação!\n';
 const ultimo = '#VQV!';
-return `${primeiro}${segundo}${terceiro}${ultimo}`;
+const solo = `${primeiro}${segundo}${terceiro}${ultimo}`;
+return typeof (nome) === 'string' && typeof (idade) === 'number' ? solo : undefined; 
 };
 
 module.exports = vqv;
