@@ -80,6 +80,7 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 let rest = {};
 let total = 0;
+
 const orderFromMenu = (request) => {
   rest.consumption.push(request);
 };
@@ -87,17 +88,16 @@ const orderFromMenu = (request) => {
 function checkProductRestaurant(product) {
   const foodProds = rest.fetchMenu().food;
   const drinkProds = rest.fetchMenu().drink;
-  const arrayProduts = Object.entries(foodProds);
-  Object.assign(arrayProduts, drinkProds);
-
-  total += arrayProduts[product];
+  let arrProducts = { ...foodProds, ...drinkProds };
+  total += arrProducts[product];
   return total;
 }
 
 const returnTotal = () => {
+  total = 0;
   const orders = rest.consumption;
-  const totalOrder = orders.checkProductRestaurant(checkProductRestaurant);
-  return totalOrder;
+  orders.forEach(checkProductRestaurant);
+  return total;
 };
 
 const createMenu = (products) => {
