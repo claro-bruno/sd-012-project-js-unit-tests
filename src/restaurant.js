@@ -89,12 +89,11 @@ const pay = () => {
   const food = Object.entries(newObject.food);
   const drink = Object.entries(newObject.drink);
   const foodDrink = food.concat(drink);
+  const newArray = foodDrink.toString().split(',');
 
   for (let items of newObject.consumption) {
-    for (let order in foodDrink) {
-      if (items === foodDrink[order][0]) {
-        toPay += foodDrink[order][1];
-      }
+    if (newArray.includes(items)) {
+      toPay += parseInt(newArray[newArray.indexOf(items) + 1], 10);
     }
   }
   return toPay + (toPay * 0.1);
@@ -107,7 +106,5 @@ const createMenu = (object) => {
   newObject.pay = pay;
   return newObject;
 };
-
-console.log();
 
 module.exports = createMenu;
