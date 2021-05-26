@@ -38,8 +38,4 @@ const productDetails = (firstProduct, secondProduct) => [
     },
   },
 ];
-
-console.log(/123$/.test(productDetails('a', 'b')[0].details.productId
- || productDetails('a', 'b')[1].details.productId));
-
 module.exports = productDetails;
