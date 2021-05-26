@@ -12,8 +12,18 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-// add your implementation here
+const average = (array) => {
+  array.length;
+  let soma = 0;
+
+  
+// segundo tratamento pode ser com for para retornar undefined tbm
+  if (value !== number || array == '') {
+  return undefined;
+} else {
+  //utilizar um contador comeca no 0 e percorre os elementos
+  parseInt Math.round() //numero inteiro e arredondar pra cima 
+}
 };
 
 module.exports = average;
