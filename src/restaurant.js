@@ -46,16 +46,21 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-// FEITO *REQUISITO 4*
+// *REQUISITO 4*
+        /* const createMenu = (objeto) => ({
+        fetchMenu: () => objeto,
+        }); */
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
-const createMenu = (objeto = {}) => ({
-  fetchMenu: () => objeto,
-});
 
 //------------------------------------------------------------------------------------------
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
-// FEITO *REQUISITO 6*
+// *REQUISITO 6*
+const createMenu = (objeto) => ({
+  fetchMenu: () => objeto,
+  consumption: [],
+});
+console.log(createMenu());
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
