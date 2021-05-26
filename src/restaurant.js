@@ -81,6 +81,7 @@
 
 const createMenu = (object) => ({
  fetchMenu: () => object,
+ consumption: [],
 });
 
 const meuRestaurante = createMenu({ food: {}, drink: {} })
