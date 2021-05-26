@@ -110,15 +110,15 @@ orderFromMenu('coxinha');
 orderFromMenu('coca');
 orderFromMenu('agua');
 
-const totalPaY = () => {
-  consumption
-};
+// const totalPaY = () => {
+//   consumption
+// };
 
 const createMenu = (myMenu) => ({
   fetchMenu: myMenu,
   consumption,
   order: orderFromMenu,
-  pay: totalPaY,
+  // pay: totalPaY,
 });
 
 console.log(createMenu(fetchMenu()));
