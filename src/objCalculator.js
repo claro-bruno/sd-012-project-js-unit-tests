@@ -26,6 +26,6 @@ const calculator = {
   sub: (num1, num2) => Math.trunc(num1 - num2),
 };
 
-// console.log(calculator.add(1.2, 2));
+console.log(calculator.add(1.2, 2));
 
 module.exports = calculator;
