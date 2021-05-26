@@ -13,17 +13,23 @@
 */
 
 const average = (array) => {
-  array.length;
+  const size = array.length;
   let soma = 0;
 
-  
-// segundo tratamento pode ser com for para retornar undefined tbm
-  if (value !== number || array == '') {
-  return undefined;
-} else {
-  //utilizar um contador comeca no 0 e percorre os elementos
-  parseInt Math.round() //numero inteiro e arredondar pra cima 
-}
+  if (size <= 0) {
+    return undefined;
+  }
+
+  for(let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
+    soma += array[index];
+  }
+  let mediaArray = Math.round(soma / size);
+  return mediaArray;
 };
+
+console.log(average([]));
 
 module.exports = average;
