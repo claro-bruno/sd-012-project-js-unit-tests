@@ -82,10 +82,16 @@
 const createMenu = (object) => ({
  fetchMenu: () => object,
  consumption: [],
+ order: orderFunction
 });
 
-const meuRestaurante = createMenu({ food: {}, drink: {} })
+const orderFunction = (order) => {
+ meuRestaurante.consumption.push(order);
+}
 
-module.exports = createMenu;
+const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} })
+// meuRestaurante.order('coxinha');
 
-console.log(meuRestaurante.fetchMenu())
+module.exports = {createMenu, meuRestaurante};
+
+console.log(meuRestaurante.consumption)
