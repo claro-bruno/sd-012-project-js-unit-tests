@@ -15,11 +15,11 @@
 const average = (xablau) => {
   if (xablau.length === 0 || typeof (xablau) !== 'object') {
     return undefined;
-  };
+  }
   let valor = 0;
   for (let index = 0; index < xablau.length; index += 1) {
-    valor += xablau[index]
+    valor += xablau[index];
   }
-  return Math.round(valor / xablau.length)
+  return Math.round(valor / xablau.length);
 };
 module.exports = average;
