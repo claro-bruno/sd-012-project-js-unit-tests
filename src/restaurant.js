@@ -83,6 +83,8 @@ const createMenu = (object) => ({
  fetchMenu: () => object,
 });
 
+const meuRestaurante = createMenu({ food: {}, drink: {} })
+
 module.exports = createMenu;
 
-console.log(typeof createMenu())
+console.log(meuRestaurante.fetchMenu())
