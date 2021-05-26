@@ -27,8 +27,5 @@ const circle = (radius) => {
     circumference: 2 * PI * radius,
   };
 };
-let lixo = circle(1);
-console.log(Object.keys(lixo));
-
 
 module.exports = circle;
