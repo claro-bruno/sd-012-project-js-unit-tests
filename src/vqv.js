@@ -18,11 +18,11 @@
 
 const vqv = (nome, idade) => {
   if (typeof nome === 'string' && typeof idade === 'number') {
-    const par = `Oi, meu nome é ${nome}!
-    Tenho ${idade} anos,
-    trabalho na Trybe e mando muito em programação!
-    #VQV!`;
-    return par;
+  const par = `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
+  return par;
   }
   return undefined;
 };
