@@ -83,13 +83,41 @@ function addOrder(orderValue) {
   this.consumption.push(orderValue);
 }
 
+function totalSum() {
+  const consumptionList = this.consumption;
+  let menuList = this.fetchMenu();
+  let sum = 0;
+  consumptionList.forEach((element) => {
+    if (menuList.food[element] !== undefined) {
+      sum += menuList.food[element];
+    }
+    if (menuList.drink[element] !== undefined) {
+      sum += menuList.drink[element];
+    }
+  });
+  return sum;
+}
+
 const createMenu = (menuObj) => {
   let menu = {
     fetchMenu: () => menuObj,
     consumption: [],
     order: addOrder,
+    pay: totalSum,
   };
   return menu;
 };
+
+// const inMenu = {
+//   food: { coxinha: 3.9, sopa: 9.9 },
+//   drink: { agua: 3.9, cerveja: 6.9 },
+// };
+
+// let objetoRetornado = createMenu(inMenu);
+// objetoRetornado.order('coxinha');
+// objetoRetornado.order('agua');
+// objetoRetornado.order('coxinha');
+// console.log(objetoRetornado.fetchMenu());
+// console.log(objetoRetornado.pay());
 
 module.exports = createMenu;
