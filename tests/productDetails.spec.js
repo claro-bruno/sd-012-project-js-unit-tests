@@ -39,7 +39,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     assert.notDeepStrictEqual(productDetails('Gel', 'Escova')[0], productDetails('Gel', 'Escova')[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.strictEqual(productDetails('Gel', 'Escova')[0].details.productId.endsWith('123'), true);
-    assert.strictEqual(productDetails('Gel', 'Escova')[1].details.productId.endsWith('123'), true);
+    assert.strictEqual(productDetails('Gel', 'Escova').every((item) => item.details.productId.endsWith('123')), true);
   });
 });
