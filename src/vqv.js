@@ -17,10 +17,10 @@
 */
 
 const vqv = (nome, idade) => {
-  [`Oi, meu nome é ${nome}!
-Tenho ${idade} anos,
-trabalho na Trybe e mando muito em programação!
-#VQV!`]
+const primeiro = `Oi, meu nome é ${nome}!\n`;
+const segundo = `Tenho ${idade} anos,\n`;
+const terceiro = 'trabalho na Trybe e mando muito em programação!\n';
+const ultimo = '#VQV!';
 };
 
 module.exports = vqv;
