@@ -12,16 +12,16 @@
     - average([1, '2']) // Retorno: undefined;
 */
 const average = (array) => {
-  if ( array.length === 0){
+  if (array.length === 0) {
     return undefined;
   }
   let soma = 0;
-  
-  for (key of array) {
-    if (typeof key !== "number") {
+
+  for (let key of array) {
+    if (typeof key !== 'number') {
       return undefined;
-    } 
-      soma += key;
+    }
+    soma += key;
   }
   return Math.round(soma / array.length);
 };
