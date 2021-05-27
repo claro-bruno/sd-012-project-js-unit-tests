@@ -12,7 +12,14 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+// Referência: https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
+// Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+// Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 
+const average = (array) => {
+    console.log(Math.round(array.reduce((a, b) => a + b, 0) / array.length));
+};
+
+average();
 
 module.exports = average;
