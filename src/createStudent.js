@@ -14,15 +14,16 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
-
+const feedback = () => 'Eita pessoa boa!';
 const createStudent = (estudante) => {
   if (estudante !== null) {
     return {
       name: estudante,
-      feedback: () => 'Eita pessoa boa!',
+      feedback: feedback(),
     };
   }
 };
 
 module.exports = createStudent;
 console.log(createStudent('Camila'));
+// Alteração feita com a ajuda do Ronald na mentoria.
