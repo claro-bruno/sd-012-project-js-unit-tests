@@ -21,10 +21,9 @@
 
 const calculator = {
   add: (num1, num2) => num1 + num2,
-  mult: (num1, num2) =>  num1 * num2 ,
-  div: (num1, num2) => Math.trunc(num1 / num2) ,
-  sub: (num1, num2) => num1 - num2 ,
+  mult: (num1, num2) => num1 * num2,
+  div: (num1, num2) => Math.trunc(num1 / num2),
+  sub: (num1, num2) => num1 - num2,
 };
-console.log(calculator.mult(2, 2))
 // fonte sobre arredondar para baixo: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
 module.exports = calculator;
