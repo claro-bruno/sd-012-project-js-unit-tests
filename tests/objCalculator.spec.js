@@ -21,7 +21,6 @@ const calculator = require('../src/objCalculator');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-
 describe('7 - Implemente a função `objCalculator`', () => {
   it('Verifica se a função `objCalculator` retorna os valores esperados', () => {
     assert.strictEqual(calculator.add(1, 3), 4);
