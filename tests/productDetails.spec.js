@@ -38,10 +38,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       let contem1 = productDetails('um','dois')
       let contem2 = contem1[0]
       let contem3 = contem1[1]
+      let complicado = productDetails()[0].details.productId.split('undefined')[1]
+      let complicado1 = productDetails()[1].details.productId.split('undefined')[1]
       assert.notDeepStrictEqual(produtos,'array')
       assert.strictEqual(contem, 2)
       assert.deepStrictEqual(produtos, 'object')
       assert.notDeepStrictEqual(contem2, contem3)
+      assert.deepStrictEqual(complicado, complicado1)
 
     // Teste que o retorno da função é um array.
     // Teste que o array retornado pela função contém dois itens dentro.
