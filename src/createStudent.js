@@ -19,9 +19,9 @@ const createStudent = (nome) => {
   const feedback = () => 'Eita pessoa boa!';
   const newStudent = {
     name: nome,
-    feedback: feedback(),
+    feedback: feedback,
   };
   return newStudent;
 };
-
+console.log(createStudent('Pedro'));
 module.exports = createStudent;
