@@ -97,7 +97,7 @@ const returnTotal = () => {
   total = 0;
   const orders = rest.consumption;
   orders.forEach(checkProductRestaurant);
-  return total;
+  return total * 1.1;
 };
 
 const createMenu = (products) => {
