@@ -36,6 +36,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.deepStrictEqual(typeof(productDetails('Alcool gel', 'Máscara')[1] ), 'object'); // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.notDeepStrictEqual(JSON.stringify(productDetails('Alcool gel', 'Máscara')[0]), JSON.stringify(productDetails('Alcool gel', 'Máscara')[1])) // Teste que os dois objetos são diferentes entre si. referencia: https://pt.stackoverflow.com/questions/291203/como-comparar-se-dois-objetos-javascript-s%C3%A3o-iguais
     assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.endsWith('123'), true);// (Difícil) Teste que os dois productIds terminam com 123.
-    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.endsWith('123'), true); //referencia:  https://www.w3schools.com/jsref/jsref_endswith.asp
+    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.endsWith('123'), true); //referencia: https://www.w3schools.com/jsref/jsref_endswith.asp
   });
 });
