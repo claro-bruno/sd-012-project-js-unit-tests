@@ -41,5 +41,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const products = productDetails('Alcool', 'Máscara');
     assert.notDeepStrictEqual(products[0], products[1]);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    const regExpOneTwoThree = /123/;
+    const haveOneTwoThree = regExpOneTwoThree.test(products[0].details.productId) && regExpOneTwoThree.test(products[1].details.productId);
+    assert.deepStrictEqual(haveOneTwoThree, true);
   });
 });
