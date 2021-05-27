@@ -1,4 +1,4 @@
-const assert = require('assert');
+  const assert = require('assert');
 const productDetails = require('../src/productDetails');
 
 /*
@@ -30,12 +30,12 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.deepStrictEqual(Array.isArray(productDetails('Alcool gel', 'Máscara' )), true); // Teste que o retorno da função é um array. referencia: https://cibersistemas.pt/tecnologia/como-verificar-se-um-array-javascript-esta-vazio-ou-nao-com-length/#:~:text=Para%20verificar%20se%20uma%20matriz,ele%20est%C3%A1%20vazio%20ou%20n%C3%A3o.
+    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara').length, 2); // Teste que o array retornado pela função contém dois itens dentro.
+    assert.deepStrictEqual(typeof(productDetails('Alcool gel', 'Máscara')[0] ), 'object');
+    assert.deepStrictEqual(typeof(productDetails('Alcool gel', 'Máscara')[1] ), 'object'); // Teste que os dois itens dentro do array retornado pela função são objetos.
+    assert.notDeepStrictEqual(JSON.stringify(productDetails('Alcool gel', 'Máscara')[0]), JSON.stringify(productDetails('Alcool gel', 'Máscara')[1])) // Teste que os dois objetos são diferentes entre si. referencia: https://pt.stackoverflow.com/questions/291203/como-comparar-se-dois-objetos-javascript-s%C3%A3o-iguais
+    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.endsWith('123', productDetails('Alcool gel', 'Máscara')[0].details.productId.length), true);// (Difícil) Teste que os dois productIds terminam com 123.
+    /* JSON.stringify(productDetails('Alcool gel', 'Máscara')[0].length */
   });
 });
