@@ -81,15 +81,15 @@
 // ```
 // *REQUISITO 8*
 
-function orderFromMenu(request) {
-  this.consumption.push(request);
-}
+        /* function orderFromMenu(request) {
+          this.consumption.push(request);
+        }
 
-const createMenu = (objeto) => ({
-  fetchMenu: () => objeto,
-  consumption: [],
-  order: orderFromMenu,
-});
+        const createMenu = (objeto) => ({
+          fetchMenu: () => objeto,
+          consumption: [],
+          order: orderFromMenu,
+        }); */
 
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
@@ -100,31 +100,31 @@ const createMenu = (objeto) => ({
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 // *REQUISITO 12*
-/* 
-const fetchMenu = () => ({
-  food: { coxinha: 3.9, sopa: 9.9 },
-  drink: { agua: 3.9, cerveja: 6.9 },
-});
 
-const consumption = [];
-const orderFromMenu = (request) => {
-  consumption.push(request);
-};
-orderFromMenu('coxinha');
-orderFromMenu('coca');
-orderFromMenu('agua');
+function orderFromMenu(request) {
+  this.consumption.push(request);
+}
 
-// const totalPaY = () => {
-//   consumption
-// };
+function calculateTotalPay() {
+  const fetchMenu = this.fetchMenu();
+  const totalConsumption = this.consumption;
+  let total = 0;
+  totalConsumption.forEach((consumo) => {
+    if (fetchMenu.food[consumo]) {
+      total += fetchMenu.food[consumo];
+    }
+    if (fetchMenu.drinks[consumo]) {
+      total += fetchMenu.drinks[consumo];
+    }
+  });
+  return (total * 1.1).toFixed(2);
+}
 
-const createMenu = (myMenu) => ({
-  fetchMenu: myMenu,
-  consumption,
+const createMenu = (objeto) => ({
+  fetchMenu: () => objeto,
+  consumption: [],
   order: orderFromMenu,
-  // pay: totalPaY,
+  pay: calculateTotalPay,
 });
-
-console.log(createMenu(fetchMenu())); */
 
 module.exports = createMenu;
