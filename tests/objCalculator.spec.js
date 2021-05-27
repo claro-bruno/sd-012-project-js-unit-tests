@@ -28,5 +28,6 @@ describe('7 - Implemente a função `objCalculator`', () => {
     assert.strictEqual(calculator.mult(10, 3), 30);
     assert.strictEqual(calculator.div(5, 2), 2);
     assert.strictEqual(calculator.sub(1, 3), -2);
+    assert(calculator.add)
   });
 });
