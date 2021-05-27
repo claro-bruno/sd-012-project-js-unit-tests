@@ -44,7 +44,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.deepStrictEqual((productDetails('Alcool gel', 'Máscara').values[0] === productDetails('Alcool gel', 'Máscara').values[1]), true);
 
     // (Difícil) Teste que os dois productIds terminam com 123
-    assert.strictEqual(/123$/.test(productDetails('Alcool gel', 'Máscara')[0].details.productId
-    || productDetails('Alcool gel', 'Máscara')[1].details.productId), true);
+    assert.strictEqual(/123$/.test(productDetails('Alcool gel', 'Máscara')[0].details.productId || productDetails('Alcool gel', 'Máscara')[1].details.productId), true);
   });
 });
