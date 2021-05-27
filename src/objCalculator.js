@@ -19,6 +19,12 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
-
+const calculator = {
+  add(num1, num2) { return num1 + num2 },
+  mult(num1, num2) { return num1 * num2 },
+  div(num1, num2) { return Math.trunc(num1 / num2) },
+  sub(num1, num2) { return num1 - num2 },
+};
+//fonte de conhecimento sobre as abreviações: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Method_definitions
+// fonte sobre arredondar para baixo: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
 module.exports = calculator;

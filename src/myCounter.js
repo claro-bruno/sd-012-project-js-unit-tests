@@ -21,9 +21,12 @@ const myCounter = () => {
     myArray.push(counter);
     for (var counter = 2; counter <= 3; counter += 1) {
       myArray.push(counter);
+      //console.log(myArray)
     }
+    //console.log(myArray)
   }
-  return myArray;
+  //return myArray;
+  console.log(myArray)
 };
-
+myCounter()
 module.exports = myCounter;
