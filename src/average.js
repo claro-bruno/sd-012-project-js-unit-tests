@@ -28,6 +28,6 @@ const average = (array) => {
   return Math.round(array.reduce((a, b) => a + b, 0) / array.length);
 };
 
-average();
+console.log(average());
 
 module.exports = average;
