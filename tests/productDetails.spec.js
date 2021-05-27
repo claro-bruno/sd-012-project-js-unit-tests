@@ -33,16 +33,17 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
    
     // ESCREVA SEUS TESTES ABAIXO:
-      let produtos = typeof(productDetails('um','dois'))
+      let produtos = Array.isArray(productDetails('um','dois'))
+      let produtos2 = typeof(productDetails('um','dois'))
       let contem = productDetails('um','dois').length
       let contem1 = productDetails('um','dois')
       let contem2 = contem1[0]
       let contem3 = contem1[1]
-      let complicado = productDetails()[0].details.productId.split('undefined')[1]
-      let complicado1 = productDetails()[1].details.productId.split('undefined')[1]
-      assert.notDeepStrictEqual(produtos,'array')
+      let complicado = productDetails('um','dois')[0].details.productId.endsWith('123')
+      let complicado1 = productDetails('um','dois')[1].details.productId.endsWith('123')
+      assert.strictEqual(produtos, true)
       assert.strictEqual(contem, 2)
-      assert.deepStrictEqual(produtos, 'object')
+      assert.deepStrictEqual(produtos2, 'object')
       assert.notDeepStrictEqual(contem2, contem3)
       assert.deepStrictEqual(complicado, complicado1)
 
