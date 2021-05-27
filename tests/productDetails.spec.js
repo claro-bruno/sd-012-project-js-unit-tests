@@ -32,6 +32,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
+
     assert.strictEqual(Array.isArray(productDetails('Mascara', 'Luva')), true);// Teste que o retorno da função é um array.
     
     assert.strictEqual(productDetails('Mascara', 'Luva').length, 2);// Teste que o array retornado pela função contém dois itens dentro.
@@ -42,5 +43,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     
     assert.strictEqual(productDetails('Mascara', 'Luva')[0].details.productId.endsWith('123'), true);
     assert.strictEqual(productDetails('Mascara', 'Luva')[1].details.productId.endsWith('123'), true);// (Difícil) Teste que os dois productIds terminam com 123.
+
   });
 });
