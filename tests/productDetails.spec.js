@@ -38,8 +38,8 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.deepStrictEqual(typeof (detailProduct[1]), 'object');
     assert.notDeepStrictEqual((detailProduct[0]), (detailProduct[1]));
     //mentoria (dificil)(endswith);
-    assert.strictEqual(detailProduct[0].details.productID.endswith('123'), true);
-    assert.strictEqual(detailProduct[1].details.productID.endswith('123'), true);
+    assert.strictEqual(detailProduct[0].details.productId.endsWith('123'), true);
+    assert.strictEqual(detailProduct[1].details.productId.endsWith('123'), true);
 
 
     // ESCREVA SEUS TESTES ABAIXO:
