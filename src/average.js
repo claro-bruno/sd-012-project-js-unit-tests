@@ -18,12 +18,12 @@ const average = (array) => {
     return undefined;
   }
   for (let index = 0; index < array.lenght; index += 1) {
-    if (typeof array[index] === 'number') {
-      valor += array[index] / array.lenght;
-    } else {
+    if (typeof array[index] !== 'number') {
       return undefined;
     }
-  } 
-  return Math.round(valor);
+    valor += array[index];
+  }
+  return Math.round(valor / array.lenght);
 };
+
 module.exports = average;
