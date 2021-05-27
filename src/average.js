@@ -17,9 +17,17 @@
 // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round
 
 const average = (array) => {
-    console.log(Math.round(array.reduce((a, b) => a + b, 0) / array.length));
+  for (let index = 0; index < array.length; index += 1) {
+    if (typeof array[index] !== 'number') {
+      return undefined; 
+    }
+  }
+  if (array.length === 0) {
+    return undefined;
+  }
+  return Math.round(array.reduce((a, b) => a + b, 0) / array.length);
 };
 
-average();
+console.log(average([]));
 
 module.exports = average;
