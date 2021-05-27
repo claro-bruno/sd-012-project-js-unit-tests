@@ -43,6 +43,5 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const checkProduct1 = productDetails('T', 'B')[0].details.productId.endsWith('123');
     const checkProduct2 = productDetails('T', 'B')[1].details.productId.endsWith('123');
     assert.strictEqual(checkProduct1, checkProduct2);
-
   });
 });
