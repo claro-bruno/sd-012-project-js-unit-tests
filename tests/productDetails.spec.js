@@ -32,7 +32,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     const detailProduct = productDetails('Alcool', 'Máscara');
     //mentoria(array.isarray);
-    assert.strictEqual(Array.isarray(detailProduct), true);
+    assert.strictEqual(Array.isArray(detailProduct), true);
     assert.strictEqual(detailProduct.length, 2);
     assert.deepStrictEqual(typeof (detailProduct[0]), 'object');
     assert.deepStrictEqual(typeof (detailProduct[1]), 'object');
