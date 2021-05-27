@@ -48,5 +48,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       assert.strictEqual(/.+123$/g.test(product), true);
     }
     assert.strictEqual(/.+123/g.test(productDetails('Alcool gel', 'Máscara')[0].details.productId), true)
+
+
   });
 });
