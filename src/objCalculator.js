@@ -20,10 +20,10 @@
 */
 
 const calculator = {
-  add: (number1, number2) => parseInt(number1 + number2),
-  mult: (number1, number2) => parseInt(number1 * number2),
-  div: (number1, number2) => parseInt(number1 / number2),
-  sub: (number1, number2) => parseInt(number1 - number2),
+  add: (number1, number2) => parseInt(number1 + number2, 10),
+  mult: (number1, number2) => parseInt(number1 * number2, 10),
+  div: (number1, number2) => parseInt(number1 / number2, 10),
+  sub: (number1, number2) => parseInt(number1 - number2, 10),
 };
 console.log(calculator.div(3, 2));
 
