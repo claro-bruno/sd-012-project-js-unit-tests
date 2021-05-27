@@ -11,7 +11,7 @@ const productDetails = require('../src/productDetails');
   Comportamento:
   productDetails('Alcool gel', 'Máscara') // Retorna:
   [
-    {
+{    
       name: 'Alcool gel'
       details: {
         productId: 'Alcool gel123'
@@ -35,8 +35,18 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que o retorno da função é um array.
     assert.strictEqual(Array.isArray(productDetails('Alcool gel', "Máscara")), true)
     // Teste que o array retornado pela função contém dois itens dentro.
+    assert.strictEqual(productDetails('Alcool gel', 'Máscara').length, 2);
     // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
+    assert.strictEqual(typeof productDetails('Alcool gel', 'Máscara'), 'object')
+    // Teste que os dois objetos são diferentes entre si.    
+    assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[0] !== productDetails('Alcool gel', 'Máscara')[1], true)
+    assert.notDeepStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1])
     // (Difícil) Teste que os dois productIds terminam com 123.
+    const functionOfDetails = productDetails('Alcool gel', 'Máscara');
+    for(let index = 0; index < functionOfDetails.length; index += 1) {
+      const product = functionOfDetails[index].details.productId;
+      assert.strictEqual(/.+123$/g.test(product), true);
+    }
+    assert.strictEqual(/.+123/g.test(productDetails('Alcool gel', 'Máscara')[0].details.productId), true)
   });
 });
