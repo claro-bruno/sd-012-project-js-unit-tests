@@ -19,6 +19,8 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
+const calculator = {
+  add: (number1, number2) => number1 + number2,
+};
 
 module.exports = calculator;
