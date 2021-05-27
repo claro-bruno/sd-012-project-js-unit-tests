@@ -56,11 +56,11 @@
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
 // *REQUISITO 6*
-const createMenu = (objeto) => ({
-  fetchMenu: () => objeto,
-  consumption: [],
-});
-console.log(createMenu());
+       /*  const createMenu = (objeto) => ({
+          fetchMenu: () => objeto,
+          consumption: [],
+        });
+        console.log(createMenu()); */
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -80,20 +80,16 @@ console.log(createMenu());
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // *REQUISITO 8*
-// const restaurant = {
-//   fetchMenu: () => 'myMenu',
-//   consumption: [],
-//   // order: orderFromMenu,
-// };
 
-// const createMenu = (myMenu) => restaurant;
+function orderFromMenu(request) {
+  this.consumption.push(request);
+}
 
-// const orderFromMenu = (request) => {
-//   restaurant.consumption = [request];
-// };
-// // orderFromMenu('coxinha');
-
-// console.log(createMenu());
+const createMenu = (objeto) => ({
+  fetchMenu: () => objeto,
+  consumption: [],
+  order: orderFromMenu,
+});
 
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
