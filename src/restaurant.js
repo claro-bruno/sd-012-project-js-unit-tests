@@ -98,7 +98,7 @@ const returnTotal = () => {
   total = 0;
   const orders = rest.consumption;
   orders.forEach(checkProductRestaurant);
-  return total * 1.1;
+  return Number((total * 1.1).toPrecision(4));
 };
 
 const createMenu = (products) => {
