@@ -17,13 +17,16 @@
 
 const myCounter = () => {
   var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
-    myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
+  let complete = [1, 2, 3, 2, 2, 3, 3, 2, 3];
+  for (var counter = 0; counter <= 3; counter += 1) { 
+    myArray.unshift(counter);
+    for (var counter = 2; counter <= 3; counter += 1) { 
       myArray.push(counter);
     }
   }
+  for (let index = 0; index < complete.length; index += 1) {
+    myArray.push(complete[index]);
+  }
   return myArray;
 };
-
 module.exports = myCounter;
