@@ -85,6 +85,9 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
+    const menu = createMenu();
+    menu.order('coxinha');
+    assert.deepStrictEqual(menu.consumption, ['coxinha']);
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
