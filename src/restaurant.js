@@ -90,7 +90,7 @@ const createMenu = (obj) => ({
     if (menu.food[request]) this.price += menu.food[request];
     if (menu.drink[request]) this.price += menu.drink[request];
   },
-  pay() { parseFloat((this.price * 1.1).toFixed(2)); },
+  pay() { return parseFloat((this.price * 1.1).toFixed(2)); },
 });
 
 module.exports = createMenu;
