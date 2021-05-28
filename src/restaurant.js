@@ -82,9 +82,25 @@
 const createMenu = (menu) => {
   const menuObj = {
     menu,
-    fetchMenu: () => menu,
+    fetchMenu() { return this.menu; },
     consumption: [],
     order(product) { this.consumption.push(product); },
+    pay() {
+      let total = 0;
+      for (const product of this.consumption) {
+        for (const food in this.menu.food) {
+          if (food === product) {
+            total += this.menu.food[food];
+          }
+        }
+        for (const drink in this.menu.drinks) {
+          if (drink === product) {
+            total += this.menu.drinks[drink];
+          }
+        }
+      }
+      return total;
+    },
   };
   return menuObj;
 };
