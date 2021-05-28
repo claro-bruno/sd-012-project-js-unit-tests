@@ -13,40 +13,29 @@
 */
 
 const average = (array) => {
-  // meu código a qui
+  // testa se o array está vazio
+  if (array.length === 0) {
+    return undefined;
+  }
+  
   // contador inicial dos valores
   let count = 0;
-  // criar um for para calcular a média dos ítens no array
+
+  // criar um for para verificar se algum ítem não é número. Caso todos os itens sejam numeros some-os de um em um
   for (let index = 0; index < array.length; index += 1) {
-    // a formula da média é (x1+x2+xn)/qtdn
+    if (typeof array[index] !== 'number') {
+      return undefined;
+    }
     // some todos os ítens do array
     count += array[index];
   }
+
   // faça a média dividindo a soma de todos os ítens pela quantidade de intens no array
-  let media = count / (array.length);
+  let media = count / array.length;
   // faça a média ser arredondada para o inteiro mais próximo
   let mediaCeil = Math.round(media);
   // retorne a média arredondada
   return mediaCeil;
 };
-// console.log(average());
-// Criar um array de testes 
-// let arrTest = [3, '10', '', 10, '9', 9, 10];
-// let arrTest = [3, 10, 9, 10];
-// let arrTest = 'teste';
-let arrTest = '';
-// console.log(typeof(arrTest));
-// console.log(average(arrTest));
-// criar um for para verificar se algum ítem não é número
-for (let index = 0; index < arrTest.length; index += 1) {
-  if (typeof (arrTest[index]) !== 'number') {
-    console.log('undefined');
-    break;
-  } else {
-    console.log(`${arrTest[index]} é um número`);
-  }
-}
-
-// console.log(typeof (arrTest[1]));
 
 module.exports = average;
