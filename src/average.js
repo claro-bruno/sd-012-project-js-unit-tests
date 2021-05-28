@@ -13,28 +13,18 @@
 */
 
 const average = (array) => {
-  // testa se o array está vazio
   if (array.length === 0) {
     return undefined;
   }
-  
-  // contador inicial dos valores
   let count = 0;
-
-  // criar um for para verificar se algum ítem não é número. Caso todos os itens sejam numeros some-os de um em um
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
       return undefined;
     }
-    // some todos os ítens do array
     count += array[index];
   }
-
-  // faça a média dividindo a soma de todos os ítens pela quantidade de intens no array
   let media = count / array.length;
-  // faça a média ser arredondada para o inteiro mais próximo
   let mediaCeil = Math.round(media);
-  // retorne a média arredondada
   return mediaCeil;
 };
 
