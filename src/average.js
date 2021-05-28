@@ -24,7 +24,7 @@ let soma = 0;
     }
     soma += index;
   }
-  return Math.round(soma / array.length)
+  return Math.round(soma / array.length);
 };
   // add your implementation here
 
