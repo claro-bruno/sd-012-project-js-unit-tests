@@ -21,6 +21,6 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
     assert.deepStrictEqual(numbers([1, 2, 3, 4, 5]), true);
     assert.deepStrictEqual(numbers([1, 2, '3', 4, 5]), false);
     assert.deepStrictEqual(numbers([1, 'a', 3]), false);
-    assert.deepStrictEqual(numbers([]), false);
+    assert.deepStrictEqual(numbers([' ']), false);
   });
 });
