@@ -17,13 +17,31 @@
 
 const myCounter = () => {
   var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  let obj = {
+  forOne: () => {
+    for (var counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
+      for (var counter = 2; counter <= 3; counter += 1) {
+        myArray.push(counter);
+      }
+    }
+    return myArray;
+  },
+  forTwo: () => {
+    for (var counter = 1; counter <= 3; counter += 1) {
+      myArray.push(counter);
+    }
+    for (var counter = 2; counter <= 3; counter += 1) {
+      myArray.push(counter);
+      myArray.push(counter);
+    } 
     for (var counter = 2; counter <= 3; counter += 1) {
       myArray.push(counter);
     }
-  }
-  return myArray;
+    return myArray;
+  },
+  };
+  return obj.forOne() && obj.forTwo();
 };
 
 module.exports = myCounter;
