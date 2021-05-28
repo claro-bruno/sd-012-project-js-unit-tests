@@ -27,6 +27,4 @@ const calculator = {
   sub: (number1, number2) => Math.round(number1 - number2), 
 };
 
-console.log(calculator.div(1, 3));
-
 module.exports = calculator;
