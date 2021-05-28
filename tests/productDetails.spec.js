@@ -40,5 +40,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     assert.deepStrictEqual(productDetails('a', 'b')[0] !== productDetails('a', 'b')[1], true);
     // (Difícil) Teste que os dois productIds terminam com 123.
+    //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+    assert.deepStrictEqual((productDetails('a', 'b')[0, 1].details.productId.slice(-3)), '123');
   });
 });
