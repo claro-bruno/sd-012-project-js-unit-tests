@@ -45,7 +45,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const pro1length = verifyDetails[0].details.productId.length;
     const pro2length = verifyDetails[1].details.productId.length;
     const product1ID = `${verifyDetails[0].details.productId[pro1length - 3]}${verifyDetails[0].details.productId[pro1length - 2]}${verifyDetails[0].details.productId[pro1length - 1]}`;
-    const product2ID = `${verifyDetails[1].details.productId[pro2length - 3]}${verifyDetails[1].details.productId[pro2length - 2]}${verifyDetails[1].details.productId[pro2length - 1]}`;
+     const product2ID = `${verifyDetails[1].details.productId[pro2length - 3]}${verifyDetails[1].details.productId[pro2length - 2]}${verifyDetails[1].details.productId[pro2length - 1]}`;
     assert.deepStrictEqual(product1ID === '123' && product2ID === '123', true);
   });
 });
