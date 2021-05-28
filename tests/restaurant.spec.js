@@ -67,6 +67,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
+    assert.deepStrictEqual(createMenu({ food: { coxinha: 3.90 }, drink: { agua: 2.00 } }).fetchMenu(), { food: { coxinha: 3.90 }, drink: { agua: 2.00 } });
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
