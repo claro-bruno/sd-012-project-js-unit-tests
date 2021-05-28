@@ -56,7 +56,7 @@
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
-
+// Parei aqui
 // PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
 // DICA: para criar isso, você pode: 
@@ -79,6 +79,17 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (obj) => ({ fetchMenu: () => obj,
+  consumption: [],
+  // A ideia do request usando this. foi baseada no código de Roberval Filho da turma 12.
+  price: 0,
+  order: (request) => {
+    this.consumption.push(request);
+    const menu = this.fetchMenu();
+    if (menu.food[request]) this.price += menu.food[request];
+    if (menu.drink[request]) this.price += menu.drink[request];
+  },
+  pay: () => parseFloat((this.price * 1.1).toFixed(2)),
+});
 
 module.exports = createMenu;
