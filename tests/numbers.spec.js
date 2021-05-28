@@ -19,9 +19,9 @@ const numbers = require('../src/numbers');
 describe('2 - Implemente os casos de teste para a função `numbers`', () => {
   it('Verifica se a função `numbers`retorna um array e se o array retornado contém somente números', () => {
     assert.deepStrictEqual(numbers, ([1, 2, 3, 4, 5]), true);
-    assert.deeepStrictEqual(numbers,([1, 2, '3', 4, 5]), false);
+    assert.deepStrictEqual(numbers,([1, 2, '3', 4, 5]), false);
     assert.deepStrictEqual(numbers,([1, 'a', 3]), false);
-    assert.deeepStrictEqual(numbers,([' ']), false);
+    assert.deepStrictEqual(numbers,([' ']), false);
     //assert.fail();
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
