@@ -27,6 +27,6 @@ const createStudent = (nome) => {
   return student;
 };
 
-console.log(createStudent('Julio').feedback);
+console.log(createStudent('Julio').feedback());
 
 module.exports = createStudent;
