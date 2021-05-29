@@ -20,7 +20,7 @@ const average = (array) => {
     if (typeof array[index] !== 'number') {
       return undefined;
     }
-    sum = sum + array[index];
+    sum += array[index];
   }
   return result = Math.round(sum / array.length)
 }
