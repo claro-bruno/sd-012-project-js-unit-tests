@@ -95,7 +95,9 @@ const createMenu = (objeto) => {
 }
 
 // 1 console.log(createMenu({ food: {}, drink: {}}));
+// 1 console.log(typeof createMenu().fetchMenu);
 // 2 console.log(createMenu({ food: {}, drink: {} }).fetchMenu());
+console.log(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu()));
 // 3 console.log(createMenu({ food: {}, drink: {} }).fetchMenu());
 // 4 console.log(createMenu().consumption);
 // 5 console.log(createMenu({ food: {}, drink: {}}).order('coxinha')); 
