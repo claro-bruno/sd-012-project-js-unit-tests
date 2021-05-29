@@ -24,6 +24,8 @@
   ]
 */
 
+//fonte e inspiracao no codigo de Julio Barros e Gabriel Bueno
+
 const productDetails = (firstProduct, secondProduct) => [
   {
     name: firstProduct,

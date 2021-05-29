@@ -14,6 +14,7 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+//fonte e inspiracao no codigo de Julio Barros
 
 const createStudent = (nome) => {
   const student = {

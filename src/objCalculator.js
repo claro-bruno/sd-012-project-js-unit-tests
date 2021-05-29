@@ -19,6 +19,8 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
+////fonte e inspiracao no codigo de Gabriel Bueno
+
 const calculator = {
   add: (num1, num2) => num1 + num2,
   mult: (num1, num2) => num1 * num2,
