@@ -1,4 +1,3 @@
-const { strict } = require('assert');
 const assert = require('assert');
 const productDetails = require('../src/productDetails');
 
