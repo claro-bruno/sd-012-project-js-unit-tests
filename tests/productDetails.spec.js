@@ -41,7 +41,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const object1 = Object.values(productDetails('Alcool gel', 'Máscara')[0]);
     const object2 = Object.values(productDetails('Alcool gel', 'Máscara')[1]);
     assert.strictEqual(object1 === object2, false);
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    // Teste que os dois productIds terminam com 123.
     // Codigo inspirado no git do Gabriel Bueno
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.substr(-3), '123');
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.substr(-3), '123');
