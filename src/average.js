@@ -13,17 +13,23 @@
 */
 
 const average = (myArray) => {
-for (let index = 0; index < myArray.length; index += 1) {
-  if ( ) {
-    return 2;
-  } if ( ) {
-    return 1;
-  } else { 
+  let array = 0; /* A var array é do tipo number, por isso = 0 */
+  let result = 0; /* A var array é do tipo number, por isso = 0 */
+
+  if (myArray.length === 0) {
     return undefined;
   }
+  for (let index = 0; index < myArray.length; index += 1) {
+    if (typeof myArray[index] !== 'number') { /* typeof percorre o array(index) para saber se é verdadeiro minha afirmação! */
+      return undefined; 
+  } else { 
+      array = array + myArray[index]
+  }
+ };
+    return result = Math.round(array / myArray.length); /* Media dos valores da array */
 };
+   
 
 module.exports = average;
 
 // /
-
