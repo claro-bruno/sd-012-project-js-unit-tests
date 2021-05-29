@@ -12,18 +12,18 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average =(valueList)=> {
+const average = (valueList) => {
   let sumNumber = 0;
-  if(valueList.length === 0) {
-    return undefined
-  };
+  if (valueList.length === 0) {
+    return undefined;
+  }
   for (let index = 0; index < valueList.length; index += 1) {
-    if (typeof valueList[index] !== "number"){
+    if (typeof valueList[index] !== 'number') {
       return undefined;
-    };
-    sumNumber = sumNumber + valueList[index];
-  };
-  return Math.round (sumNumber / valueList.length);  
+    }
+    sumNumber += valueList[index];
+  }
+  return Math.round(sumNumber / valueList.length); 
 };
 
 module.exports = average;
