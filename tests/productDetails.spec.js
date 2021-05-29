@@ -33,6 +33,7 @@ const teste2 = productDetails('produto1', 'produto2');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
+    // teste
     assert.strictEqual(teste1, true);
     assert.strictEqual(teste2.length, 2);
     assert.strictEqual(typeof teste2.values(), 'object');
