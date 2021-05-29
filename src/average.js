@@ -18,8 +18,8 @@ const average = (array) => {
   let retorno = '';
 
   for (let numero = 0; numero < array.length; numero += 1) {
-    if (typeof(array[numero]) === 'string' || typeof(array[numero]) === 'object') {
-      retorno = undefined;
+    if (typeof array[numero] === 'string' || typeof array[numero] === 'object') {
+      retorno = "undefined";
       break;
     } else if (array[numero] % 1 !== 0) {
       retorno = Math.round(array[numero]);
@@ -28,7 +28,7 @@ const average = (array) => {
     soma += retorno;
     count += 1;
   }
-  return retorno !== undefined ? soma / count : undefinied;
+  return retorno !== "undefined" ? soma / count : undefinied;
 };
 
 module.exports = average;
