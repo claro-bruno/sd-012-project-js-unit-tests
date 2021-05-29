@@ -79,27 +79,40 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+const novoObjeto = { 
+  consumption: [],
+};
+
 const createMenu = (objeto) => { 
   const objetoInicial = objeto;
-  const novoObjeto = { fetchMenu: (objeto2) => {
+  novoObjeto.fetchMenu = (objeto2) => {
     objeto2 = objetoInicial;
     return objeto2;
-    },
   };
-  novoObjeto.consumption = [];
+
   novoObjeto.order = (string) => {
     novoObjeto.consumption.push(string);
     return novoObjeto.consumption;
   };
+
   return novoObjeto;
 };
 
-// 1 console.log(createMenu({ food: {}, drink: {}}));
-// 1 console.log(typeof createMenu().fetchMenu);
-// 2 console.log(createMenu({ food: {}, drink: {} }).fetchMenu());
-// 2 console.log(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu()));
-// 3 console.log(createMenu({ food: {}, drink: {} }).fetchMenu());
-// 4 console.log(createMenu().consumption);
-// 5 console.log(createMenu({ food: {}, drink: {}}).order('coxinha')); 
+// console.log(createMenu({ food: {}, drink: {}})); // teste 1
+// console.log(typeof createMenu().fetchMenu); // teste 1
+// console.log(createMenu({ food: {}, drink: {} }).fetchMenu()); // teste 2
+// console.log(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu())); // teste 2
+// console.log(createMenu({ food: {}, drink: {} }).fetchMenu()); // teste 3
+// console.log(createMenu().consumption); // teste 4
+// console.log(createMenu({ food: {}, drink: {}}).order('coxinha')); // teste 5
+/* TESTES 6
+createMenu({food: {}, drink: {}}).order('coxinha');
+createMenu({food: {}, drink: {}}).order('agua');
+createMenu({food: {}, drink: {}}).order('sopa');
+createMenu({food: {}, drink: {}}).order('sasimi');
+console.log(createMenu({food: {}, drink: {}}).consumption);
+*/
+
+// console.log(createMenu());
 
 module.exports = createMenu;
