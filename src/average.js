@@ -11,7 +11,7 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
-//fonte e inspiracao no codigo de Julio Barros
+// fonte e inspiracao no codigo de Julio Barros
 
 const average = (array) => {
   const size = array.length;
