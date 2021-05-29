@@ -28,7 +28,7 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     //assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
-       //assert(circle(1)) sucesso !!
+       // assert(circle(1)) sucesso !!
     
     // Teste se o objeto retornado tem 3 entradas.
        //assert(circle()) 
