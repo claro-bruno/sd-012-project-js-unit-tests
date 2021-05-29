@@ -239,7 +239,7 @@ Caso a função seja chamada sem nenhum parâmetro, o valor undefined deve ser r
 
 ### 4 - Implemente os casos de teste para a função `circle`
 
-A função `circle` recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência). Se não for especificado um raio, a função retorna `undefined`. Essa função já está implementada no arquivo `src/circle.js`. Escreva os testes para essa função para garantir que a implementação de `circle` está correta.
+A função `circle` recebe o raio de um círculo e retorna um objeto contendo suas informaçõe Se não for especificado um raio, a função retorna `undefined`. Essa função já está implementada no arquivo `src/circle.js`. Escreva os testes para essa função para garantir que a implementação de `circle` está correta.
 
   **O que será avaliado**
 
