@@ -42,7 +42,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const object2 = Object.values(productDetails('Alcool gel', 'Máscara')[1]);
     assert.strictEqual(object1 === object2, false);
     // Teste que os dois productIds terminam com 123.
-    // Codigo inspirado no git do Gabriel Bueno
+    // Codigo inspirado no git do Gabriel Bueno e na documentacao https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.substr(-3), '123');
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.substr(-3), '123');
   });
