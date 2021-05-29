@@ -29,6 +29,6 @@ describe('2 - Implemente os casos de teste para a função `numbers`', () => {
      assert.notStrictEqual(numbers([1, 'a', 3])) 
     
     // Escreva um teste em que a função recebe [' '] e retorna false
-    assert.notStrictEqual(numbers(['']))
+     assert.notStrictEqual(numbers(['']))
   });
 });
