@@ -80,7 +80,10 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (objetoParametro) => {
-  let resultado = { fetchMenu: () => objetoParametro };
+  let resultado = { 
+    fetchMenu: () => objetoParametro,
+    consumption: [],
+  };
 
   return resultado;
 };

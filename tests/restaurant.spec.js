@@ -82,6 +82,8 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
+    const objetoRetornado4 = createMenu({ food: {}, drink: {}});
+    assert.deepStrictEqual(objetoRetornado4.consumption, []);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
