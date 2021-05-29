@@ -220,7 +220,7 @@ A função average recebe um array (tamanho variável) e retorna a média dos va
 
   * Será validado se o teste da função `numbers` verifica se o retorno da função é um array e se o array retornado contém somente números. -->
 
-### 3 - Implemente a função `vqv`
+<!-- ### 3 - Implemente a função `vqv`
 
 Use template literals para escrever uma função que recebe seu nome e sua idade e retorna o parágrafo descrito abaixo:
 
@@ -235,7 +235,7 @@ Caso a função seja chamada sem nenhum parâmetro, o valor undefined deve ser r
 
   **O que será avaliado**
 
-  * Será validado se a função `vqv` retorna a frase esperada com nome e idade.
+  * Será validado se a função `vqv` retorna a frase esperada com nome e idade. -->
 
 ### 4 - Implemente os casos de teste para a função `circle`
 
