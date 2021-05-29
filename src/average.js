@@ -11,9 +11,23 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+const getLenght = (arr) => {
+  let count = 0;
+  for (let i of arr) count += 1;
+  return count;
+};
 
-const average = () => {
-  
+const average = (arr) => {
+  let media = 0;
+  if (getLenght(arr) === 0 || typeof (arr) !== 'object') {
+    return undefined;
+  }
+  for (let item of arr) {
+    if (typeof (item) !== 'number') return undefined;
+    media += item;
+  }
+  media /= getLenght(arr);
+  return media.toFixed();
 };
 
 module.exports = average;
