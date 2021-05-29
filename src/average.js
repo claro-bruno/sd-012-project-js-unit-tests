@@ -20,16 +20,14 @@ const average = (myArray) => {
     return undefined;
   }
   for (let index = 0; index < myArray.length; index += 1) {
-    if (typeof myArray[index] !== 'number') { /* typeof percorre o array(index) para saber se é verdadeiro minha afirmação! */
-      return undefined; 
-  } else { 
-      array = array + myArray[index]
+    if (typeof myArray[index] !== 'number') {
+      /* typeof percorre o array(index) para saber se é verdadeiro minha afirmação! */
+      return undefined;
+    }
+    array += myArray[index];
   }
- };
-    return result = Math.round(array / myArray.length); /* Media dos valores da array */
+  result = Math.round(array / myArray.length); /* Media dos valores da array */
+  return result;
 };
-   
 
 module.exports = average;
-
-// /
