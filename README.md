@@ -284,7 +284,7 @@ Essa função já está implementada no arquivo `src/productDetails.js`. Escreva
 
   * Será validado se o teste da função `productDetails` verifica se ao receber duas strings, o retorno da função é um array de objetos e se cada objeto contém os dados necessários.
 
-### 7 - Implemente a função `objCalculator`
+<!-- ### 7 - Implemente a função `objCalculator`
 Desenvolva um objeto calculator que possui quatro chaves:
   - add;
   - mult;
@@ -295,7 +295,7 @@ Para cada uma delas atribua uma função que realiza a respectiva operação. A 
 
   **O que será avaliado**
 
-  * Será validado se a função `objCalculator` retorna os valores esperados.
+  * Será validado se a função `objCalculator` retorna os valores esperados. -->
 
 ### 8 - Implemente a função `myCounter`
 A função myCounter possui dois loops aninhados que inserem valores dentro de um array. Como podemos perceber, eles vão adicionando valores ao array até sua condição de parada. Corrija a função `myCounter` para que a função retorne o array correto. O arquivo `myCounter.spec.js` contém os testes para `myCounter` já implementados. Implemente a função no arquivo `src/myCounter.js` de forma que ela atenda aos testes propostos.
