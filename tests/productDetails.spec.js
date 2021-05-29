@@ -43,6 +43,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     const obj0 = productDetails()[0];
     const obj1 = productDetails()[1];
     assert.notStrictEqual(obj0, obj1);
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    // Teste que os dois productIds terminam com 123.
   });
 });
