@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
-//const { assert } = require('console');
+const { assert } = require('console');
 const circle = require('../src/circle');
 
 /*
