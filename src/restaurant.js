@@ -81,18 +81,18 @@
 
 const createMenu = (objeto) => { 
   const objetoInicial = objeto;
-  const novoObjeto = { fetchMenu: (objeto) => {
-    objeto = objetoInicial;
-    return objeto;
-    } 
+  const novoObjeto = { fetchMenu: (objeto2) => {
+    objeto2 = objetoInicial;
+    return objeto2;
+    },
   };
   novoObjeto.consumption = [];
   novoObjeto.order = (string) => {
     novoObjeto.consumption.push(string);
     return novoObjeto.consumption;
-  } 
+  };
   return novoObjeto;
-}
+};
 
 // 1 console.log(createMenu({ food: {}, drink: {}}));
 // 1 console.log(typeof createMenu().fetchMenu);
