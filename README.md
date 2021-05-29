@@ -237,13 +237,13 @@ Caso a função seja chamada sem nenhum parâmetro, o valor undefined deve ser r
 
   * Será validado se a função `vqv` retorna a frase esperada com nome e idade. -->
 
-### 4 - Implemente os casos de teste para a função `circle`
+<!-- ### 4 - Implemente os casos de teste para a função `circle`
 
 A função `circle` recebe o raio de um círculo e retorna um objeto contendo suas informações (Raio, Área e Circunferência). Se não for especificado um raio, a função retorna `undefined`. Essa função já está implementada no arquivo `src/circle.js`. Escreva os testes para essa função para garantir que a implementação de `circle` está correta.
 
   **O que será avaliado**
 
-  * Será validado se o teste da função `circle` verifica se ao receber um raio, o retorno da função é um objeto com as informações corretas (Raio, Área e Circunferência).
+  * Será validado se o teste da função `circle` verifica se ao receber um raio, o retorno da função é um objeto com as informações corretas (Raio, Área e Circunferência). -->
 
 ### 5 - Implemente a função `createStudent`
 
