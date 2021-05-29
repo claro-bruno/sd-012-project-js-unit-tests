@@ -24,7 +24,8 @@ const calculator = {
   mult: (value1, value2) => value1 * value2,
   div: (value1, value2) => {
     let result = 0;
-    return result = Math.floor(value1 / value2);
+    result = Math.floor(value1 / value2);
+    return result;
   },
   sub: (value1, value2) => value1 - value2,
 };
