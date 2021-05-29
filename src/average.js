@@ -27,7 +27,7 @@ const average = (arr) => {
     media += item;
   }
   media /= getLenght(arr);
-  return media.toFixed();
+  return Math.round(media);
 };
 
 module.exports = average;
