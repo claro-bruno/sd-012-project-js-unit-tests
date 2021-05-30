@@ -92,11 +92,10 @@ const checkMenu = (item) => {
 const calcTotal = () => {
   const arrayOrders = restaurant.consumption;
   let total = 0;
-  let totalGorjeta = total * 1.1;
   for (let index = 0; index < arrayOrders.length; index += 1) {
     total += checkMenu(arrayOrders[index]);
   }
-  return totalGorjeta;
+  return total;
 };
 
 const createMenu = (obj) => {
