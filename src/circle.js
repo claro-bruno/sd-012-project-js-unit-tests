@@ -28,4 +28,6 @@ const circle = (radius) => {
   };
 };
 
+if (circle(2).circumference === 12.56) console.log(circle(2));
+
 module.exports = circle;
