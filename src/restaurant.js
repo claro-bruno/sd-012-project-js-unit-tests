@@ -86,18 +86,15 @@ const createMenu = (obj) => {
     order: (string) => {
       objReturn.consumption.push(string);
     },
-    // eslint-disable-next-line sonarjs/cognitive-complexity
     pay: () => {
       let valor = 0;
       let items = [];
       items = items.concat(Object.entries(obj.food), Object.entries(obj.drink));
       for (let i = 0; i < objReturn.consumption.length; i += 1) {
         const currItem = objReturn.consumption[i];
-        // eslint-disable-next-line sonarjs/no-one-iteration-loop
-        for (let j = 0; j < items.length; j += 1) {
-          if (currItem === items[j][0]);
-          valor += items[j][1];
-          break;
+        const currItemObj = items.find((item) => item[0] === currItem);
+        if (currItemObj) {
+          valor += currItemObj[1];
         }
       }
       return valor;
