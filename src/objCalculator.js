@@ -23,9 +23,7 @@ const calculator = {
   add: (value1, value2) => value1 + value2,
   mult: (value1, value2) => value1 * value2,
   div: (value1, value2) => {
-    let result = 0;
-    result = Math.floor(value1 / value2);
-    return result;
+    return Math.floor(value1 / value2);
   },
   sub: (value1, value2) => value1 - value2,
 };
