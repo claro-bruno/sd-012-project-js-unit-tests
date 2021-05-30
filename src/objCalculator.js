@@ -22,10 +22,8 @@
 const calculator = {
   add: (a, b) => a + b, 
   mult: (a, b) => a * b, 
-  div: (a, b) => { 
-    return Math.floor(a / b)
-  },
-  sub: (a, b) => a - b, 
+  div: (a, b) => Math.floor(a / b),
+  sub: (a, b) => a - b,
 };
 calculator.add(2, 5);
 calculator.mult(2, 5);
