@@ -83,34 +83,28 @@ let restaurant = {};
 
 const orderFromMenu = (request) => restaurant.consumption.push(request);
 
-const somaDosPreçosDosPedidos = () => {
-  if (Object.keys(restaurant.fetchMenu.food).includes(restaurant.consumption)) {
-    let itemInfo = restaurant.fetchMenu.food.find((item) => item);
+const consultaPreco = (consumedItem) => {
+  let precoComida = restaurant.fetchMenu().food[consumedItem];
+  let precoFinal = !precoComida ? restaurant.fetchMenu().drinks[consumedItem] : precoComida;
+  return precoFinal;
+};
 
-  } else if (Object.keys(restaurant.fetchMenu.drink).includes(restaurant.consumption)) {
-
-  } else {
-    return 'Item não cadastrado!'
-  }
+const somaDosPrecosDosPedidos = () => {
+  const valoresConsumidos = restaurant.consumption.map(consultaPreco);
+  const soma = valoresConsumidos.reduce((somatorio, valor) => somatorio + valor);
+  return parseFloat((soma * 1.1).toFixed(2));
 };
 
 const createMenu = (myMenu) => {
-  return restaurant = {
+  restaurant = {
     fetchMenu: () => myMenu,
     consumption: [],
     order: orderFromMenu,
-    pay: somaDosPreçosDosPedidos
+    pay: somaDosPrecosDosPedidos,
   };
+  return restaurant;
 };
 
 let objetoRetornado = createMenu();
 
-createMenu({
-  food: {'coxinha': 3.90, 'sanduiche': 9.90},
-  drinks: {'agua': 3.90, 'cerveja': 6.90}
-});
-
-//objetoRetornado.pay(() => );
-
 module.exports = createMenu;
-
