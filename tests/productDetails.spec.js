@@ -22,13 +22,13 @@ const productDetails = require('../src/productDetails');
       details: {
         productId: 'Máscara123'
       }
-    }
+    }f
   ]
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
-//Utilizei o seguinte site como referencia para resolver o ultimo teste: https://www.w3schools.com/jsref/jsref_endswith.asp
+//Utilizei o seguinte site como referencia para resolver o ultimo teste: https://www.w3schools.com/jsref/jsref_endswith.asp 
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
