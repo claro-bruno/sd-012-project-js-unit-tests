@@ -84,7 +84,7 @@ function recebePedido (pedido) {
 };
 // Nesse caso, o this "chama" o objeto que possui a função "recebePedido".
 
-function criaConta() {
+function criaConta() { // Foi necessário recorrer ao Caio Takeshi novamente para auxiliar na construção dessa função
   let soma = 0;
   const menu = this.fetchMenu();
   for (let item of this.consumption) {
