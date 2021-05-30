@@ -95,6 +95,4 @@ const createMenu = (menu) => {
   return restaurant.consumption; 
 };
 
-console.log(createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }) && orderFromMenu('coxinha'));
-
 module.exports = createMenu;
