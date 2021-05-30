@@ -28,14 +28,15 @@ const productDetails = require('../src/productDetails');
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
 
+//Utilizei o seguinte site como referencia para resolver o ultimo teste: https://www.w3schools.com/jsref/jsref_endswith.asp
+
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    assert.fail();
     // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    // Teste que o array retornado pela função contém dois itens dentro.
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    // Teste que os dois objetos são diferentes entre si.
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    assert.strictEqual(Array.isArray(productDetails()), true);
+    assert.strictEqual(productDetails().length, 2);
+    assert.strictEqual(typeof productDetails(), 'object');
+    assert.notStrictEqual(productDetails()[0], productDetails()[1]);
+    assert.strictEqual(productDetails()[0].details.productId.endsWith('123'), productDetails()[1].details.productId.endsWith('123'));
   });
 });
