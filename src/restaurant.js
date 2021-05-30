@@ -88,13 +88,46 @@ function orderReceived(pedido) {
 
 // Escopo do This em uma arrow function visto link compartilhado pelo Jensen no slack: https://blog.da2k.com.br/2019/01/07/javascript-tudo-sobre-arrow-functions/
 
+function valorTotal() {
+  const itensConsumo = this.consumption;
+  const comidas = Object.keys(this.fetchMenu().food);
+  const precoComidas = Object.values(this.fetchMenu().food);
+  const bebidas = Object.keys(this.fetchMenu().drink);
+  const precoBebidas = Object.values(this.fetchMenu().drink);
+  let valorTotal = 0;
+  for (let i = 0; i < itensConsumo.length; i += 1) {
+    for (let i2 = 0; i2 < comidas.length; i2 += 1) {
+      if (comidas !== undefined && itensConsumo[i] === comidas[i2]) {
+        valorTotal += precoComidas[i2];
+      }
+    }
+  }
+  for (let i = 0; i < itensConsumo.length; i += 1) {
+    for (let i2 = 0; i2 < bebidas.length; i2 += 1) {
+      if (bebidas !== undefined && itensConsumo[i] === bebidas[i2]) {
+        valorTotal += precoBebidas[i2];
+      }
+    }
+  }
+  return this.valorConsumo += (valorTotal * 1.10);
+  }
+
 const createMenu = (objetoParametro) => {
   const result = { 
     fetchMenu: () => objetoParametro,
     consumption: [],
     order: orderReceived,
+    pay: valorTotal,
+    valorConsumo: 0,
   };
   return result;
 };
+
+const objetoRetornado8 = createMenu({ food: { sopa: 21.90, coxinha: 4.90 }, drink: { agua: 3.50 } });
+objetoRetornado8.order('coxinha');
+objetoRetornado8.order('sopa');
+objetoRetornado8.order('agua');
+objetoRetornado8.pay();
+console.log(objetoRetornado8.valorConsumo);
 
 module.exports = createMenu;
