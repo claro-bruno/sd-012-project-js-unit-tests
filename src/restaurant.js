@@ -113,7 +113,14 @@ createMenu({food: {}, drink: {}}).order('sasimi');
 console.log(createMenu({food: {}, drink: {}}).consumption);
 */
 
-/*TESTE 7*/
+/* TESTE 7 
+createMenu({food: {}, drink: {}}).consumption = [];
+createMenu({food: {}, drink: {}}).order('coxinha');
+createMenu({food: {}, drink: {}}).order('agua');
+createMenu({food: {}, drink: {}}).order('coxinha');
+createMenu({food: {}, drink: {}}).consumption // Retorno: ['coxinha', 'agua', 'coxinha']
+console.log(createMenu({food: {}, drink: {}}).consumption);
+*/
 
 // console.log(createMenu());
 
