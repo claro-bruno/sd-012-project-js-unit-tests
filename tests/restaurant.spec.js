@@ -45,7 +45,8 @@ const createMenu = require("../src/restaurant");
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-let objetoQualquer = { food: {}, drink: {} };
+let objetoQualquer = { food: { coxinha: 10, sopa: 7, sashimi: 7 }, drink: { agua: 2 } };
+
 const objetoRetornado = createMenu(objetoQualquer);
 
 describe("9 - Implemente os casos de teste e a função `createMenu`", () => {
@@ -63,7 +64,7 @@ describe("9 - Implemente os casos de teste e a função `createMenu`", () => {
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
-    assert.deepStrictEqual(objetoRetornado.fetchMenu(objetoQualquer), { food: {}, drink: {} });
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(objetoQualquer), { food: { coxinha: 10, sopa: 7, sashimi: 7 }, drink: { agua: 2 } });
 
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
@@ -130,5 +131,6 @@ describe("9 - Implemente os casos de teste e a função `createMenu`", () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    assert.strictEqual(objetoRetornado.pay(), 39.6);
   });
 });
