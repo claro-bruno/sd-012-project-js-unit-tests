@@ -120,6 +120,11 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
+    const objetoRetornado7 = createMenu({ food: {}, drink: {}} );
+    objetoRetornado7.order('coxinha');
+    objetoRetornado7.order('sopa');
+    objetoRetornado7.order('sopa');
+    assert.deepStrictEqual(Object.values(objetoRetornado7.consumption), ['coxinha', 'sopa', 'sopa']);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
