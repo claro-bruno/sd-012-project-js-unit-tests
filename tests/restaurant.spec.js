@@ -1,4 +1,6 @@
+const { strictEqual } = require('assert');
 const assert = require('assert');
+const { accessSync } = require('fs');
 const createMenu = require('../src/restaurant');
  
 /*
@@ -48,9 +50,10 @@ const createMenu = require('../src/restaurant');
 
 describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    assert.fail();
+    // assert.fail();
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
+    // assert.strictEqual(typeof createMenu() == 'object' && Object.keys(createMenu().includes('fetchMenu')), true)
     // ```
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
@@ -72,6 +75,8 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
+    assert.deepStrictEqual(restaurant(), []);
+
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
