@@ -64,11 +64,11 @@
 // - Definir o objeto que a `createMenu()` retorna, mas separadamente 
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
-// const restaurant = {}
+// const restaurant = {};
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
+// const orderFromMenu = () => {}; // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
@@ -79,6 +79,22 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const restaurant = {};
+
+const orderFromMenu = (request) => restaurant.consumption.push(request);
+
+// const totalToPay = () => {
+
+// }
+
+const createMenu = (menu) => {
+  restaurant.fetchMenu = () => menu;
+  restaurant.consumption = [];
+  restaurant.order = () => orderFromMenu;
+  restaurant.pay = () => {};
+  return restaurant.consumption; 
+};
+
+console.log(createMenu({ food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } }) && orderFromMenu('coxinha'));
 
 module.exports = createMenu;
