@@ -57,28 +57,60 @@
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro, 
+// PASSO 3: Crie uma função, separada da função `createMenu()`, que, dada uma string recebida por parâmetro,
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
-// DICA: para criar isso, você pode: 
+// DICA: para criar isso, você pode:
 // - Definir a função `createMenu()`
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
+// - Definir o objeto que a `createMenu()` retorna, mas separadamente
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
 // const restaurant = {}
 //
 // const createMenu = (myMenu) => // Lógica que edita o objeto `restaurant`
 //
-// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
+// const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`.
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
 
-// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
-// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
+// PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`,
+// soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso,
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+let menuRestaurant = {};
 
-const createMenu = () => {};
+const addConsumption = (str) => {
+  menuRestaurant.consumption.push(str);
+};
+
+const checkMenu = (item) => {
+  const foods = menuRestaurant.fetchMenu().food;
+  const drinks = menuRestaurant.fetchMenu().drink;
+  const arrayMenu = Object.keys(foods);
+  return arrayMenu.includes(item) ? foods[item] : drinks[item];
+};
+
+const calcPrice = () => {
+  const arrayOrders = menuRestaurant.consumption;
+  let total = 0;
+
+  for (let index = 0; index < arrayOrders.length; index += 1) {
+    total += checkMenu(arrayOrders[index]);
+  }
+  return total;
+};
+
+const createMenu = (obj) => {
+  menuRestaurant = {
+    fetchMenu: () => obj,
+    consumption: [],
+    order: (str) => addConsumption(str),
+    pay: () => calcPrice(),
+  };
+  return menuRestaurant;
+};
 
 module.exports = createMenu;
+
+//Requisito realizado com imensa contribuição do David Gonzaga
