@@ -17,13 +17,14 @@
 
 const myCounter = () => {
   var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+    for (let counterI = 2; counterI <= 3; counterI += 1) { // o var vaza o escorpo, por isso o erro. Troquei var por let e funcionou.
+      myArray.push(counterI);
     }
   }
   return myArray;
 };
+console.log(myCounter());
 
 module.exports = myCounter;

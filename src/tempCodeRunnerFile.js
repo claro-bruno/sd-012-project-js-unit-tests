@@ -1,7 +1,11 @@
-const calculator = {
-  add: (a, b) => Math.floor(a + b),
-  mult: (a, b) => Math.floor(a * b),
-  div: (a, b) => Math.floor(a / b),
-  sub: (a, b) => Math.floor(a - b),
+const myCounter = () => {
+  var myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
+    myArray.push(counter);
+    for (let counterI = 2; counterI <= 3; counterI += 1) {
+      myArray.push(counterI);
+    }
+  }
+  return myArray;
 };
-console.log(calculator.div(3, 2));
+console.log(myCounter());
