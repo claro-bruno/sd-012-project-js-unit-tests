@@ -46,13 +46,13 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-//
+
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
 
 // PASSO 2: Adicione ao objeto retornado por `createMenu` uma chave `consumption` que, como valor inicial, tem um array vazio.
-//
+
 // Agora faça o TESTE 5 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -79,6 +79,42 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+function recebePedido (pedido) {
+  this.consumption.push(pedido); // this. utilizado com ajuda do PR do Caio Takeshi.
+};
+// Nesse caso, o this "chama" o objeto que possui a função "recebePedido".
+
+function criaConta() {
+  let soma = 0;
+  const menu = this.fetchMenu();
+  for (let item of this.consumption) {
+    let valor = menu.drink[item] ? menu.drink[item] : menu.food[item];
+    soma += valor;
+  }
+  return parseFloat((soma * 1.1).toFixed(2));
+}
+
+const createMenu = (objeto) => ({
+  fetchMenu: () => objeto, // Passo 1
+  consumption: [], // Passo 2
+  order: recebePedido,
+  pay: criaConta
+});
 
 module.exports = createMenu;
+
+// Testes durante realização do Requisito 9
+
+// let pedido = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} })
+// console.log(pedido.fetchMenu());
+// let pedido2 = createMenu({ food: 'coxinha', drink: 'suco'})
+// console.log(pedido2.fetchMenu());
+// console.log(pedido2.consumption);
+// let carol = createMenu({
+//   food: {'coxinha': 3.90, 'sanduiche': 9.90},
+//   drinks: {'agua': 3.90, 'cerveja': 6.90}
+// });
+// carol.fetchMenu();
+// carol.order('coxinha');
+// carol.order('cerveja');
+// console.log(carol.consumption);
