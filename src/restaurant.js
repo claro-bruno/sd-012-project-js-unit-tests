@@ -78,33 +78,31 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const newObject = { food: { coxinha: 4, sopa: 10, sashimi: 8 }, drink: { agua: 3 } };
+const restaurant = {};
 
 const orderFromMenu = (request) => {
-  newObject.consumption.push(request);
-};
-
-const pay = () => {
-  let toPay = 0;
-  const food = Object.entries(newObject.food);
-  const drink = Object.entries(newObject.drink);
-  const foodDrink = food.concat(drink);
-  const newArray = foodDrink.toString().split(',');
-
-  for (let items of newObject.consumption) {
-    if (newArray.includes(items)) {
-      toPay += parseInt(newArray[newArray.indexOf(items) + 1], 10);
-    }
-  }
-  return toPay + (toPay * 0.1);
+  restaurant.consumption.push(request);
 };
 
 const createMenu = (object) => {
-  newObject.fetchMenu = () => object;
-  newObject.consumption = [];
-  newObject.order = orderFromMenu;
-  newObject.pay = pay;
-  return newObject;
+  restaurant.fetchMenu = () => object;
+  restaurant.consumption = [];
+  restaurant.order = orderFromMenu;
+  restaurant.pay = () => {
+    let toPay = 0;
+    const food = Object.entries(object.food);
+    const drink = Object.entries(object.drink);
+    const foodDrink = food.concat(drink);
+    const newArray = foodDrink.toString().split(',');
+  
+    for (let items of restaurant.consumption) {
+      if (newArray.includes(items)) {
+        toPay += parseInt(newArray[newArray.indexOf(items) + 1], 10);
+      }
+    }
+    return toPay + (toPay * 0.1);
+  };
+  return restaurant;
 };
 
 module.exports = createMenu;
