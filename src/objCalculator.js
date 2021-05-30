@@ -28,7 +28,7 @@ const calculator = {
   add,
   mult,
   div,
-  sub,  
+  sub,
 };
 
 module.exports = calculator;
