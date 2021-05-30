@@ -19,6 +19,11 @@
   calculator.div(3, 2) // Retorno: 1;
 */
 
-const calculator = {};
-
+const calculator = {
+  add: (a, b) => Math.floor(a + b), // Método Math.floor arredonda número para baixo --> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+  mult: (a, b) => Math.floor(a * b),
+  div: (a, b) => Math.floor(a / b),
+  sub: (a, b) => Math.floor(a - b),
+};
+console.log(calculator.div(3, 2));
 module.exports = calculator;

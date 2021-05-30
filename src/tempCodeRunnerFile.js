@@ -1,9 +1,7 @@
-const createStudent = (nome) => {
-  const estudante = {
-    name: nome,
-    feedback: () => 'Eita pessoa boa!',
-  };
-  
-  return estudante;
+const calculator = {
+  add: (a, b) => Math.floor(a + b),
+  mult: (a, b) => Math.floor(a * b),
+  div: (a, b) => Math.floor(a / b),
+  sub: (a, b) => Math.floor(a - b),
 };
-console.log(createStudent('felipe'));
+console.log(calculator.div(3, 2));
