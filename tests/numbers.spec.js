@@ -18,7 +18,6 @@ const numbers = require('../src/numbers');
 
 describe('#numbers', () => {
   it('Verifica se a função `numbers`retorna um array e se o array retornado contém somente números', () => {
-    //assert.fail();
     // Escreva um teste em que a função recebe [1, 2, 3, 4, 5] e retorna true
     assert.strictEqual(numbers([1, 2, 3, 4, 5]),true);
     // Escreva um teste em que a função recebe [1, 2, '3', 4, 5] e retorna false
