@@ -79,9 +79,9 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-function recebePedido (pedido) {
+function recebePedido(pedido) {
   this.consumption.push(pedido); // this. utilizado com ajuda do PR do Caio Takeshi.
-};
+}
 // Nesse caso, o this "chama" o objeto que possui a função "recebePedido".
 
 function criaConta() { // Foi necessário recorrer ao Caio Takeshi novamente para auxiliar na construção dessa função
@@ -98,7 +98,7 @@ const createMenu = (objeto) => ({
   fetchMenu: () => objeto, // Passo 1
   consumption: [], // Passo 2
   order: recebePedido,
-  pay: criaConta
+  pay: criaConta,
 });
 
 module.exports = createMenu;
