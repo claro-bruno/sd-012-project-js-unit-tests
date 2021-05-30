@@ -129,6 +129,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
       food: {'coxinha': 3.90, 'sanduiche': 9.90},
       drinks: {'agua': 3.90, 'cerveja': 6.90}
     });
+    
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
     objetoRetornado.order('coxinha');
