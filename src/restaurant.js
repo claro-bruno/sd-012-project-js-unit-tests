@@ -79,13 +79,22 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
+function orderReceived(pedido) {
+  return this.consumption.push(pedido);
+}
+// Vi no PR do colega Thalles Carneiro que era possível utilizar o this.
+
+// Explicação do uso do 'this' se referindo ao objeto onde a função está sendo chamada, vista no link https://desenvolvimentoparaweb.com/javascript/this-javascript-dominando/ 
+
+// Escopo do This em uma arrow function visto link compartilhado pelo Jensen no slack: https://blog.da2k.com.br/2019/01/07/javascript-tudo-sobre-arrow-functions/
+
 const createMenu = (objetoParametro) => {
-  let resultado = { 
+  const result = { 
     fetchMenu: () => objetoParametro,
     consumption: [],
+    order: orderReceived,
   };
-
-  return resultado;
+  return result;
 };
 
 module.exports = createMenu;
