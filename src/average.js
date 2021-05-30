@@ -19,7 +19,7 @@ const average = (arr) => {
     if (typeof valor !== 'number') return undefined;
     sum += valor;
   }
-  media = sum / arr.length;
+  media = Math.round(sum / arr.length);
   return media;
 };
 
