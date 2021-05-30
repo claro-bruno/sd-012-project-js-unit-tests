@@ -26,5 +26,6 @@ describe('#numbers', () => {
     assert.strictEqual(numbers([1, 'a', 3]), false);
     // Escreva um teste em que a função recebe [' '] e retorna false
     assert.strictEqual(numbers(['']), false);
+    //teste
   });
 });
