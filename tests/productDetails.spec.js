@@ -45,9 +45,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
       assert.strictEqual(Array.isArray(arrayTeste[index]), false);
     };
     // Teste que os dois objetos são diferentes entre si.
+jossany-moura-unit-tests
     assert.notDeepStrictEqual(arrayTeste[0], arrayTeste[1]);
     // Teste que os dois productIds terminam com 123.
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.endsWith('123'), true)
     assert.strictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.endsWith('123'), true)
+    // Teste que os dois productIds terminam com 123.
+master
   });
 });
