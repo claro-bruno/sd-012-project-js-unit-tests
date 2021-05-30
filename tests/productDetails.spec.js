@@ -38,8 +38,5 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois itens dentro do array retornado pela função são objetos.
     assert.strictEqual(typeof Object.keys(productDetails()), "object");
     // Teste que os dois objetos são diferentes entre si.
-    assert.strictEqual(Object.keys(productDetails()[0]) !== Object.keys(productDetails()[1]), true);
-    // (Difícil) Teste que os dois productIds terminam com 123.
-    assert.strictEqual(productDetails()[0].details.productId.endsWith('123') && productDetails()[1].details.productId.endsWith('123'), true); // Método .endWith() retirado da documetação ->> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
   });
 });
