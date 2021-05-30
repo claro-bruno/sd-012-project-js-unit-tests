@@ -113,6 +113,8 @@ createMenu({food: {}, drink: {}}).order('sasimi');
 console.log(createMenu({food: {}, drink: {}}).consumption);
 */
 
+/*TESTE 7*/
+
 // console.log(createMenu());
 
 module.exports = createMenu;
