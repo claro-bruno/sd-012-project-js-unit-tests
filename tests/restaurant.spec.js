@@ -139,7 +139,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     objetoRetornado8.order('sopa');
     objetoRetornado8.order('agua');
     objetoRetornado8.pay();
-    assert.strictEqual(objetoRetornado8.valorConsumo, 33.33);
+    assert.strictEqual(objetoRetornado8.valorConsumo, '33.33');
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });

@@ -91,26 +91,22 @@ function orderReceived(pedido) {
 function valorTotal() {
   const itensConsumo = this.consumption;
   const comidas = Object.keys(this.fetchMenu().food);
-  const precoComidas = Object.values(this.fetchMenu().food);
   const bebidas = Object.keys(this.fetchMenu().drink);
-  const precoBebidas = Object.values(this.fetchMenu().drink);
-  let valorTotal = 0;
+  let somaValor = 0;
+  
   for (let i = 0; i < itensConsumo.length; i += 1) {
-    for (let i2 = 0; i2 < comidas.length; i2 += 1) {
-      if (comidas !== undefined && itensConsumo[i] === comidas[i2]) {
-        valorTotal += precoComidas[i2];
-      }
+    if (comidas.includes(itensConsumo[i])) {
+        somaValor += this.fetchMenu().food[itensConsumo[i]];
+    } else if (bebidas.includes(itensConsumo[i])) {
+      somaValor += this.fetchMenu().drink[itensConsumo[i]];
     }
   }
-  for (let i = 0; i < itensConsumo.length; i += 1) {
-    for (let i2 = 0; i2 < bebidas.length; i2 += 1) {
-      if (bebidas !== undefined && itensConsumo[i] === bebidas[i2]) {
-        valorTotal += precoBebidas[i2];
-      }
-    }
-  }
-  return this.valorConsumo += (valorTotal * 1.10);
-  }
+  this.valorConsumo = (somaValor * 1.10).toPrecision(4);
+  return this.valorConsumo;
+}
+// Função .toPrecision esclarecida na documentção, no link https://mzl.la/2SJyhZj;
+//  Função valorTotal refatorada com a ajuda do colega Nuwanda, onde buscamos uma forma de diminuir a complexidade da mesma;
+//  Função .includes vista na documentação, no link https://mzl.la/3yT3Y3k;
 
 const createMenu = (objetoParametro) => {
   const result = { 
@@ -122,12 +118,5 @@ const createMenu = (objetoParametro) => {
   };
   return result;
 };
-
-const objetoRetornado8 = createMenu({ food: { sopa: 21.90, coxinha: 4.90 }, drink: { agua: 3.50 } });
-objetoRetornado8.order('coxinha');
-objetoRetornado8.order('sopa');
-objetoRetornado8.order('agua');
-objetoRetornado8.pay();
-console.log(objetoRetornado8.valorConsumo);
 
 module.exports = createMenu;
