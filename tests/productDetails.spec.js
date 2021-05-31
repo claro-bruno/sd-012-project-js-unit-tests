@@ -39,7 +39,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // (Difícil) Teste que os dois productIds terminam com 123.
     
     assert.strictEqual(typeof productDetails, typeof []);
-    assert.strictEqual(product.length, 2);
+    assert.strictEqual(productDetails.length, 2);
     assert.strictEqual(typeof productDetails[0], 'object');
     assert.strictEqual(typeof productDetails[1], 'object');
     assert.notDeepStrictEqual(productDetails[0], productDetails[1]);
