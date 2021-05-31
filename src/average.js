@@ -24,10 +24,10 @@ const average = (array) => {
       return undefined;
     }
     soma += array[index];
-    tamanhoArray += 1;
+  
   }
-
-  return resultado = (Math.round(soma / array.length));
+  resultado = (Math.round(soma / array.length));
+  return resultado;
 };
 
 module.exports = average;
