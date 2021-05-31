@@ -27,21 +27,11 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    // assert.fail();
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste que o retorno da função é um array.
-    assert.strictEqual(Array.isArray(productDetails('a', 'b')), true);
-    // Teste que o array retornado pela função contém dois itens dentro.
-    assert.strictEqual(productDetails('a', 'b').length, 2);
-    // Teste que os dois itens dentro do array retornado pela função são objetos.
-    for (let produto of productDetails('a', 'b')) {
-      assert.strictEqual(typeof produto, 'object');
-    }
-    // Teste que os dois objetos são diferentes entre si.
-    assert.strictEqual(productDetails('a', 'b')[0] !== productDetails('a', 'b')[1], true);
-    // (Difícil) Teste que os dois productIds terminam com 123.
-    for (let produto of productDetails('a', 'b')) {
-      assert.strictEqual(produto.details.productId.substr(-3) === '123', true);
-    }
+    assert.strictEqual(Array.isArray(productDetails()), true);
+    assert.strictEqual(productDetails().length, 2);
+    assert.strictEqual(typeof productDetails()[0] && typeof productDetails()[1], 'object');
+    assert.notStrictEqual(productDetails()[0], productDetails()[1]);
+    assert.strictEqual(productDetails()[0].details.productId.endsWith('123'), true);
+    assert.strictEqual(productDetails()[1].details.productId.endsWith('123'), true);
   });
 });
