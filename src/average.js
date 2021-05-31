@@ -26,6 +26,4 @@ const average = (arrayNúmerico) => {
   return Math.round(media);
 };
 
-
 module.exports = average;
-
