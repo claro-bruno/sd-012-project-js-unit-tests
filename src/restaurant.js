@@ -83,22 +83,6 @@ function createOrder(string) {
   return this.consumption.push(string);
 }
 
-const createMenu = (fullMenu) => {
-  let restaurant = {
-    fetchMenu: () => fullMenu,
-    consumption: [],
-    order: createOrder,
-    // eslint-disable-next-line no-use-before-define
-    pay: payCalc,
-  };
-  return restaurant;
-};
-
-let objetoRetornado = createMenu({ food: { coxinha: 30, paçoca: 40, jaca: 33, frango: 20 }, drink: { guaraná: 5, coca: 6, agua: 2, suco: 9 } });
-
-objetoRetornado.order("coxinha");
-objetoRetornado.order("coca");
-
 function payCalc() {
   let bill = 0;
   let cardapio = this.fetchMenu();
@@ -116,6 +100,14 @@ function payCalc() {
   return bill * 1.1;
 }
 
-console.log(objetoRetornado.pay());
+const createMenu = (fullMenu) => {
+  let restaurant = {
+    fetchMenu: () => fullMenu,
+    consumption: [],
+    order: createOrder,
+    pay: payCalc,
+  };
+  return restaurant;
+};
 
 module.exports = createMenu;
