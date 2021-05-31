@@ -24,7 +24,6 @@ const average = (array) => {
       return undefined;
     }
     soma += array[index];
-  
   }
   resultado = (Math.round(soma / array.length));
   return resultado;
