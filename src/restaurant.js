@@ -89,14 +89,9 @@ let objeto = {
   }
 };
 
-const createMenu = (objeto) => ({
-  
-    fetchMenu: () => objeto,
-    consumption: ['',''],
-    order: ,
-    pay: ,
+const createMenu = objeto => (
+  {fetchMenu: () => objeto}
+);
 
-  
-});
 
 module.exports = createMenu;
