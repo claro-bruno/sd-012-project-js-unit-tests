@@ -44,5 +44,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.deepStrictEqual(productDetails("Alcool gel", "Máscara")[0].details.productId.match(/123/g), ['123'])
     assert.deepStrictEqual(productDetails("Alcool gel", "Máscara")[1].details.productId.match(/123/g), ['123'])
+    // Teste que os dois productIds terminam com 123.
   });
 });
