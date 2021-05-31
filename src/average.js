@@ -15,19 +15,21 @@
 const average = (array) => {
   let soma = 0;
   let resultado = 0;
+  tamanhoArray = 0;
   if (array.length === 0) {
     return undefined;
   }
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] === 'string') {
-  return undefined;
+      return undefined;
 
-    } else {
-      soma += array[index];
     }
-  resultado = Math.round(soma / array.length);
+    soma += array[index];
+    tamanhoArray += 1;
   }
-  return resultado
+
+  return resultado = Math.round(soma / array.length);
+
 };
 
 module.exports = average;
