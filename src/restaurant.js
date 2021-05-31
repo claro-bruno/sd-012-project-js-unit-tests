@@ -83,5 +83,7 @@ const createMenu = (items) => ({
   fetchMenu: () => items,
   consumption: [],
 });
-
+const addItemToConsumption = (itemString) => ({
+  order: createMenu.consumption.push(itemString),
+});
 module.exports = createMenu;

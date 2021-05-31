@@ -85,9 +85,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
-    // const objetoRetornado = createMenu(objetoQualquer);
-    // objetoRetornado.order("coxinha");
-    // objetoRetornado.consumption // Retorno: ["coxinha"]
+    const objetoRetornado5 = createMenu(objetoQualquer);
+    objetoRetornado5.order("coxinha");
+    objetoRetornado5.consumption // Retorno: ["coxinha"]
+    assert.strictEqual(objetoRetornado5.consumption, ["coxinha"])
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
