@@ -82,7 +82,7 @@
 function orderReceived(pedido) {
   return this.consumption.push(pedido);
 }
-// Vi no PR do colega Thalles Carneiro que era possível utilizar o this.
+// Vi no PR do colega Thalles Carneiro que era possível utilizar o this. Link: https://github.com/tryber/sd-012-project-js-unit-tests/pull/88 ;
 
 // Explicação do uso do 'this' se referindo ao objeto onde a função está sendo chamada, vista no link https://desenvolvimentoparaweb.com/javascript/this-javascript-dominando/ 
 
