@@ -53,5 +53,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // https://www.devmedia.com.br/javascript-substring-selecionando-parte-de-uma-string/39232
     assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.substring(productDetails('Alcool gel', 'Máscara')[0].name.length), '123');
     assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.substring(productDetails('Alcool gel', 'Máscara')[1].name.length), '123');
+    // Teste que os dois productIds terminam com 123.
   });
 });
