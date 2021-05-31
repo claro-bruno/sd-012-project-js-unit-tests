@@ -32,12 +32,12 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     assert.strictEqual(Array.isArray(productDetails('a', 'b')), true);
     assert.strictEqual(productDetails('a', 'b').length, 2);
-    for (let product of productDetails('a', 'b')) {
-      assert.strictEqual(typeof product, 'object');
+    for (let produto of productDetails('a', 'b')) {
+      assert.strictEqual(typeof produto, 'object');
     }
     assert.strictEqual(productDetails('a', 'b')[0] !== productDetails('a', 'b')[1], true);
-    for (let product of productDetails('a', 'b')) {
-      assert.strictEqual(product.details.productId.substr(-3) === '123', true);
+    for (let produto of productDetails('a', 'b')) {
+      assert.strictEqual(produto.details.productId.substr(-3) === '123', true);
     }
   });
 });
