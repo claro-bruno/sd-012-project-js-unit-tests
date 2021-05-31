@@ -80,32 +80,47 @@
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 function recebePedido(pedido) {
-  this.consumption.push(pedido); // this. utilizado com ajuda do PR do Caio Takeshi.
+  cliente.consumption.push(pedido); // this. utilizado com ajuda do PR do Caio Takeshi.
 }
-// Nesse caso, o this "chama" o objeto que possui a função "recebePedido".
+// Nesse caso, o this "chama" o objeto que possui a função "recebePedido" pra poder incluir todos os pedido realizados
 
-function criaConta() { // Foi necessário recorrer ao Caio Takeshi novamente para auxiliar na construção dessa função
+function criaConta() { 
   let soma = 0;
-  const menu = this.fetchMenu();
-  for (let item of this.consumption) {
-    let valor = menu.drink[item] ? menu.drink[item] : menu.food[item];
-    soma += valor;
+  const menu = cliente.fetchMenu();
+  const consumo = cliente.consumption; // ajuda do PR do Caio Takeshi.
+  for (let key of consumo) { // pego cada item da array consumo. ex: coxinha, agua..
+    // jogo a comida no menu. ex: menu.food[coxinha]? retorna o valor da coxinha
+    // jogo a bebida no menu. ex: menu.food[água]? false => retorna menu.drink[agua] e faz a soma
+    let precoItem = menu.food[key] ? menu.food[key] : menu.drink[key];
+    soma += precoItem;
   }
   return parseFloat((soma * 1.1).toFixed(2));
 }
 
-const createMenu = (objeto) => ({
-  fetchMenu: () => objeto, // Passo 1
-  consumption: [], // Passo 2
-  order: recebePedido,
-  pay: criaConta,
+let cliente = {};
+
+const createMenu = (objeto) => { // função createMenu com 4 métodos
+  return cliente = { 
+    fetchMenu: () => objeto, // Passo 1 - cria uma função .fetchMenu() que retorna o menu inserido 
+    consumption: [], // Passo 2 - mantém o pedido zerado quando cria o menu
+    order: recebePedido, // chama a função que recebe o pedido
+    pay: criaConta,// chama a função que cria a conta
+  }
+};
+
+// Monitoria individual Massaki
+let cliente1 = createMenu({
+  food: {'coxinha': 3.90, 'sanduiche': 9.90},
+  drinks: {'agua': 3.90, 'cerveja': 6.90},
 });
+console.log(cliente1.fetchMenu());
+cliente1.order('coxinha');
+console.log(cliente1.consumption);
 
 module.exports = createMenu;
 
 // Testes durante realização do Requisito 9
 
-// let pedido = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} })
 // console.log(pedido.fetchMenu());
 // let pedido2 = createMenu({ food: 'coxinha', drink: 'suco'})
 // console.log(pedido2.fetchMenu());
