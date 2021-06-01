@@ -32,9 +32,18 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
     assert.strictEqual(typeof productDetails(), 'object');
     assert.strictEqual(productDetails().length, 2);
-    assert.strictEqual(typeof (Object.entries(productDetails())) ,'object');
-    assert.deepStrictEqual(Object.entries(productDetails()[0]),Object.entries(productDetails()[1]));
-    assert.strictEqual(productDetails()[0].details.productId.endsWith('123'), true);
-    assert.strictEqual(productDetails()[1].details.productId.endsWith('123'), true);
+    assert.strictEqual(typeof Object.entries(productDetails()), 'object');
+    assert.notDeepStrictEqual(
+      productDetails('coca-cola', 'abacaxi')[0],
+      productDetails('coca-cola', 'abacaxi')[1]
+    );
+    assert.strictEqual(
+      productDetails()[0].details.productId.endsWith('123'),
+      true
+    );
+    assert.strictEqual(
+      productDetails()[1].details.productId.endsWith('123'),
+      true
+    );
   });
 });
