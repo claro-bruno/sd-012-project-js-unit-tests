@@ -83,77 +83,22 @@
 
 const assert = require('assert');
 
-/* const createMenu = (obj) => {
-  if (!obj) {
-    const menu = {
-      fetchMenu() {
-        return {};
-      },
-    };
-    return menu;
-  }
-  const menu = {
-    fetchMenu() {
-      return obj;
-    },
-  };
-  return menu;
-}; */
-
-const createMenu = (obj) => {
-  if (!obj) {
-    const menu = {
-      fetchMenu: () => {
-        const emptyObj = ({});
-        return emptyObj;
-      },
-    };
-    return menu;
-  }
-  const menu = {
+const createMenu = (obj) => ({
     fetchMenu: () => (obj),
-  };
-  return menu;
-};
+    consumption: [],  
+});
 
 module.exports = createMenu;
 
-console.log('----------------------------------');
+const testMenu = { food: {}, drink: {} };
+const objetoRetornado = createMenu(testMenu);
 
-const menu = createMenu({ food: {} });
-console.log('createMenu({ food: {} }) Call:');
-console.log('\n');
+assert.strictEqual(Object.keys(createMenu()).includes('fetchMenu'), true);
 
-console.log(`Keys (stringify): ${JSON.stringify(Object.keys(menu))}`);
-console.log('Keys (no stringify): ' + Object.keys(menu));
-console.log(`Values (stringify): ${JSON.stringify(Object.values(menu))}`);
-console.log('Values (no stringify): ' + Object.values(menu));
-console.log(`Entries (stringify): ${JSON.stringify(Object.entries(menu))}`);
-console.log('Entries (no stringify): ' + Object.entries(menu));
-console.log('\n');
+assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {} });
+assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
 
-console.log(`fetchMenu Call: ${JSON.stringify(menu.fetchMenu())}`);
+assert.deepStrictEqual(objetoRetornado.fetchMenu(), testMenu);
+assert.strictEqual(Object.is(objetoRetornado.fetchMenu(), testMenu), true);
 
-console.log('----------------------------------');
-
-const menu2 = createMenu();
-console.log('createMenu() Call: ');
-console.log('\n');
-
-console.log(`Keys (stringify): ${JSON.stringify(Object.keys(menu2))}`);
-console.log('Keys (no stringify): ' + Object.keys(menu2));
-console.log(`Values (stringify): ${JSON.stringify(Object.values(menu2))}`);
-console.log('Values (no stringify): ' + Object.values(menu2));
-console.log(`Entries (stringify): ${JSON.stringify(Object.entries(menu2))}`);
-console.log('Entries (no stringify): ' + Object.entries(menu2));
-console.log('\n');
-
-console.log(`fetchMenu Call: ${JSON.stringify(menu2.fetchMenu())}`);
-
-console.log('----------------------------------');
-
-assert.strictEqual(Object.keys(menu).includes('fetchMenu'), true);
-assert.strictEqual(Object.keys(menu2).includes('fetchMenu'), true);
-
-// assert.strictEqual(Object.values(menu).includes(''), true);
-// assert.strictEqual(Object.values(menu2).includes('fetchMenu'), true);
+assert.deepStrictEqual(objetoRetornado.consumption, []);

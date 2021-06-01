@@ -61,15 +61,18 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu({ food: {}, drink: {} });
     // objetoRetornado.fetchMenu() // Retorno: { food: {}, drink: {}}
     // ```
-    assert.strictEqual(createMenu({ food: {}, drink: {} }).fetchMenu(), { food: {}, drink: {} });
-    assert.strictEqual(Object.keys(createMenu({ food: {}, drink: {} }).fetchMenu()), ['food', 'drink']);
+    const testMenu = { food: {}, drink: {} };
+    const objetoRetornado = createMenu(testMenu);
+
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), { food: {}, drink: {} });
+    assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.fetchMenu() // Retorno: objetoQualquer
     // ```
-    const objetoQualquer = {gaia: true, janis: 10};
-    assert.strictEqual(Object.is(createMenu(objetoQualquer).fetchMenu(), objetoQualquer), true);
+    assert.deepStrictEqual(objetoRetornado.fetchMenu(), testMenu);
+    assert.strictEqual(Object.is(objetoRetornado.fetchMenu(), testMenu), true);
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
@@ -77,8 +80,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.consumption // Retorno: []
     // ```
-    const objetoRetornado = createMenu(objetoQualquer);
-    assert.strictEqual(objetoRetornado.consumption, []);
+    assert.deepStrictEqual(objetoRetornado.consumption, []);
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
