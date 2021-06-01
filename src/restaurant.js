@@ -78,6 +78,7 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+let cliente = {};
 
 function recebePedido(pedido) {
   cliente.consumption.push(pedido); // this. utilizado com ajuda do PR do Caio Takeshi.
@@ -97,25 +98,24 @@ function criaConta() {
   return parseFloat((soma * 1.1).toFixed(2));
 }
 
-let cliente = {};
-
 const createMenu = (objeto) => { // função createMenu com 4 métodos
-  return cliente = { 
+    cliente = { 
     fetchMenu: () => objeto, // Passo 1 - cria uma função .fetchMenu() que retorna o menu inserido 
     consumption: [], // Passo 2 - mantém o pedido zerado quando cria o menu
     order: recebePedido, // chama a função que recebe o pedido
-    pay: criaConta,// chama a função que cria a conta
-  }
+    pay: criaConta, // chama a função que cria a conta
+  };
+  return cliente;
 };
 
 // Monitoria individual Massaki
-let cliente1 = createMenu({
-  food: {'coxinha': 3.90, 'sanduiche': 9.90},
-  drinks: {'agua': 3.90, 'cerveja': 6.90},
-});
-console.log(cliente1.fetchMenu());
-cliente1.order('coxinha');
-console.log(cliente1.consumption);
+// let cliente1 = createMenu({
+//   food: {'coxinha': 3.90, 'sanduiche': 9.90},
+//   drinks: {'agua': 3.90, 'cerveja': 6.90},
+// });
+// console.log(cliente1.fetchMenu());
+// cliente1.order('coxinha');
+// console.log(cliente1.consumption);
 
 module.exports = createMenu;
 
