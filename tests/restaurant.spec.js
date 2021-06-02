@@ -58,50 +58,48 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
     // verifique que 'objetoRetornado.fetchMenu()' retorna um objeto cujas chaves são somente `food` e `drink`.
     // ```
-    let objetoRetornado = createMenu({ food: {}, drink: {} });
-    assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']); // Retorno: { food: {}, drink: {}}
+    const objetoRetornado1 = createMenu({ food: {}, drink: {} });
+    assert.deepStrictEqual(Object.keys(objetoRetornado1.fetchMenu()), ['food', 'drink']); // Retorno: { food: {}, drink: {}}
     // ```
     // TESTE 3: Verifique que o menu passado pra função createMenu é identico ao menu recuperado pela função 'objetoRetornado.fetchMenu'
     // ```
     const objetoQualquer = {};
-    objetoRetornado = createMenu(objetoQualquer);
-    assert.strictEqual(objetoRetornado.fetchMenu(), objetoQualquer)// Retorno: objetoQualquer
+    const objetoRetornado2 = createMenu(objetoQualquer);
+    assert.strictEqual(objetoRetornado2.fetchMenu(), objetoQualquer)// Retorno: objetoQualquer
     // ```
     // Agora faça o PASSO 1 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 4: Verifique que 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
     // ```
-    objetoRetornado = createMenu(objetoQualquer);
-    assert.deepStrictEqual(objetoRetornado.consumption, []) // Retorno: []
+    const objetoRetornado3 = createMenu(objetoQualquer);
+    assert.deepStrictEqual(objetoRetornado3.consumption, []) // Retorno: []
     // ```
     // Agora faça o PASSO 2 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 5: Verifique que chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro, 
     // como `objetoRetornado.order('coxinha')`, tal string é adicionada ao array retornado em `objetoRetornado.consumption
     // ```
-    objetoRetornado = createMenu(objetoQualquer);
-    objetoRetornado.order("coxinha");
-    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);  // Retorno: ["coxinha"]
+    const objetoRetornado4 = createMenu(objetoQualquer);
+    objetoRetornado4.order("coxinha");
+    assert.deepStrictEqual(objetoRetornado4.consumption, ['coxinha']);  // Retorno: ["coxinha"]
     
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
     // objetoRetornado.order("coxinha");
-    // objetoRetornado.order("agua");
-    // objetoRetornado.order("sopa");
-    // objetoRetornado.order("sashimi");
-    // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
+    objetoRetornado4.order("agua");
+    objetoRetornado4.order("sopa");
+    objetoRetornado4.order("sashimi");
+    assert.deepStrictEqual(objetoRetornado4.consumption, ["coxinha", "agua", "sopa", "sashimi"]);  // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
     // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
-    // ```
+    objetoRetornado4.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado4.consumption, ["coxinha", "agua", "sopa", "sashimi", "coxinha"]);
     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
