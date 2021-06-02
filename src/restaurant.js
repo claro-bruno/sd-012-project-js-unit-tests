@@ -46,7 +46,6 @@
 */
 
 // PASSO 1: Crie uma função `createMenu()` que, dado um objeto passado por parâmetro, retorna um objeto com o seguinte formato: { fetchMenu: () => objetoPassadoPorParametro }.
-const createMenu = (menu) => { fetchMenu: () => menu };
 //
 // Agora faça o TESTE 4 no arquivo `tests/restaurant.spec.js`.
 
@@ -62,7 +61,7 @@ const createMenu = (menu) => { fetchMenu: () => menu };
 // adiciona essa string ao array de `objetoRetornado.consumption`. Adicione essa função à chave `order`.
 // DICA: para criar isso, você pode: 
 // - Definir a função `createMenu()`
-// - Definir o objeto que a `createMenu()` retorna, mas separadamente 
+// - Definir o objeto que a `createMenu()` objetoRetornado.consumption retorna, mas separadamente 
 // - E, depois, definir a função que será atribuída a `order`.
 // ```
 // const restaurant = {}
@@ -81,10 +80,16 @@ const createMenu = (menu) => { fetchMenu: () => menu };
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
 const createMenu = (objetoPassadoPorParametro) => {
+  
   return { 
     fetchMenu: () => objetoPassadoPorParametro,
-    consumption: []
+    consumption: [],
+    order: orderFromMenu
   }
+};
+
+const orderFromMenu = function(request) {
+  this.consumption.push(request);
 };
 
 module.exports = createMenu;
