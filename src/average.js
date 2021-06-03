@@ -11,6 +11,7 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+// recorri aos exercicios do Julio Barros e Henrique Alarcon para solucionar requisito
 
 const average = (array) => {
    let soma = 0;
@@ -26,5 +27,5 @@ const average = (array) => {
   let mediaArray = Math.round(soma / array.length);
     return mediaArray;
 };
-console.log(average([47, 63, 122]));
+// console.log(average([-11, 2, 5]));
 module.exports = average;
