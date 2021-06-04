@@ -21,9 +21,9 @@ const createStudent = (nome) => {
   feedback: () => {
     const frase = 'Eita pessoa boa!';
     return frase;
-    }
+    },
   };
+};
 
-
-console.log(createStudent('aldria'));
+// console.log(createStudent('aldria'));
 module.exports = createStudent;
