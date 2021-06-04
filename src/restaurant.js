@@ -80,32 +80,37 @@ const { request } = require('http');
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
-function orderFromMenu(menuItem) {
-  this.consumption.push(menuItem);
-}
 
-function payBill() {
-  const foodOrDrink = this.fetchMenu();
+const restaurant = {
+  consumption: [],
+  total: 0, /** Consultei o Pull Request do Roberval Filho para resolver essa parte de colocar o total como chave do objeto e conseguir passar por um erro do Linter.
+  //   https://github.com/tryber/sd-012-project-js-unit-tests/pull/23
+  //   */
+};
+
+const orderFromMenu = (menuItem) => {
+  restaurant.consumption.push(menuItem);
+};
+
+const payBill = () => {
+  const foodOrDrink = restaurant.fetchMenu();
   const keys = Object.keys(foodOrDrink);
   for (let index = 0; index < keys.length; index += 1) {
-    this.consumption.forEach((item) => {
+    restaurant.consumption.forEach((item) => {
       if (foodOrDrink[keys[index]][item] !== undefined) {
-        this.total += foodOrDrink[keys[index]][item];
+        restaurant.total += foodOrDrink[keys[index]][item];
       }
     });
   }
-  const totalWithTip = (this.total * 0.1) + this.total;
+  const totalWithTip = (restaurant.total * 0.1) + restaurant.total;
   return totalWithTip;
-}
+};
 
-const createMenu = (myMenu) => ({
-  fetchMenu: () => myMenu,
-  consumption: [],
-  total: 0, /** Consultei o Pull Request do Roberval Filho para resolver essa parte de colocar o total como chave do objeto e conseguir passar por um erro do Linter.
-  https://github.com/tryber/sd-012-project-js-unit-tests/pull/23
-  */
-  order: orderFromMenu,
-  pay: payBill,
-});
+const createMenu = (myMenu) => {
+  restaurant.fetchMenu = () => myMenu;
+  restaurant.order = orderFromMenu;
+  restaurant.pay = payBill;
+  return restaurant;
+};
 
 module.exports = createMenu;
