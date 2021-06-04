@@ -47,12 +47,11 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     assert.notStrictEqual(productDetails('Alcool gel', 'Máscara')[0], productDetails('Alcool gel', 'Máscara')[1]);
 
-    // (Difícil) Teste que os dois productIds terminam com 123.
+    // Teste que os dois productIds terminam com 123.
     /** Consultei o link que o Diogo Sant'Anna compartilhou em uma thread do Slack da turma sobre o Requisito 6 para refatorar o teste.
     https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
     */
     assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[0].details.productId.endsWith('123'), true);
     assert.deepStrictEqual(productDetails('Alcool gel', 'Máscara')[1].details.productId.endsWith('123'), true);
-
   });
 });
