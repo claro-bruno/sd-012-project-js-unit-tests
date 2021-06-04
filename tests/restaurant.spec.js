@@ -104,10 +104,15 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.order('agua');
-    // objetoRetornado.order('coxinha');
-    // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
+    const somaDosPreçosDosPedidos = 3.90 + 3.90 + 3.90;
+    const objetoRetornado5 = createMenu({
+      food: {'coxinha': 3.90, 'sanduiche': 9.90},
+      drinks: {'agua': 3.90, 'cerveja': 6.90}
+    })
+    objetoRetornado5.order('coxinha');
+    objetoRetornado5.order('agua');
+    objetoRetornado5.order('coxinha');
+    assert.deepStrictEqual(objetoRetornado5.pay(),somaDosPreçosDosPedidos); // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
