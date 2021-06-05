@@ -112,6 +112,6 @@ const getPay = (order) => {
     return total;
 };
 
-meuRestaurante.pay = getPay(meuRestaurante.consumption);
+meuRestaurante.pay = getPay(meuRestaurante.consumption); // pagamento
 
 module.exports = createMenu;
