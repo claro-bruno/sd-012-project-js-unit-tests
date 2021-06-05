@@ -20,27 +20,27 @@
 */
 
 const calculator = {
-  add: (num1,num2) => {
-    let numResultado = 0
-    numResultado = num1 + num2
-    return numResultado
+  add: (num1, num2) => {
+    let numResultado = 0;
+    numResultado = num1 + num2;
+    return numResultado;
   },
-  mult: (num1,num2) => {
-    let numResultado = 0
-    numResultado = num1 * num2
-    return numResultado
+  mult: (num1, num2) => {
+    let numResultado = 0;
+    numResultado = num1 * num2;
+    return numResultado;
   },
-  div: (num1,num2) => {
-    let numResultado = 0
-    numResultado = num1 / num2
-    return Math.floor(numResultado)
+  div: (num1, num2) => {
+    let numResultado = 0;
+    numResultado = num1 / num2;
+    return Math.floor(numResultado);
   },
-  sub: (num1,num2) => {
-    let numResultado = 0
-    numResultado = num1 - num2
-    return numResultado
+  sub: (num1, num2) => {
+    let numResultado = 0;
+    numResultado = num1 - num2;
+    return numResultado;
   },
   
 };
-console.log(calculator.sub(10,2))
+
 module.exports = calculator;
