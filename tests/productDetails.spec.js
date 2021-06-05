@@ -51,5 +51,6 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(diff(funcxon), true)
     // (Difícil) Teste que os dois productIds terminam com 123.
     assert.strictEqual(parseInt(str.substring(1,4)), 123)
+
   });
 });
