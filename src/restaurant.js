@@ -13,7 +13,7 @@
   Eles guiarão você pelo desenvolvimento.
 
   Parâmetros:
-  - Um objeto. Exemplos: { food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }.
+  - Um objeto. Exemplos: .
   Comportamento:
 
   const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} }).
@@ -78,7 +78,43 @@
 // PASSO 4: Adicione ao objeto retornado por `createMenu()` uma chave `pay` com uma função que varre todo os itens de `objetoRetornado.consumption`, 
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+const objetoP = { food: { coxinha: 3.9, sopa: 9.9 }, drink: { agua: 3.9, cerveja: 6.9 } };
+let objeto = {}
+const createMenu = (obj) => {
+  
+  objeto = { 
+    fetchMenu: () =>  { return obj; },
+    consumption: [],
+  };
+  return objeto;
+};
 
-const createMenu = () => {};
+
+const meuRestaurante = createMenu(objetoP);
+const createOrder = (string) => meuRestaurante.consumption.push(string);
+meuRestaurante.order = createOrder
+meuRestaurante.order('coxinha')
+meuRestaurante.order('agua')
+
+const getPay = (order) => {
+  let cardapio = meuRestaurante.fetchMenu();
+  let itemsCardapio = [];
+  Object.assign(itemsCardapio, cardapio.food, cardapio.drink);
+  let valores = Object.values(itemsCardapio);
+  let produtos = Object.keys(itemsCardapio);
+  let total = 0;
+  // compara cada produto order com produto tabela
+  order.forEach(produtoOrder => {
+    produtos.forEach((produto, index) => {
+      if (produto === produtoOrder)
+      total+= valores[index]
+    })
+  });
+    return total
+};
+
+
+meuRestaurante.pay = getPay(meuRestaurante.consumption);
 
 module.exports = createMenu;
+
