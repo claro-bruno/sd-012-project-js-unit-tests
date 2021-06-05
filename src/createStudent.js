@@ -23,7 +23,7 @@ const createStudent = (nome) => {
     return frase;
   },
 };
-return createStudent;
+return student;
 };
 
 // console.log(createStudent('Aldria'));
