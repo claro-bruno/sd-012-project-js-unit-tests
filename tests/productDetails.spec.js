@@ -41,6 +41,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois objetos são diferentes entre si.
     assert.strictEqual(Object.is(productDetails("Qboa", "esponja")), false)
     // Teste que os dois productIds terminam com 123.
-    assert.deepStrictEqual(productDetails('Qboa', 'esponja').details.productId.endsWith('123'), true)
+    assert.strictEqual(productDetails('Qboa', 'esponja')[0].details.productId.endsWith('123'), true)
+    assert.strictEqual(productDetails('Qboa', 'esponja')[1].details.productId.endsWith('123'), true)
   });
 });
