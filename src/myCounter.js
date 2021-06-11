@@ -14,16 +14,17 @@
   Comportamento:
   myCounter() // Retorna: [0, 2, 3, 1, 2, 3, 2, 2, 3, 3, 2, 3];
 */
+// requisito feito com apoio da Caroline
 
 const myCounter = () => {
-  var myArray = [];
-  for (var counter = 0; counter <= 3; counter += 1) {
+  let myArray = [];
+  for (let counter = 0; counter <= 3; counter += 1) {
     myArray.push(counter);
-    for (var counter = 2; counter <= 3; counter += 1) {
-      myArray.push(counter);
+    for (let counterA = 2; counterA <= 3; counterA += 1) {
+      myArray.push(counterA);
     }
   }
   return myArray;
 };
-
+// console.log(myCounter());
 module.exports = myCounter;
