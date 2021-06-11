@@ -46,6 +46,5 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste que os dois productIds terminam com 123.
     assert.strictEqual(objeto1.details.productId.endsWith('123'), true);
     assert.strictEqual(objeto2.details.productId.endsWith('123'), true);
-        // Teste que os dois productIds terminam com 123.
   });
 });
