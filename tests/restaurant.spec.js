@@ -110,5 +110,6 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+    a
   });
 });
