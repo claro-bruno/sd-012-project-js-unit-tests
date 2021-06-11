@@ -40,11 +40,15 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     assert.strictEqual(typeof productDetails('a', 'b')[0], 'object');
     assert.strictEqual(typeof productDetails('a', 'b')[1], 'object');
     // Teste que os dois objetos são diferentes entre si.
+
+    
     const objeto1 = productDetails('a', 'b')[0];
     const objeto2 = productDetails('a', 'b')[1];
     assert.notDeepStrictEqual(objeto1, objeto2);
     // Teste que os dois productIds terminam com 123.
     assert.strictEqual(objeto1.details.productId.endsWith('123'), true);
     assert.strictEqual(objeto2.details.productId.endsWith('123'), true);
+    // Teste que os dois productIds terminam com 123.
+
   });
 });
