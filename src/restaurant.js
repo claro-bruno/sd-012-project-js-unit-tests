@@ -79,6 +79,26 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+// Criterio 9 feito com a ajuda do Roberval
+
+function createMenu(object) {
+  const returnedObject = {
+    fetchMenu: () => object,
+    consumption: [],
+    order(string) { this.consumption.push(string); },
+    pay() {
+      const consumo = this.consumption;
+      const menu = this.fetchMenu();
+      let preco = 0;
+      consumo.forEach((item) => {
+        if (menu.food[item]) preco += menu.food[item];
+        if (menu.drink[item]) preco += menu.drink[item];
+      });
+      const result = preco * 1.1;
+      return Number(result.toFixed(2));
+  },
+}; 
+  return returnedObject;
+}
 
 module.exports = createMenu;
