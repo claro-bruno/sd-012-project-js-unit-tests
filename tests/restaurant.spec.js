@@ -52,6 +52,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // TESTE 1: Verifique se o retorno da função createMenu() é um objeto que possui, 
     // mas não é necessariamente é limitado à chave `fetchMenu`, a qual tem como valor uma função.
     // ```
+    assert.strictEqual(typeof (createMenu()), 'object')
     // const objetoRetornado = createMenu(); // Retorno: { fetchMenu: () => {}, ... }
     // ```
     // TESTE 2: Verifique que, dado que a função createMenu foi chamada com o objeto: `{ food: {}, drink: {} }`, 
@@ -82,6 +83,9 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.consumption // Retorno: ["coxinha"]
     // ```
     // Agora faça o PASSO 3 no arquivo `src/restaurant.js`.
+    const meuRestaurante = createMenu({ food: {'coxinha': 3.9, 'sopa': 9.9}, drink: {'agua': 3.9, 'cerveja': 6.9} })
+    meuRestaurante.order('coxinha');
+    assert.deepStrictEqual(meuRestaurante.consumption, ['coxinha']);
     // --------------------------------------------------------------------------------------
     // TESTE 6: Verifique que as três orders seguintes, de bebidas e comidas mescladas, somam três itens no array `objetoRetornado.consumption` conforme os itens pedidos.
     // ```
@@ -91,6 +95,10 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order("sashimi");
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
+    meuRestaurante.order('agua');
+    meuRestaurante.order('sopa');
+    meuRestaurante.order('sashimi');
+    assert.deepStrictEqual(meuRestaurante.consumption, ['coxinha', 'agua', 'sopa', 'sashimi']);
     // Agora faça o TESTE 7 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 7: Verifique que a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
@@ -110,6 +118,6 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
-    a
+  
   });
 });
