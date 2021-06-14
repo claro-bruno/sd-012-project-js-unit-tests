@@ -91,7 +91,7 @@ const createMenu = (myMenu) => {
   fetchMenu: () => myMenu,
   consumption: [],
   order: orderMenu,
-  pay: somaValores,
+  // pay: somaValores,
   };
   return restaurant;
 };
