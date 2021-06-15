@@ -108,7 +108,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.comsuption // Retorno: ['coxinha', 'agua', 'coxinha']
     // ```
-    // Agora faça o TESTE 8 deste arquivo.
+     // Agora faça o TESTE 8 deste arquivo.
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
@@ -117,7 +117,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
-  
+        // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
+
   });
 });
