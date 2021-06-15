@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 const assert = require('assert');
+const { TestScheduler } = require('jest');
+const { hasUncaughtExceptionCaptureCallback } = require('process');
 const circle = require('../src/circle');
 
 /*
@@ -22,8 +24,25 @@ const circle = require('../src/circle');
 
   OBS: Lembre-se que você não precisa se preocupar com o describe e o it por enquanto, isso será aprendido posteriormente.
 */
-
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
+  test('testa se  a função retorna um objeto',() => {
+    expect(typeof circle(2)).toBe('object');
+  });
+  test('testa se o retorno da função sem parametros é undefindid',() => {
+    expect(circle()).toBeUndefined();
+  });
+  test('Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.', () => {
+    expect(parseFloat((circle(2).circumference).toPrecision(4))).toBeCloseTo(12.56);
+  });
+  test('Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 7.',() => {
+    expect(parseFloat((circle(7).area).toPrecision(5))).toBeCloseTo(153.86);
+  });
+  test('Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3', () => {
+    expect(parseFloat((circle(3).area).toPrecision(4))).toBeCloseTo(28.26);
+    expect(parseFloat((circle(3).circumference).toPrecision(4))).toBeCloseTo(18.84);
+  });
+});
+/* describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contedos os valores esperados', () => {
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna um objeto.
@@ -35,10 +54,11 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste que a função retorna, dentro de um objeto, a circunferência correta para um círculo de raio 2.
     //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision referencial 
     assert.strictEqual(parseFloat((circle(2).circumference).toPrecision(4)), 12.56);
-    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 3.
+    // Teste que a função retorna, dentro de um objeto, a área correta para um círculo de raio 7.
     assert.strictEqual(parseFloat((circle(7).area).toPrecision(5)), 153.86);
     // Teste que a função retorna, num objeto, os dados corretos de um círculo de raio 3.
     assert.strictEqual(parseFloat((circle(3).area).toPrecision(4)), 28.26);
     assert.strictEqual(parseFloat((circle(3).circumference).toPrecision(4)), 18.84);
   });
 });
+*/
