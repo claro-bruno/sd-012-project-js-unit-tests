@@ -91,7 +91,7 @@ function somaValores(consumo, menu) {
   });
   const result = valores * 1.1;
   return Number(result.toFixed(2));
-};
+}
 
 const orderMenu = (pedido) => restaurant.consumption.push(pedido);
 
