@@ -81,47 +81,44 @@
 
 const createMenu = (item) => {
   let meuRestaurante = {
-  food: {'coxinha': 3, 'sanduiche': 9},
-  drink: {'agua': 3, 'cerveja': 6}
-}   
-  const arrayVazio = []
+  food: { coxinha: 3, sanduiche: 9 },
+  drink: { agua: 3, cerveja: 6 },
+};
+  const arrayVazio = [];
 
   const contaFinal = () => {
-    let resultadoDaSoma = 0 
+    let resultadoDaSoma = 0; 
     arrayVazio.forEach((element) => {
-      const valoresDoMenu = Object.values(meuRestaurante)
-      const comida = Object.entries(valoresDoMenu[0])
-      const bebida = Object.entries(valoresDoMenu[1])
-      const arrayDoMenu = [...comida, ...bebida]
+      const valoresDoMenu = Object.values(item);
+      const comida = Object.entries(valoresDoMenu[0]);
+      const bebida = Object.entries(valoresDoMenu[1]);
+      const arrayDoMenu = [...comida, ...bebida];
       arrayDoMenu.forEach((element2) => {
-        if(element2[0] === element){
-          resultadoDaSoma = resultadoDaSoma + element2[1]
+        if (element2[0] === element) {
+          resultadoDaSoma += element2[1];
         }
-      })
-    })
-     return resultadoDaSoma
-  }
-
+      });
+    });
+     return resultadoDaSoma;
+  };
 
   const meuMenu = {
     fetchMenu: () => item, 
     consumption: arrayVazio,
     order: (consumido) => arrayVazio.push(consumido),
-    pay:contaFinal(),
-  }
-  
+    pay: contaFinal,
+  };    
  
-    
-  return meuMenu
+  return meuMenu;
 };
 
 let meuObjeto = createMenu({
-  food: {'coxinha': 3, 'sanduiche': 9},
-  drink: {'agua': 3, 'cerveja': 6}
-})   
+food: { coxinha: 3, sanduiche: 9 },
+drink: { agua: 3, cerveja: 6 },
+});   
 
-meuObjeto.order = 'coxinha'
-meuObjeto.order = 'sanduiche'
-console.log(meuObjeto.pay)
+meuObjeto.order('coxinha');
+meuObjeto.order('sanduiche'); 
+console.log(meuObjeto.pay());
 
 module.exports = createMenu;

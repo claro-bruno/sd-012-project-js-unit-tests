@@ -120,13 +120,14 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // --------------------------------------------------------------------------------------
     // TESTE 8: Verifique que, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
     // ```
-    
+    meuRestaurante.order('coxinha')
+    meuRestaurante.order('sanduiche')
     // objetoRetornado.order('coxinha');
     // objetoRetornado.order('agua');
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-  
+  assert.strictEqual(meuRestaurante.pay(), 42.3)
     // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
   });
 });
