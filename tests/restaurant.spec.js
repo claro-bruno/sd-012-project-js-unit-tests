@@ -129,7 +129,7 @@ describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    assert.deepStrictEqual(meuRestaurante.pay(), 12.87);
+    
         // Agora faça o PASSO 4 no arquivo `src/restaurant.js`.
 
   });

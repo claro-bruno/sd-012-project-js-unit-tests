@@ -79,7 +79,7 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-// Requisito feito com ajuda do Julio e Caroline
+// Requisito feito com ajuda do Julio 
 
 let restaurant = {};
 
@@ -91,7 +91,7 @@ function somaValores(consumo, menu) {
   });
   const result = valores * 1.1;
   return Number(result.toFixed(2));
-}
+};
 
 const orderMenu = (pedido) => restaurant.consumption.push(pedido);
 
