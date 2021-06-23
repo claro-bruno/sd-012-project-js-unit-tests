@@ -12,14 +12,14 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = (numbers) => {
-  if (numbers.length === 0) return undefined;
-  let soma = 0;
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (typeof (numbers[i]) !== 'number') return undefined;
-    soma += numbers[i];
+const average = (numbers) => { // Cria uma arrow function 'avarage' recebendo parametro 'numbers'
+  if (numbers.length === 0) return undefined; // Se 'numbers' nao tiver nenhum valor, retornar 'undefined'
+  let soma = 0; // Define variavel 'soma' como 0 (sem valor)
+  for (let i = 0; i < numbers.length; i += 1) { // Laco de repeticao para passar pelo index
+    if (typeof (numbers[i]) !== 'number') return undefined; // Se o tipo do parametro 'number' for diferente de numero, retorna 'undefined'
+    soma += numbers[i]; // variavel 'soma' se torna ela mesma + o index 'i' do parametro 'numbers'
   }
-  return Math.round(soma / numbers.length);
+  return Math.round(soma / numbers.length); // arredonda o valor para o inteiro mais proximo do resultado da variavel 'soma' dividido pelo tamanho de do parametro 'numbers'  (logica solicitada para a funcao) 
 };
 
-module.exports = average;
+module.exports = average; // exporta o component

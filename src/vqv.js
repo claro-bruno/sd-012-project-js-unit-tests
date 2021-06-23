@@ -16,13 +16,13 @@
       #VQV!'
 */
 
-const vqv = (nome, idade) => {
+const vqv = (nome, idade) => { // Cria a arrow function 'vqv' com parametros 'nome' e 'idade'
   if (nome === undefined || idade === undefined) {
-    return undefined;
+    return undefined; // Se o parametro 'nome' ou 'idade' forem de tipo 'undefined', retorna 'undefined'
   }
   return `Oi, meu nome é ${nome}!
 Tenho ${idade} anos,
 trabalho na Trybe e mando muito em programação!
-#VQV!`;
+#VQV!`; // Se nao, retona a frase construida. Ps: '${}' serve para voce adicionar valores de variaveis ou parametros dentro de uma string de forma mais dinamica com a utilizacao de crases ao inves de aspas.
 };
-module.exports = vqv;
+module.exports = vqv; // Exporta o component

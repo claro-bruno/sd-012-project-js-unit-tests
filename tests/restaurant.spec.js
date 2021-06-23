@@ -48,29 +48,32 @@ const createMenu = require('../src/restaurant');
 
 describe('9 - Implemente os casos de teste e a função `createMenu`', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    assert.strictEqual(typeof (createMenu().fetchMenu), 'function');
-    const objetoRetornado = createMenu({ food: {}, drink: {} });
-    assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']);
-    const someObj = { food: {}, drink: {} };
-    assert.deepStrictEqual(createMenu(someObj).fetchMenu(), { food: {}, drink: {} });
-    assert.deepStrictEqual(objetoRetornado.consumption, []);
-    objetoRetornado.order('coxinha');
-    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']);
+    assert.strictEqual(typeof (createMenu().fetchMenu), 'function'); // verifica se o tipo('typeof') da chave 'fetchMenu', dentro da funcao(objeto) 'createMenu', e uma funcao.
+    const objetoRetornado = createMenu({ food: {}, drink: {} }); // criar uma variavel para receber a funcao 'creatMenu' recebendo como parametro um objeto com duas chaves
+    assert.deepStrictEqual(Object.keys(objetoRetornado.fetchMenu()), ['food', 'drink']); // Verifica se as chaves dentro da funcao 'fetchMenu' dentro da variavel 'objetoRetornado', tem como nome os valores descritos
+    const someObj = { food: {}, drink: {} }; // cria uma variavel(objeto) para receber duas chaves
+    assert.deepStrictEqual(createMenu(someObj).fetchMenu(), { food: {}, drink: {} }); // Verifica se o valor de 'fetchMenu, ao declarar a variavel 'someObj' como parametro de 'createMenu', e igual ao valor apresentado
+    assert.deepStrictEqual(objetoRetornado.consumption, []); // Verifica se o valor da chave consumption, dentro da variavel ' objetoRetornado', e um array vazio.
+    objetoRetornado.order('coxinha'); // adiciona a 'string' 'coxinha' dentro da 'chave'(funcao) 'order', que por sua vez envia como parametro para a funcao 'addOrder' que acaba por adicionar a 'string' ao 'array' da chave 'consumption' dentro da variavel ('createMenu' || 'objetoRetornado')
+    assert.deepStrictEqual(objetoRetornado.consumption, ['coxinha']); // Verifica se a chave 'consumption' dentro 'objetoRetornado' tem como valor a string mencionada
+    // adiciona as 'strings' 'agua', 'sopa' e 'sashimi' dentro da 'chave'(funcao) 'order', dentro de 'objetoRetornado', que por sua vez envia como parametro para a funcao 'addOrder' que acaba por adicionar a 'string' ao 'array' da chave 'consumption' dentro da variavel ('createMenu' || 'objetoRetornado')
     objetoRetornado.order("agua");
     objetoRetornado.order("sopa");
-    objetoRetornado.order("sashimi");
-    assert.strict(objetoRetornado.consumption.length, 3);
-    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "sashimi"]);
+    objetoRetornado.order("burguer");
+    assert.strict(objetoRetornado.consumption.length, 3); // Verifica se a chave 'consumption' dentro 'objetoRetornado' tem como tamanho (.lenght) de seu array, o valor 3
+    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "burguer"]); // Verifica se a chave 'consumption' dentro 'objetoRetornado' tem os valores mencionados (strings), dentro do seu array
+    // adiciona as 'strings' 'coxinha', 'coxinha' e 'agua' dentro da 'chave'(funcao) 'order', dentro de 'objetoRetornado', que por sua vez envia como parametro para a funcao 'addOrder' que acaba por adicionar a 'string' ao 'array' da chave 'consumption' dentro da variavel ('createMenu' || 'objetoRetornado')
     objetoRetornado.order('coxinha');
     objetoRetornado.order('coxinha');
     objetoRetornado.order('agua');
-    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "sashimi", "coxinha", "coxinha", "agua"]);
-    const objetoRetornado2 = createMenu({ food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } });
-    const somaDosPrecosPedidos = 3.9 + 3.9 + 3.9 + 6.9;
+    assert.deepStrictEqual(objetoRetornado.consumption, ["coxinha", "agua", "sopa", "burguer", "coxinha", "coxinha", "agua"]); // Verifica se a chave 'consumption' dentro 'objetoRetornado' tem os valores mencionados (strings), dentro do seu array
+    const objetoRetornado2 = createMenu({ food: { 'coxinha': 3.9, 'sopa': 9.9 }, drink: { 'agua': 3.9, 'cerveja': 6.9 } }); // Cria uma variavel que recebe a funcao 'createMenu' que recebe como parametro um objeto com os valores mostrado
+    const somaDosPrecosPedidos = 3.9 + 3.9 + 3.9 + 6.9; // cria uma variavel para somar os precos de objetoRetornado2 para esse test especifico
+    // adiciona as 'strings' 'coxinha', 'agua', 'coxinha' e 'cerveja dentro da 'chave'(funcao) 'order', dentro de 'objetoRetornado', que por sua vez envia como parametro para a funcao 'addOrder' que acaba por adicionar a 'string' ao 'array' da chave 'consumption' dentro da variavel ('createMenu' || 'objetoRetornado2')
     objetoRetornado2.order('coxinha');
     objetoRetornado2.order('agua');
     objetoRetornado2.order('coxinha');
     objetoRetornado2.order('cerveja');
-    assert.strictEqual(objetoRetornado2.pay(), 18.6, 'soma');
+    assert.strictEqual(objetoRetornado2.pay(), somaDosPrecosPedidos, 'soma'); // Verifica se o valor da chave 'pay' dentro de 'objetoRetornado2' e igual a variavel 'somaDosPrecosPedidos'. Devolve a mensagem 'soma'
   });
 });

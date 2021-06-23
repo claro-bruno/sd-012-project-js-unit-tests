@@ -79,33 +79,33 @@
 // soma o preço de todos checando-os no menu e retorna o valor somado acrescido de 10%. DICA: para isso, 
 // você precisará varrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-function addOrder(orderValue) {
-  this.consumption.push(orderValue);
+function addOrder(orderValue) { // cria funcao 'addOrder'para ordem de pedido, com paremetro 'orderValue'
+  this.consumption.push(orderValue); // adiciona a chave 'consumption' o parametro 'orderValue'
 }
 
-function totalSum() {
-  const consumptionList = this.consumption;
-  let menuList = this.fetchMenu();
-  let sum = 0;
-  consumptionList.forEach((element) => {
-    if (menuList.food[element] !== undefined) {
-      sum += menuList.food[element];
+function totalSum() { // funcao totalSum pra percorrer todos os itens de consumption
+  const consumptionList = this.consumption; // variavel para receber o valor da chave consumption
+  let menuList = this.fetchMenu(); // variavel apra receber o valor da chave 'fetchMenu' (que e uma funcao)
+  let sum = 0; // variavel vazia para captar a soma
+  consumptionList.forEach((element) => { // arrow function utlizando '.forEach' para percorrer os valores de 'consumptionList' utilizando o parametro 'element'
+    if (menuList.food[element] !== undefined) { // condicao para caso o item com index de valor do paramentro 'element' dentro da chave 'food' dentro de 'menuList' nao seja undefined
+      sum += menuList.food[element]; // se for diferente de undefined, a variavel sum vai receber o valor da chave 'food' dentro de 'menuList' com o index de valor igual a parametro 'element'
     }
-    if (menuList.drink[element] !== undefined) {
-      sum += menuList.drink[element];
+    if (menuList.drink[element] !== undefined) { // condicao para caso o item com index de valor do paramentro 'element' dentro da chave 'drink' dentro de 'menuList' nao seja undefined
+      sum += menuList.drink[element]; // se for diferente de 'undefined', a variavel sum vai receber o valor da chave 'drink' dentro de 'menuList' com o index de valor igual a parametro 'element'
     }
   });
-  return sum;
+  return sum; // a funcao 'totalSum' retorna a variavel sum
 }
 
-const createMenu = (menuObj) => {
-  let menu = {
-    fetchMenu: () => menuObj,
-    consumption: [],
-    order: addOrder,
-    pay: totalSum,
+const createMenu = (menuObj) => { // cria funcao 'createMenu', com paremetro 'menuObj'
+  let menu = { // cria variavel 'menu' sendo um objeto
+    fetchMenu: () => menuObj, // chave do objeto, uma funcao e o valor sendo igual o parametro 'menuObj' da funcao 'createMenu'
+    consumption: [], // chave do objeto sendo um array vazio
+    order: addOrder, // chave do objeto tendo como valor a funcao addOrder 
+    pay: totalSum, // chave do objeto tendo como valor a funcao 'totalSum'
   };
-  return menu;
+  return menu; // Retorna a variavel 'menu'
 };
 
-module.exports = createMenu;
+module.exports = createMenu; // exporta o Component
