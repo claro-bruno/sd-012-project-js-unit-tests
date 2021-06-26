@@ -13,11 +13,15 @@
 */
 
 const average = (array) => {
+  
   let sum = 0;
 
   if (array.length === 0) {
     return undefined;
   }
+  // const average = (...values) => {
+  //   return values.reduce((accumulator, currentValue) => accumulator + currentValue);
+  // }
 
   for (let index = 0; index < array.length; index += 1) {
     if (typeof array[index] !== 'number') {
@@ -27,6 +31,8 @@ const average = (array) => {
   }
   let media = Math.round(sum / array.length);
   return (media);
+
+
 };
-console.log(average([1, '79']));
+console.log(average([1, 2]));
 module.exports = average;
